@@ -1,1 +1,2 @@
-# Project 3 Starter Code
+# Project 3 Starter
+Nick Cresner
