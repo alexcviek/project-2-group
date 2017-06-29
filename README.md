@@ -1,2 +1,3 @@
-# Project 3 Starter
-Nick Cresner
+# Project 3 Starter Code
+Lauren Armbrust
+Alex Cwiek
