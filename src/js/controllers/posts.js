@@ -2,8 +2,8 @@ angular
   .module('sausageApp')
   .controller('PostsIndexCtrl', PostsIndexCtrl);
 
-PostsIndexCtrl.$inject = ['Post', '$auth'];
-function PostsIndexCtrl(Post, $auth){
+PostsIndexCtrl.$inject = ['Post'];
+function PostsIndexCtrl(Post){
   const vm = this;
   function postsIndex(){
     vm.all = Post.query();
