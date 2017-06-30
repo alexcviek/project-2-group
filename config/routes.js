@@ -2,7 +2,7 @@ const router = require('express').Router();
 const foodBanksController = require('../controllers/foodBanks');
 const usersController = require('../controllers/users');
 const postsController = require('../controllers/posts');
-// const auth = require('../controllers/auth');
+const auth = require('../controllers/auth');
 // const oauth = require('../controllers/oauth');
 
 router.route('/posts')
@@ -28,5 +28,11 @@ router.route('/users/:id')
   .get(usersController.showUsersRoute)
   .put(usersController.updateUsersRoute)
   .delete(usersController.deleteUsersRoute);
+
+router.route('/register')
+  .post(auth.register);
+
+router.route('/login')
+  .post(auth.login);
 
 module.exports = router;
