@@ -1,6 +1,9 @@
 angular
   .module('sausageApp')
-  .controller('PostsIndexCtrl', PostsIndexCtrl);
+  .controller('PostsIndexCtrl', PostsIndexCtrl)
+  .controller('PostsNewCtrl', PostsNewCtrl)
+  .controller('PostsShowCtrl', PostsShowCtrl)
+  .controller('PostsEditCtrl', PostsEditCtrl);
 
 PostsIndexCtrl.$inject = ['Post'];
 function PostsIndexCtrl(Post){
