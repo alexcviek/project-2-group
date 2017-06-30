@@ -1,4 +1,4 @@
-/* globals: api */
+/* global api */
 require('../helper');
 
 const FoodBank  = require('../../models/foodBank');
@@ -15,22 +15,28 @@ describe('Food Bank tests', () => {
   describe('GET /api/foodBanks', () => {
 
     beforeEach(done => {
-      FoodBank.create({
-        name: 'Battersea Food Bank',
-        location: { lat: 51.0000034, lng: 1.000034 },
-        type: 'Private',
-        createdBy: User[0]
-      }, done);
+      User.create({
+        username: 'Sausage',
+        email: 'sausage@gmail.com',
+        password: 'pass'
+      }, (err, user) => {
+        FoodBank.create({
+          name: 'Battersea Food Bank',
+          location: { lat: 51.0000034, lng: 1.000034 },
+          type: 'Private',
+          createdBy: user
+        }, done);
+      });
     });
 
     it('should return a 200 response', done => {
-      api.get('/api/foodBanks')
+      api.get('/api/foodbanks')
       .set('Accept', 'application/json')
       .expect(200, done);
     });
 
     it('should respond with a JSON object', done => {
-      api.get('/api/foodBanks')
+      api.get('/api/foodbanks')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.header['content-type']).to.be.eq('application/json; charset=utf-8');
@@ -39,7 +45,7 @@ describe('Food Bank tests', () => {
     });
 
     it('should return an array of Food Banks', done => {
-      api.get('/api/foodBanks')
+      api.get('/api/foodbanks')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.body).to.be.an('array');
@@ -48,7 +54,7 @@ describe('Food Bank tests', () => {
     });
 
     it('should return an array of shoe objects', done => {
-      api.get('/api/foodBanks')
+      api.get('/api/foodbanks')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.body)
@@ -56,11 +62,11 @@ describe('Food Bank tests', () => {
         .and.have.property(0)
         .and.have.all.keys([
           'id',
+          'comments',
           'name',
           'location',
           'type',
-          'createdAt',
-          'updatedAt'
+          'createdBy'
         ]);
         done();
       });

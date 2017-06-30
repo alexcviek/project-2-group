@@ -8,6 +8,54 @@ function indexFoodBanksRoute(req, res, next){
     .catch(next);
 }
 
+function showFoodBanksRoute(req, res, next){
+  FoodBank
+    .findById(req.params.id)
+    .exec()
+    .then(foodBank => {
+      if(!foodBank) return res.notFound();
+      return res.json(foodBank);
+    })
+    .catch(next);
+}
+
+function createFoodBanksRoute(req, res, next){
+  FoodBank
+    .create(req.body)
+    .then((foodBank) => res.status(201).json(foodBank))
+    .catch(next);
+}
+
+function updateFoodBanksRoute(req, res, next){
+  FoodBank
+    .findById(req.params.id)
+    .exec()
+    .then(foodBank => {
+      if(!foodBank) return res.notFound();
+
+      foodBank = Object.assign(foodBank, req.body);
+      return foodBank.save();
+    })
+    .then(foodBank => res.json(foodBank))
+    .catch(next);
+}
+
+function deleteFoodBanksRoute(req, res, next){
+  FoodBank
+    .findById(req.params.id)
+    .exec()
+    .then((foodBank) => {
+      if(!foodBank) return res.notFound();
+      return foodBank.remove();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 module.exports = {
-  indexFoodBanksRoute
+  indexFoodBanksRoute,
+  showFoodBanksRoute,
+  createFoodBanksRoute,
+  updateFoodBanksRoute,
+  deleteFoodBanksRoute
 };
