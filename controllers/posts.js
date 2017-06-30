@@ -10,7 +10,7 @@ function indexPostsRoute(req, res, next) {
 
 function createPostsRoute(req, res, next) {
   if(req.file) req.body.image = req.file.filename;
-  req.body.createdBy = req.user;
+  // req.body.createdBy = req.user;
 
   Post
   .create(req.body)
@@ -21,7 +21,6 @@ function createPostsRoute(req, res, next) {
 function showPostsRoute(req, res, next) {
   Post
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
     .exec()
     .then((post) => {
       if(!post) return res.notFound();
@@ -57,41 +56,41 @@ function deletePostsRoute(req, res, next) {
     .then(() => res.status(204).end())
     .catch(next);
 }
-
-function addPostsCommentRoute(req, res, next) {
-
-  req.body.createdBy = req.user;
-
-  Post
-    .findById(req.params.id)
-    .exec()
-    .then((post) => {
-      if(!post) return res.notFound();
-
-      const comment = post.comments.create(req.body);
-      post.comments.push(comment);
-
-      return post.save()
-        .then(() => res.json(comment));
-    })
-    .catch(next);
-}
-
-function deletePostsCommentRoute(req, res, next) {
-  Post
-    .findById(req.params.id)
-    .exec()
-    .then((post) => {
-      if(!post) return res.notFound();
-
-      const comment = post.comments.id(req.params.commentId);
-      comment.remove();
-
-      return post.save();
-    })
-    .then(() => res.status(204).end())
-    .catch(next);
-}
+//
+// function addPostsCommentRoute(req, res, next) {
+//
+//   req.body.createdBy = req.user;
+//
+//   Post
+//     .findById(req.params.id)
+//     .exec()
+//     .then((post) => {
+//       if(!post) return res.notFound();
+//
+//       const comment = post.comments.create(req.body);
+//       post.comments.push(comment);
+//
+//       return post.save()
+//         .then(() => res.json(comment));
+//     })
+//     .catch(next);
+// }
+//
+// function deletePostsCommentRoute(req, res, next) {
+//   Post
+//     .findById(req.params.id)
+//     .exec()
+//     .then((post) => {
+//       if(!post) return res.notFound();
+//
+//       const comment = post.comments.id(req.params.commentId);
+//       comment.remove();
+//
+//       return post.save();
+//     })
+//     .then(() => res.status(204).end())
+//     .catch(next);
+// }
 
 
 module.exports = {
@@ -99,7 +98,7 @@ module.exports = {
   createPostsRoute,
   showPostsRoute,
   updatePostsRoute,
-  deletePostsRoute,
-  addPostsCommentRoute,
-  deletePostsCommentRoute
+  deletePostsRoute
+  // addPostsCommentRoute,
+  // deletePostsCommentRoute
 };
