@@ -4,6 +4,8 @@ const bodyParser  = require('body-parser');
 const mongoose    = require('mongoose');
 mongoose.plugin(require('./lib/globalToJSON'));
 mongoose.Promise  = require('bluebird');
+const routes      = require('./config/routes');
+
 
 const app         = express();
 const { port, dbURI, env }    = require('./config/environment');
@@ -16,7 +18,7 @@ app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 // app.use(customResponses);
 
-
+app.use('/api', routes);
 
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
