@@ -8,7 +8,83 @@ function indexPostsRoute(res, req, next) {
     .catch(next);
 }
 
+function createPostsRoute(res, req, next) {
+  if(req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.user;
+
+  Post
+  .create(req.body)
+  .then((post) => res.status(201).json(post))
+  .catch(next);
+}
+
+function showPostsRoute(req, res, next) {
+  Post
+    .findById(req.params.id)
+    .populate('createdBy comments.createdBy')
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      res.json(post);
+    })
+    .catch(next);
+}
+
+function deletePostsRoute(req, res, next) {
+  Post
+    .findById(req.params.id)
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      return post.remove();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
+function addPostsCommentRoute(req, res, next) {
+
+  req.body.createdBy = req.user;
+
+  Post
+    .findById(req.params.id)
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      const comment = post.comments.create(req.body);
+      post.comments.push(comment);
+
+      return post.save()
+        .then(() => res.json(comment));
+    })
+    .catch(next);
+}
+
+function deletePostsCommentRoute(req, res, next) {
+  Post
+    .findById(req.params.id)
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      const comment = post.comments.id(req.params.commentId);
+      comment.remove();
+
+      return post.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 
 module.exports = {
-  indexPostsRoute
+  indexPostsRoute,
+  createPostsRoute,
+  showPostsRoute,
+  deletePostsRoute,
+  addPostsCommentRoute,
+  deletePostsCommentRoute
 };
