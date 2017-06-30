@@ -31,6 +31,20 @@ function showPostsRoute(req, res, next) {
     .catch(next);
 }
 
+function updatePostsRoute(req, res, next){
+  Post
+    .findById(req.params.id)
+    .exec()
+    .then(posts => {
+      if(!posts) return res.notFound();
+
+      posts = Object.assign(posts, req.body);
+      return posts.save();
+    })
+    .then(post => res.json(post))
+    .catch(next);
+}
+
 function deletePostsRoute(req, res, next) {
   Post
     .findById(req.params.id)
@@ -84,6 +98,7 @@ module.exports = {
   indexPostsRoute,
   createPostsRoute,
   showPostsRoute,
+  updatePostsRoute,
   deletePostsRoute,
   addPostsCommentRoute,
   deletePostsCommentRoute
