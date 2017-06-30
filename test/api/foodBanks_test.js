@@ -2,11 +2,13 @@
 require('../helper');
 
 const FoodBank  = require('../../models/foodBank');
+const User      = require('../../models/user');
 
 describe('Food Bank tests', () => {
 
   beforeEach(done => {
     FoodBank.collection.remove();
+    User.collection.remove();
     done();
   });
 
@@ -14,11 +16,10 @@ describe('Food Bank tests', () => {
 
     beforeEach(done => {
       FoodBank.create({
-        brand: 'Nike',
-        color: 'Black',
-        laced: true,
-        material: 'leather',
-        price: 49.99
+        name: 'Battersea Food Bank',
+        location: { lat: 51.0000034, lng: 1.000034 },
+        type: 'Private',
+        createdBy: User[0]
       }, done);
     });
 
