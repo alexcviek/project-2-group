@@ -1,6 +1,6 @@
 const Post = require('../models/post');
 
-function indexPostsRoute(res, req, next) {
+function indexPostsRoute(req, res, next) {
   Post
     .find()
     .exec()
@@ -8,7 +8,7 @@ function indexPostsRoute(res, req, next) {
     .catch(next);
 }
 
-function createPostsRoute(res, req, next) {
+function createPostsRoute(req, res, next) {
   if(req.file) req.body.image = req.file.filename;
   req.body.createdBy = req.user;
 
