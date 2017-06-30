@@ -9,11 +9,11 @@ router.route('/posts')
   .get(postsController.indexPostsRoute)
   .post(postsController.createPostsRoute);
 
-router.route('posts/:id')
+router.route('/posts/:id')
   .get(postsController.showPostsRoute)
   .put(postsController.updatePostsRoute)
   .delete(postsController.deletePostsRoute);
-  
+
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
   .post(foodBanksController.createFoodBanksRoute);
