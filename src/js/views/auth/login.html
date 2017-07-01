@@ -1,1 +1,16 @@
-<h1>I'm a login</h1>
+<section class="col-lg-4">
+  <h2>Login</h2>
+  <form ng-submit="login.submit()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" type="text" name="email" id="email" ng-model="login.credentials.email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" type="password" name="password" id="password" ng-model="login.credentials.password">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">
+  </form>
+</section>
+<button ng-click="login.authenticate('github')">Login with Github</button>
+<button ng-click="login.authenticate('facebook')">Login with FB</button>

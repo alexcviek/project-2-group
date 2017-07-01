@@ -26,9 +26,15 @@ function LoginCtrl($auth, $state) {
 
   function submit() {
     $auth.login(vm.credentials) //where else does this tie in..?
-      .then(() => $state.go('dashboard')); //when you login you see the dashboard page .. need to set this up
+      .then(() => $state.go('foodBanksIndex')); //when you login you see the dashboard page .. need to set this up
+      //WILL NEED TO CHANGE THIS BUT AT THE TIME BEING THERE IS NO DASHBOARD
+  }
+  vm.submit = submit;
+  function authenticate(provider){
+    $auth.authenticate(provider)
+    .then(() => $state.go('foodBanksIndex'));
   }
 
-  vm.submit = submit;
+  vm.authenticate = authenticate;
 
 }

@@ -3,7 +3,7 @@ const foodBanksController = require('../controllers/foodBanks');
 const usersController = require('../controllers/users');
 const postsController = require('../controllers/posts');
 const auth = require('../controllers/auth');
-// const oauth = require('../controllers/oauth');
+const oauth = require('../controllers/oauth');
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)
@@ -34,5 +34,11 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login);
+
+router.route('/oauth/github')
+  .post(oauth.github);
+
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
 
 module.exports = router;
