@@ -29,7 +29,12 @@ function LoginCtrl($auth, $state) {
       .then(() => $state.go('foodBanksIndex')); //when you login you see the dashboard page .. need to set this up
       //WILL NEED TO CHANGE THIS BUT AT THE TIME BEING THERE IS NO DASHBOARD
   }
-
   vm.submit = submit;
+  function authenticate(provider){
+    $auth.authenticate(provider)
+    .then(() => $state.go('foodBanksIndex'));
+  }
+
+  vm.authenticate = authenticate;
 
 }
