@@ -8,10 +8,10 @@ function Auth($authProvider){
   $authProvider.loginUrl = '/api/login';
   $authProvider.github({
     url: '/api/oauth/github',
-    clientId: '78728b29f8da09d64cb7'
+    clientId: '3b35ffa04f89f7ae1e67'
   });
   $authProvider.facebook({
     url: '/api/oauth/facebook',
-    clientId: '428530614196971'
+    clientId: '1397101173700413'
   });
 }

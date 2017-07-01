@@ -10,19 +10,23 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String },
-  facebookId: { type: Number },
   image: { type: String },
+  facebookId: { type: Number },
+  githubId: { type: Number },
   comments: [commentSchema]
 });
 
 userSchema
-  .virtual('passwordConfirmation')
-  .set(function setPasswordConfirmation(passwordConfirmation) {
-    this._passwordConfirmation = passwordConfirmation;
-  });
+.virtual('passwordConfirmation')
+.set(function setPasswordConfirmation(passwordConfirmation) {
+  this._passwordConfirmation = passwordConfirmation;
+});
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
+  if(!this.password && !this.githubId && !this.facebookId) {
+    this.invalidate('password', 'required');
+  }
+  if(this.isModified('password') && this._passwordConfirmation !== this.password){
     this.invalidate('passwordConfirmation', 'does not match');
   }
   next();
