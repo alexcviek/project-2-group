@@ -1,11 +1,9 @@
-<h1>HELLO ALL FOODBANKS FROM THE TOWN</h1>
+<h2>Food Banks</h2>
 <a ui-sref="foodBanksNew">Add a new Food Bank</a>
-<section>
-  <div>
-    <div ng-repeat="foodBank in foodBanksIndex.all">
-      <img ng-src="{{ foodBank.image }}">
-      <h2>{{ foodBank.name }}</h2>
-      <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
-    </div>
+<section class="row">
+  <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.all">
+    <img ng-src="{{ foodBank.image }}">
+    <h2>{{ foodBank.name }}</h2>
+    <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
   </div>
 </section>

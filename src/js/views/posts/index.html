@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-
-<h1>Posts 'HELLO I AM THE INDEX FOR POSTS'</h1>
+<h1>Take me home with you</h1>
+<input type="text" class="search" ng-model="postsIndex.q" placeholder="Search...">
 <a ui-sref="postsNew">Add a new Item</a>
 
-<section>
-    <div ng-repeat="post in postsIndex.all">
-      <div class="postImage">
-        <img ng-src="{{ post.image }}">
-      </div>
-      <h2>{{ post.title }}</h2>
-
-      <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
+<section class="row">
+  <div class="col-lg-6" ng-repeat="post in postsIndex.filtered">
+    <div class="postImage" style="background-image: url({{ post.image }})">
     </div>
+    <h2>{{ post.title }}</h2>
+
+    <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
+  </div>
 </section>
