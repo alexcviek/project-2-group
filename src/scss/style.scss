@@ -1,4 +1,20 @@
 // Import all of your scss files here
+@import "normalize";
+body{
+  text-align: center;
+}
+nav{
+  ul{
+    text-align: left;
+    height: 50px;
+    li{
+      list-style: none;
+      line-height: 50px;
+      display: inline;
+      margin-right: 20px;
+    }
+  }
+}
 .postImage {
   width: 500px;
   height: 400px;
