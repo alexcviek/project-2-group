@@ -19,7 +19,7 @@
       <li><a ui-sref="postsIndex">Browse items</a></li>
       <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
       <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
-      <li><a ui-sref="usersShow({ id: user.id })" ng-if="main.isAuthenticated()">Show your account</a></li>
+      <li><a ui-sref="usersShow" ng-if="main.isAuthenticated()">Show your account</a></li>
 
       <li><a href="#" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
     </ul>

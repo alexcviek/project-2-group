@@ -61,12 +61,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/auth/register.html',
     controller: 'RegisterCtrl as register'
   })
-  .state('userShow', {
+  .state('usersShow', {
     url: '/user/:id',
     templateUrl: 'js/views/users/show.html',
     controller: 'UsersShowCtrl as usersShow'
   })
-  .state('userEdit', {
+  .state('usersEdit', {
     url: '/user/:id/edit',
     templateUrl: 'js/views/users/edit.html',
     controller: 'UsersEditCtrl as usersEdit'
