@@ -1,16 +1,18 @@
 angular
 .module('sausageApp')
-.controller('ProfileCtrl', ProfileCtrl)
-.controller('UsersEditCtrl', UsersEditCtrl);
+.controller('UsersEditCtrl', UsersEditCtrl)
+.controller('UsersShowCtrl', UsersShowCtrl);
 
-
-ProfileCtrl.$inject = ['$auth', 'User'];
-function ProfileCtrl($auth, User) {
+UsersShowCtrl.$inject = ['User', '$stateParams', '$state'];
+function UsersShowCtrl(User, $stateParams, $state) {
   const vm = this;
-  const { userId } = $auth.getPayload();
-
-  if(userId) vm.user = User.get({ id: userId });
-
+  vm.post = User.get($stateParams);
+  function userDelete() {
+    vm.post
+    .$remove()
+    .then(() => $state.go('home'));
+  }
+  vm.delete = userDelete;
 }
 
 UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
@@ -29,10 +31,4 @@ function UsersEditCtrl(User, $stateParams, $state) {
 
   vm.update = usersUpdate;
 
-  // function logout() {
-  //   $auth.logout();
-  //   $state.go('login');
-  // }
-  //
-  // vm.logout = logout;
 }
