@@ -12,6 +12,6 @@ function Auth($authProvider){
   });
   $authProvider.facebook({
     url: '/api/oauth/facebook',
-    clientId: '1397101173700413'
+    clientId: '134624920454350'
   });
 }
