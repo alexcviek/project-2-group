@@ -3,19 +3,20 @@
 <h1>I AM EDITING A USER</h1>
 
 <section>
-<form ng-submit="usersEdit.update()" name="usersEdit.userForm" novalidate>
-  <label>Username</label>
-  <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
-  <div ng-messages="usersEdit.userForm.username.$error" ng-show="usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched"></div>
+  <form ng-submit="usersEdit.update()" name="usersEdit.userForm" novalidate>
+    <label>Username</label>
+    <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
+    <div ng-messages="usersEdit.userForm.username.$error" ng-show="usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched"></div>
 
-  <div>
-  <label for="image">Image</label>
-  <input base64 type="file" name="base64" id="image" ng-model="usersEdit.user.base64" required>
-  <div ng-messages="usersEdit.userForm.base64.$error" role="alert" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.base64.$touched) && usersEdit.userForm.base64.$invalid" class="error">
-  </div>
+    <div>
+      <label for="image">Image</label>
+      <input base64 type="file" name="base64" id="image" ng-model="usersEdit.user.base64" required>
+      <div ng-messages="usersEdit.userForm.base64.$error" role="alert" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.base64.$touched) && usersEdit.userForm.base64.$invalid" class="error">
+      </div>
+    </div>
+
+    
 
 
-
-
-</form>
+  </form>
 </section>
