@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <section>
-<h1>USER PROFILE PAGE</h1>
+<h2>Hello, {{ usersShow.user.username }}!</h2>
 
-<h1>HELLO I AM SHOWING ONE USER</h1>
-<img ng-src="{{ profile.user.image }}" alt="profile.user.username">
-<h2>{{ profile.user.username }}</h2>
-<a href="mailto:{{ profile.user.email }}" ng-if="profile.user.email">{{ profile.user.email }}</a>
-<p>Github Id: <strong>{{ profile.user.githubId }}</strong></p>
-<p>Facebook Id: <strong>{{ profile.user.facebookId }}</strong></p>
+<img ng-src="{{ usersShow.user.image }}" alt="profile.user.username">
+<h2>{{ usersShow.user.username }}</h2>
+<a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a>
+<p>Github Id: <strong>{{ usersShow.user.githubId }}</strong></p>
+<p>Facebook Id: <strong>{{ usersShow.user.facebookId }}</strong></p>
 <button ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
 </section>
 
