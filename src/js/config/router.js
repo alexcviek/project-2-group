@@ -64,12 +64,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   .state('userShow', {
     url: '/user/:id',
     templateUrl: 'js/views/users/show.html',
-    controller: 'ProfileCtrl as userShow'
+    controller: 'UsersShowCtrl as usersShow'
   })
   .state('userEdit', {
     url: '/user/:id/edit',
     templateUrl: 'js/views/users/edit.html',
-    controller: '/ProfileCtrl as usersEdit'
+    controller: 'UsersEditCtrl as usersEdit'
   });
   $urlRouterProvider.otherwise('/');
 }
