@@ -3,10 +3,16 @@ angular
 .controller('UsersEditCtrl', UsersEditCtrl)
 .controller('UsersShowCtrl', UsersShowCtrl);
 
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersShowCtrl(User, $stateParams, $state) {
+UsersShowCtrl.$inject = ['User', '$auth', '$stateParams', '$state'];
+function UsersShowCtrl(User, $auth, $stateParams, $state) {
   const vm = this;
-  vm.post = User.get($stateParams);
+  // vm.user = User.get($stateParams);
+  console.log('here', $auth.getPayload());
+
+  const { userId } = $auth.getPayload();
+
+  if(userId) vm.user = User.get({ id: userId });
+
   function userDelete() {
     vm.post
     .$remove()
