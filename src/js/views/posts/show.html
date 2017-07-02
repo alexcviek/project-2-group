@@ -5,9 +5,8 @@
   <div>
     <img ng-src="{{ postsShow.post.image }}">
     <h2>{{ postsShow.post.title }}</h2>
-    <a href="{{ postsShow.post.facebook }}"><p><strong>{{ postsShow.post.facebook }}</strong></p></a>
 
-    <button ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
-    <button ng-click="postsShow.delete()">Delete</button>
+    <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
+    <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
   </div>
 </section>

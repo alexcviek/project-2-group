@@ -1,1 +1,78 @@
-<h1>NEW POST with items</h1>
+<!DOCTYPE html>
+
+
+    <div class="container">
+      <form ng-submit="postsNew.update()" name="postsNew.postForm" novalidate>
+        <div class="form-group">
+          <p>
+            <label for="title">Title</label>
+          </p>
+          <input type="text" class="input" id="title" name="title" ng-model="postsNew.post.name" required>
+          <div ng-messages="postsNew.postForm.title.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.title.$touched">
+            <div ng-message="required">Title is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>
+            <label for="separable">Separable?</label>
+          </p>
+          <select id="separable" name="separable" required>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+          <div ng-messages="postsNew.postForm.separable.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.separable.$touched">
+            <div ng-message="required">Separable is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>
+            <label class="label" for="image">Image:</label>
+          </p>
+          <input type="text" class="input" id="image" name="image" ng-model="postsNew.post.image">
+        </div>
+
+        <div class="form-group">
+          <p>
+            <label for="item">Item:</label>
+          </p>
+          <label for="nameItem">Name:
+            <input type="text" id="nameItem" name="nameItem" ng-model="postsNew.post.name" required>
+          </label><br>
+
+          <label for="type">Type:
+            <input type="text" id="type" name="type" ng-model="postsNew.post.type" required>
+          </label><br>
+
+          <label for="perishable">Perishable? (Yes: checked)
+            <input type="checkbox" id="perishable" name="perishable" ng-model="postsNew.post.perishable" required>
+          </label><br>
+
+          <label for="image">Image:
+            <input type="text" id="itemImage" name="itemImage" ng-model="postsNew.post.itemImage" required>
+          </label><br>
+
+          <label for="claimed">Claimed (Yes: checked)
+            <input type="checkbox" id="claimed" name="claimed" ng-model="postsNew.post.claimed" required>
+          </label>
+
+          <div ng-messages="postsNew.postForm.item.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.item.$touched">
+            <div ng-message="required">Item is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p>
+            <label for="createdBy">Created By</label>
+          </p>
+          <input type="text" id="createdBy" name="createdBy" ng-model="postsNew.post.createdBy" required>
+          <div ng-messages="postsNew.postForm.createdBy.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.createdBy.$touched">
+            <div ng-message="required">Created by is required.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-default" ui-sref="postsShow({ id: post.id })">Update</button>
+
+      </form>
+    </div>
