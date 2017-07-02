@@ -8,7 +8,13 @@
   <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
   <div ng-messages="usersEdit.userForm.username.$error" ng-show="usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched"></div>
 
-  
+  <div>
+  <label for="image">Image</label>
+  <input base64 type="file" name="base64" id="image" ng-model="usersEdit.user.base64" required>
+  <div ng-messages="usersEdit.userForm.base64.$error" role="alert" ng-show="(usersEdit.userForm.$submitted || usersEdit.userForm.base64.$touched) && usersEdit.userForm.base64.$invalid" class="error">
+  </div>
+
+
 
 
 </form>
