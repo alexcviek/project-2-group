@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
-<section>
-  <div>
-    <div>
+
+    <div class="container">
       <form ng-submit="postsNew.update()" name="postsNew.postForm" novalidate>
-        <div>
+        <div class="form-group">
           <p>
             <label for="title">Title</label>
           </p>
@@ -14,7 +13,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="form-group">
           <p>
             <label for="separable">Separable?</label>
           </p>
@@ -27,14 +26,14 @@
           </div>
         </div>
 
-        <div>
+        <div class="form-group">
           <p>
             <label class="label" for="image">Image:</label>
           </p>
           <input type="text" class="input" id="image" name="image" ng-model="postsNew.post.image">
         </div>
 
-        <div>
+        <div class="form-group">
           <p>
             <label for="item">Item:</label>
           </p>
@@ -63,7 +62,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="form-group">
           <p>
             <label for="createdBy">Created By</label>
           </p>
@@ -73,12 +72,7 @@
           </div>
         </div>
 
-        <div>
-          <p>
-            <input type="submit" class="button is-primary is-fullwidth" value="Update">
-          </p>
-        </div>
+        <button type="submit" class="btn btn-default" ui-sref="postsShow({ id: post.id })">Update</button>
+
       </form>
     </div>
-  </div>
-</section>
