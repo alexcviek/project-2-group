@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<h1>Hello I am showing one post</h1>
+<h2>{{ postsShow.post.title }}</h2>
+
 <section>
   <div>
     <img ng-src="{{ postsShow.post.image }}">
-    <h2>{{ postsShow.post.title }}</h2>
     <google-map center="postsShow.post.location"></google-map>
     <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
     <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
