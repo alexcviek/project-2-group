@@ -25,7 +25,7 @@ function MainCtrl($rootScope, $state, $auth) {
 
   function logout() {
     $auth.logout();
-    $state.go('login'); //remember to create dashboard also where will the user be redirected after they logout ../
+    $state.go('home'); //remember to create dashboard also where will the user be redirected after they logout ../
   }
 
   vm.logout = logout;
