@@ -1,3 +1,11 @@
 <h1>HELLO ALL FOODBANKS FROM THE TOWN</h1>
 
-{{ foodBanksIndex.all }}
+<section>
+  <div>
+    <div ng-repeat="foodBank in foodBanksIndex.all">
+      <img ng-src="{{ foodBank.image }}">
+      <h2>{{ foodBank.name }}</h2>
+      <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
+    </div>
+  </div>
+</section>
