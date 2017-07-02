@@ -19,7 +19,9 @@
     "satellizer": "^0.15.5",
     "angular-messages": "^1.6.4",
     "angular-ui-router": "^1.0.5",
-    "angular-resource": "^1.6.4"
+    "angular-resource": "^1.6.4",
+    "normalize-strings": "normalize#^1.1.0",
+    "css": "^2.2.1"
   },
   "resolutions": {
     "angular": "1.6.4"
