@@ -9,6 +9,9 @@ const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   separable: { type: Boolean, required: true },
   image: { type: String },
+  location: { lat: { type: Number, required: true },
+    lng: { type: Number, required: true }
+  },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   items: [{
     name: { type: String, required: true },

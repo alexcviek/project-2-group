@@ -5,7 +5,7 @@
   <div>
     <img ng-src="{{ postsShow.post.image }}">
     <h2>{{ postsShow.post.title }}</h2>
-
+    <google-map center="postsShow.post.location"></google-map>
     <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
     <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
   </div>

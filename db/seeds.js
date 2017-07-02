@@ -56,6 +56,9 @@ User
             title: 'Bunch of clothes',
             separable: false,
             image: 'https://static.pexels.com/photos/322207/pexels-photo-322207.jpeg',
+            location: { lat: 51.521610,
+              lng: -0.059307
+            },
             item: [{
               name: 'Belt',
               type: 'clothes',
@@ -80,6 +83,9 @@ User
             title: 'Loads of food',
             separable: false,
             image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
+            location: { lat: -51.521610,
+              lng: -0.059307
+            },
             item: [{
               name: 'Eggs',
               type: 'food',
