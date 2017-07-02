@@ -11,8 +11,6 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <h1> HeLLo SaUsAgE</h1>
-  <header>
     <nav>
       <ul>
         <li><a ui-sref="foodBanksIndex">Food Banks</a></li>
@@ -22,7 +20,6 @@
         <li><a href="#" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
       </ul>
     </nav>
-  </header>
   <main ui-view>
 
   </main>
