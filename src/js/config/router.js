@@ -46,7 +46,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/foodBanks/show.html',
     controller: 'FoodBanksShowCtrl as foodBanksShow'
   })
-  .state('foodbanksEdit', {
+  .state('foodBanksEdit', {
     url: '/foodbanks/:id/edit',
     templateUrl: 'js/views/foodBanks/edit.html',
     controller: 'FoodBanksEditCtrl as foodBanksEdit'

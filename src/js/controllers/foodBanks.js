@@ -16,7 +16,7 @@ function FoodBanksIndexCtrl(FoodBank){
 FoodBanksNewCtrl.$inject = ['$state', 'FoodBank'];
 function FoodBanksNewCtrl($state, FoodBank){
   const vm = this;
-  vm.create = foodBanksCreate;
+  vm.foodBank = {};
 
   function foodBanksCreate(){
     if(vm.foodBankForm.$valid){
@@ -28,6 +28,7 @@ function FoodBanksNewCtrl($state, FoodBank){
       });
     }
   }
+  vm.create = foodBanksCreate;
 }
 
 FoodBanksShowCtrl.$inject = ['FoodBank', '$stateParams', '$state'];
