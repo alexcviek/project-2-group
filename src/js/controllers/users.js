@@ -1,43 +1,7 @@
 angular
 .module('sausageApp')
-<<<<<<< HEAD
 .controller('ProfileCtrl', ProfileCtrl);
 
-=======
-.controller('ProfileCtrl', ProfileCtrl)
-.controller('UsersEditCtrl', UsersEditCtrl)
-.controller('UsersShowCtrl', UsersShowCtrl);
-
-ProfileCtrl.$inject = ['$auth', 'User'];
-function ProfileCtrl($auth, User) {
-  const vm = this;
-  console.log('in here');
-  console.log('here', $auth.getPayload());
-
-  const { userId } = $auth.getPayload();
-
-  if(userId) vm.user = User.get({ id: userId });
-
-}
-
-UsersShowCtrl.$inject = ['User', '$stateParams', '$state'];
-function UsersShowCtrl(User, $stateParams, $state) {
-  const vm = this;
-  vm.user = User.get($stateParams);
-  // console.log('here', $auth.getPayload());
-  //
-  // const { userId } = $auth.getPayload();
-  //
-  // if(userId) vm.user = User.get({ id: userId });
-
-  function userDelete() {
-    vm.post
-    .$remove()
-    .then(() => $state.go('home'));
-  }
-  vm.delete = userDelete;
-}
->>>>>>> development
 
 ProfileCtrl.$inject = ['$auth', 'User'];
 function ProfileCtrl($auth, User) {
