@@ -27,6 +27,7 @@ function UsersEditCtrl(User, $stateParams, $state) {
     }
   }
 
+
   vm.update = usersUpdate;
 
   // function logout() {
