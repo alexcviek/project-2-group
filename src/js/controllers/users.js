@@ -1,6 +1,7 @@
 angular
 .module('sausageApp')
-.controller('ProfileCtrl', ProfileCtrl);
+.controller('ProfileCtrl', ProfileCtrl)
+.controller('UsersEditCtrl', UsersEditCtrl);
 
 
 ProfileCtrl.$inject = ['$auth', 'User'];
@@ -10,28 +11,28 @@ function ProfileCtrl($auth, User) {
 
   if(userId) vm.user = User.get({ id: userId });
 
+}
 
-  UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
-  function UsersEditCtrl(User, $stateParams, $state) {
-    const vm = this;
+UsersEditCtrl.$inject = ['User', '$stateParams', '$state'];
+function UsersEditCtrl(User, $stateParams, $state) {
+  const vm = this;
 
-    vm.post = User.get($stateParams);
+  vm.post = User.get($stateParams);
 
-    function usersUpdate() {
-      if (vm.userForm.$valid) {
-        vm.user
-        .$update()
-        .then(() => $state.go('usersShow', $stateParams));
-      }
+  function usersUpdate() {
+    if (vm.userForm.$valid) {
+      vm.user
+      .$update()
+      .then(() => $state.go('usersShow', $stateParams));
     }
-
-    vm.update = usersUpdate;
-
-    function logout() {
-      $auth.logout();
-      $state.go('login');
-    }
-
-    vm.logout = logout;
   }
+
+  vm.update = usersUpdate;
+
+  // function logout() {
+  //   $auth.logout();
+  //   $state.go('login');
+  // }
+  //
+  // vm.logout = logout;
 }
