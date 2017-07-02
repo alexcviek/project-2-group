@@ -2,14 +2,22 @@
 @import "normalize";
 body{
   text-align: center;
+  h1,h2,h3,h4,h5,h6{
+    letter-spacing: 2px;
+    font-weight: lighter;
+  }
+  h1{
+    font-size: 60px;
+  }
 }
 nav{
+  height: 50px;
   ul{
     text-align: left;
-    height: 50px;
+    margin: 0;
     li{
-      list-style: none;
       line-height: 50px;
+      list-style: none;
       display: inline;
       margin-right: 20px;
     }
@@ -26,6 +34,16 @@ nav{
   background-color: ghostwhite;
 }
 .tomato {
-  width: 100%;
-  height: 100%;
+  height: 92vh;
+  background-image: url("https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=&amp;bg=");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  .main-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+  }
 }
