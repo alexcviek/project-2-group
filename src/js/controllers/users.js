@@ -29,7 +29,6 @@ function UsersEditCtrl(User, $stateParams, $state) {
   console.log(vm.user, 'here');
   function usersUpdate() {
     if (vm.userForm.$valid) {
-      console.log('fire');
       vm.user
       .$update()
       .then(() => $state.go('usersShow', $stateParams));
