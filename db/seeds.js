@@ -51,6 +51,15 @@ User
         url: 'http://cambridgecity.foodbank.org.uk',
         image: 'http://www.stpaulscambridge.org.uk/wp-content/uploads/2014/11/Cambridge-City-Foodbank.jpg',
         createdBy: users[1]
+      },{
+        name: 'Battersea Fat Cat Pantry',
+        location: { lat: 51.476389,
+          lng: -0.151680
+        },
+        type: 'Private Sectory',
+        url: 'http://fatcat.co.uk',
+        image: 'http://i.dailymail.co.uk/i/pix/2016/10/04/17/39191F2600000578-3821775-image-a-40_1475597321353.jpg',
+        createdBy: users[1]
       }])
       .then((foodBanks) => {
         console.log(`${foodBanks.length} food banks created!`);

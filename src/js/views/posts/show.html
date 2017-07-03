@@ -5,7 +5,7 @@
 <section>
   <div class="post">
     <img ng-src="{{ postsShow.post.image }}">
-    <google-map center="postsShow.post.location"></google-map>
+    <google-map class="small" center="postsShow.post.location"></google-map>
     <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
     <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
   </div>

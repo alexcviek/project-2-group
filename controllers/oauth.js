@@ -33,7 +33,8 @@ function github(req, res, next) {
         if(!user) {
           user = new User({
             username: profile.login,
-            email: profile.email
+            email: profile.email,
+            image: profile.picture.data.url
           });
         }
 
