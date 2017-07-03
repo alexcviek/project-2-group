@@ -7,8 +7,11 @@ angular
 
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope){
-  const vm = this;
-  vm.all = Post.query();
+  const vm = this; //see brewdog lesson
+  Post.query((posts) => {
+    vm.all = posts;
+    filterPosts(); //will then update the value of filtered
+  });
 
   function filterPosts(){
     const params = { title: vm.q };
