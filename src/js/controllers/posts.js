@@ -8,7 +8,10 @@ angular
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope){
   const vm = this;
-  vm.all = Post.query();
+  Post.query((posts) => {
+    vm.all = posts;
+    filterPosts();
+  });
 
   function filterPosts(){
     const params = { title: vm.q };
