@@ -5,13 +5,22 @@ angular
   .controller('FoodBanksShowCtrl', FoodBanksShowCtrl)
   .controller('FoodBanksEditCtrl', FoodBanksEditCtrl);
 
-FoodBanksIndexCtrl.$inject = ['FoodBank'];
-function FoodBanksIndexCtrl(FoodBank){
+FoodBanksIndexCtrl.$inject = ['FoodBank', 'filterFilter', '$scope'];
+function FoodBanksIndexCtrl(FoodBank, filterFilter, $scope){
   const vm = this;
-  function foodBanksIndex(){
-    vm.all = FoodBank.query();
+  FoodBank.query((foodBanks) => {
+    vm.all = foodBanks;
+    filterFoodBanks();
+  });
+
+  function filterFoodBanks(){
+    const params = { name: vm.q };
+    vm.filtered = filterFilter(vm.all, params);
   }
-  foodBanksIndex();
+
+  $scope.$watchGroup([
+    () => vm.q
+  ], filterFoodBanks);
 }
 FoodBanksNewCtrl.$inject = ['$state', 'FoodBank'];
 function FoodBanksNewCtrl($state, FoodBank){

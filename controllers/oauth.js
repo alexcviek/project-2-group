@@ -76,24 +76,30 @@ function facebook(req, res, next) {
     });
   })
   .then((profile) => {
-    console.log(profile);
+    // console.log('This is the profile ********', profile);
     return User.findOne({$or: [{facebookId: profile.id }, { email: profile.email }]})
-    .then((user) => {
-      if(!user){
-        user = new User({
-          username: profile.name,
-          email: profile.email
-        });
-      }
-      user.facebookId = profile.id;
-      user.image = profile.picture.data.url;
-      return user.save();
-    });
+      .then((user) => {
+        if(!user){
+          user = new User({
+            username: profile.name,
+            email: profile.email,
+            image: profile.picture.data.url
+          });
+        }
+
+        user.facebookId = profile.id;
+        // console.log('USER IMAGE BEFORE UPDATING WITH FACEBOOK', user.image);
+
+        console.log(user);
+        return user.save();
+      });
   })
   .then((user) => {
-    console.log(user);
+    console.log('here is the user', user);
     const payload = { userId: user.id };
     const token   = jwt.sign(payload, secret, { expiresIn: '1hr' });
+
+    console.log('here is the token ********', token);
 
     return res.json({
       token,
