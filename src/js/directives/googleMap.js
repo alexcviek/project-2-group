@@ -28,7 +28,9 @@ function googleMap() {
       function initLargeMap(){
         map = new google.maps.Map(element[0], {
           zoom: 7,
-          center: { lat: 51.521610, lng: -0.059307 }
+          center: { lat: 51.521610, lng: -0.059307 },
+          scaleControl: false,
+          scrollwheel: false
         });
       }
 
@@ -71,7 +73,9 @@ function googleMap() {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
           zoom: 14,
-          center: center
+          center: center,
+          scaleControl: false,
+          scrollwheel: false
         });
         smallMapMarker = new google.maps.Marker({
           position: center,
