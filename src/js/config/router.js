@@ -11,6 +11,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/',
     templateUrl: 'js/views/static/home.html'
   })
+  .state('dashboard', {
+    url: '/dashboard',
+    templateUrl: 'js/views/dashboard/dashboard.html'
+  })
   .state('postsIndex', {
     url: '/posts',
     templateUrl: 'js/views/posts/index.html',
@@ -71,5 +75,5 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'js/views/users/edit.html',
     controller: 'UsersEditCtrl as usersEdit'
   });
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/dashboard');
 }
