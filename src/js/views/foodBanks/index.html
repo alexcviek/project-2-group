@@ -1,8 +1,9 @@
 <h2>Food Banks</h2>
 <a ui-sref="foodBanksNew">Add a new Food Bank</a>
-<google-map class="map-large" center="postsShow.post.location"></google-map>
+<google-map class="map-large" food-banks="foodBanksIndex.filtered" ng-if="foodBanksIndex.all.$resolved"></google-map>
+<input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="Search for a food bank...">
 <section class="row">
-  <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.all">
+  <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.filtered">
     <img ng-src="{{ foodBank.image }}">
     <h2>{{ foodBank.name }}</h2>
     <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
