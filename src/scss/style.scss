@@ -51,10 +51,17 @@ nav{
   }
 }
 
-* {
-  text-align: center;
+.post {
+  img {
+    width: 500px;
+    height: 400px;
+  }
 }
 
 form {
   text-align: center;
+}
+
+.right {
+  float: right;
 }

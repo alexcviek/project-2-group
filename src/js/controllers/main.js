@@ -24,6 +24,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
     if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    // if($auth.getPayload()) vm.currentUserImage = $auth.getPayload().userImage; -- TO DISPLAY USER IMAGE IN NAV
   });
 
   function logout() {

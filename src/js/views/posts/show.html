@@ -3,7 +3,7 @@
 <h2>{{ postsShow.post.title }}</h2>
 
 <section>
-  <div>
+  <div class="post">
     <img ng-src="{{ postsShow.post.image }}">
     <google-map center="postsShow.post.location"></google-map>
     <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>

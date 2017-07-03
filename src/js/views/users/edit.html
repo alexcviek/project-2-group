@@ -5,6 +5,8 @@
 <section>
   <form ng-submit="usersEdit.update()" name="usersEdit.userForm" novalidate>
     <label>Username</label>
+    <h2>{{ usersShow.user.username }}</h2>
+
     <input type="text" class="input" id="username" name="username" ng-model="usersEdit.user.username" required>
     <div ng-messages="usersEdit.userForm.username.$error" ng-show="usersEdit.userForm.$submitted || usersEdit.userForm.username.$touched"></div>
 
