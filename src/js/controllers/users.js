@@ -1,10 +1,10 @@
 angular
 .module('sausageApp')
-.controller('ProfileCtrl', ProfileCtrl);
+.controller('UsersShowCtrl', UsersShowCtrl);
 
 
-ProfileCtrl.$inject = ['$auth', 'User'];
-function ProfileCtrl($auth, User) {
+UsersShowCtrl.$inject = ['$auth', 'User'];
+function UsersShowCtrl($auth, User) {
   const vm = this;
   const { userId } = $auth.getPayload();
 
