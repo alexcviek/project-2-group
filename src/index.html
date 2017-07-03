@@ -12,20 +12,21 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  
+
   <nav class="navbar navbar-default">
     <ul class="navbar-left">
-      <li><a ui-sref="home"><img src="./images/logo-small.png"></a></li>
-      <li><a ui-sref="home">Hello Sausage</a></li>
+      <li><a ui-sref="dashboard"><img src="./images/logo-small.png"></a></li>
+      <li><a ui-sref="dashboard">Hello Sausage</a></li>
       <li><a ui-sref="foodBanksIndex">Food Banks</a></li>
       <li><a ui-sref="postsIndex">Browse items</a></li>
-    </ul>
 
-    <ul class="navbar-right">
-      <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
-      <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
-      <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Show your account</a></li>
-      <li><a href="#" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
+
+      <div class="right">
+        <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
+        <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
+        <li><a ui-sref="usersShow({ id: main.currentUserId })" ng-if="main.isAuthenticated()">Show your account</a></li>
+        <li><a href="#" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
+      </div>
     </ul>
   </nav>
   <main class="container" ui-view>

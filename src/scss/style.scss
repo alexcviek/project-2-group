@@ -21,9 +21,14 @@ nav{
       display: inline;
       margin-right: 20px;
       a {
+        color: #000;
         img {
           height: 50px;
         }
+      }
+      a:hover{
+        text-decoration: none;
+        color: #5c8a8a;
       }
     }
     .right{
