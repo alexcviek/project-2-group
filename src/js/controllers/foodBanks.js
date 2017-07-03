@@ -16,7 +16,7 @@ function FoodBanksIndexCtrl(FoodBank){
 FoodBanksNewCtrl.$inject = ['$state', 'FoodBank'];
 function FoodBanksNewCtrl($state, FoodBank){
   const vm = this;
-  vm.create = foodBanksCreate;
+  vm.foodBank = {};
 
   function foodBanksCreate(){
     if(vm.foodBankForm.$valid){
@@ -28,38 +28,37 @@ function FoodBanksNewCtrl($state, FoodBank){
       });
     }
   }
+  vm.create = foodBanksCreate;
 }
 
-FoodBanksShowCtrl.$inject = ['$stateParams', 'FoodBank'];
-function FoodBanksShowCtrl($stateParams, FoodBank){
+FoodBanksShowCtrl.$inject = ['FoodBank', '$stateParams', '$state'];
+function FoodBanksShowCtrl(FoodBank, $stateParams, $state) {
   const vm = this;
-  vm.foodBank = {};
 
-  foodBanksShow();
-  function foodBanksShow(){
-    vm.foodBank = FoodBank.get($stateParams);
+  vm.foodBank = FoodBank.get($stateParams);
+
+  function foodBanksDelete() {
+    vm.foodBank
+      .$remove()
+      .then(() => $state.go('foodBanksIndex'));
   }
+
+  vm.delete = foodBanksDelete;
 }
 
-FoodBanksEditCtrl.$inject = ['$stateParams', '$state', 'FoodBank'];
-function FoodBanksEditCtrl($stateParams, $state, FoodBank){
+FoodBanksEditCtrl.$inject = ['FoodBank', '$stateParams', '$state'];
+function FoodBanksEditCtrl(FoodBank, $stateParams, $state) {
   const vm = this;
-  vm.foodBank = {};
-  vm.update = foodBanksUpdate;
 
-  foodBanksShow();
-  function foodBanksShow(){
-    vm.foodBank = FoodBank.get($stateParams);
-  }
+  vm.foodBank = FoodBank.get($stateParams);
 
-  function foodBanksUpdate(){
-    if(vm.foodBankForm.$valid){
-      FoodBank
-      .update({ id: $stateParams.id }, vm.foodBank)
-      .$promise
-      .then(() => {
-        $state.go('foodBanksShow', { id: vm.foodBank.id });
-      });
+  function foodBanksUpdate() {
+    if (vm.foodBankForm.$valid) {
+      vm.foodBank
+        .$update()
+        .then(() => $state.go('foodBanksShow', $stateParams));
     }
   }
+
+  vm.update = foodBanksUpdate;
 }

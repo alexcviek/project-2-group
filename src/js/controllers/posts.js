@@ -5,13 +5,20 @@ angular
   .controller('PostsShowCtrl', PostsShowCtrl)
   .controller('PostsEditCtrl', PostsEditCtrl);
 
-PostsIndexCtrl.$inject = ['Post'];
-function PostsIndexCtrl(Post){
+PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
+function PostsIndexCtrl(Post, filterFilter, $scope){
   const vm = this;
-  function postsIndex(){
-    vm.all = Post.query();
+  vm.all = Post.query();
+
+  function filterPosts(){
+    const params = { title: vm.q };
+    vm.filtered = filterFilter(vm.all, params);
   }
-  postsIndex();
+
+  $scope.$watchGroup([
+    () => vm.q
+  ], filterPosts);
+
 }
 
 PostsNewCtrl.$inject = ['Post', '$state'];
