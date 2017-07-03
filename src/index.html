@@ -15,7 +15,7 @@
 <body ng-controller="MainCtrl as main">
   <nav>
     <ul>
-      <li><a ui-sref="home">Team Sausage App</a></li>
+      <li><a ui-sref="home">Hello Sausage</a></li>
       <li><a ui-sref="foodBanksIndex">Food Banks</a></li>
       <li><a ui-sref="postsIndex">Browse items</a></li>
       <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
@@ -26,9 +26,7 @@
       <!-- <li>Image: {{ main.currentUserImage }} </li> -->
     </ul>
   </nav>
-
-  <p> Id: {{ main.currentUserId }} </p>
-  <main ui-view>
+  <main class="container" ui-view>
 
   </main>
 </body>

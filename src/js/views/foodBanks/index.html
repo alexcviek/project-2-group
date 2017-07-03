@@ -2,6 +2,7 @@
 
 <h2>Food Banks</h2>
 <a ui-sref="foodBanksNew">Add a new Food Bank</a>
+<google-map class="map-large" center="postsShow.post.location"></google-map>
 <section class="row">
   <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.all">
     <img ng-src="{{ foodBank.image }}">

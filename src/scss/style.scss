@@ -21,6 +21,9 @@ nav{
       display: inline;
       margin-right: 20px;
     }
+    .right{
+      float: right;
+    }
   }
 }
 .postImage {
@@ -35,6 +38,10 @@ nav{
   height: 250px;
   width: 250px;
   background-color: ghostwhite;
+}
+.map-large{
+  width: 100%;
+  height: 70vh;
 }
 .tomato {
   height: 92vh;
