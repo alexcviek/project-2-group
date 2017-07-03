@@ -6,6 +6,22 @@
   <div class="post">
     <img ng-src="{{ postsShow.post.image }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
+
+    <div class="comments">
+      <h2>Comments</h2>
+      <ul>
+        <li ng-repeat="comment in postsShow.post.comments track by $index">
+          <strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="button" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">X</button>
+        </li>
+      </ul>
+      <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
+        <label>Add comment</label>
+        <textarea ng-model="postsShow.newComment.text"></textarea>
+        <button class="button button--full">Comment</button>
+      </form>
+    </div>
+
+
     <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
     <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
   </div>

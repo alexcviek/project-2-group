@@ -3,7 +3,7 @@
   <form class="col-lg-4" ng-submit="postsNew.update()" name="postsNew.postForm" novalidate>
     <div class="form-group">
       <label for="title">Title</label>
-      <input class="form-control" type="text" class="input" id="title" name="title" ng-model="postsNew.post.name" required>
+      <input class="form-control" type="text" id="title" name="title" ng-model="postsNew.post.name" required>
       <div ng-messages="postsNew.postForm.title.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.title.$touched">
         <div ng-message="required">Title is required.</div>
       </div>
@@ -36,9 +36,9 @@
     </div>
 
     <div class="form-group">
-    <label for="perishable">Perishable? </label>
+      <label for="perishable">Perishable? </label>
       <input class="form-check-input" type="checkbox" id="perishable" name="perishable" ng-model="postsNew.post.perishable" required>
-  </div>
+    </div>
 
     <label for="image">Image:
       <input type="text" id="itemImage" name="itemImage" ng-model="postsNew.post.itemImage" required>
@@ -47,7 +47,6 @@
     <div ng-messages="postsNew.postForm.item.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.item.$touched">
       <div ng-message="required">Item is required.</div>
     </div>
-  </div>
 
   <div class="form-group">
     <p>

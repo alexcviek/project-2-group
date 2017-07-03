@@ -15,6 +15,12 @@ router.route('/posts/:id')
   .put(imageUpload, postsController.updatePostsRoute)
   .delete(postsController.deletePostsRoute);
 
+router.route('/posts/:id/comments')
+  .post(postsController.addPostsCommentRoute);
+
+router.route('/posts/:id/comments/:commentId')
+  .delete(postsController.deletePostsCommentRoute);
+
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
   .post(foodBanksController.createFoodBanksRoute);
