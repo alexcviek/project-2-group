@@ -36,6 +36,7 @@ function googleMap() {
       }
 
       function addMarkers(foodBanks) {
+        if(!foodBanks) return false;
         removeMarkers();
 
         foodBanks.forEach((foodBank) => {
@@ -86,6 +87,7 @@ function googleMap() {
       function updateCenter(center) {
         if(!center) return false;
         map.setCenter(center);
+        if(smallMapMarker) smallMapMarker.setPosition(center);
       }
 
       function destroyMap(){

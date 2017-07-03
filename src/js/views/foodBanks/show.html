@@ -9,7 +9,7 @@
   <div>
     <img ng-src="{{ foodBanksShow.foodBank.image }}">
     <h2>{{ foodBanksShow.foodBank.name }}</h2>
-    <google-map center="foodBanksShow.foodBank.location"></google-map>
+    <google-map class="small" center="foodBanksShow.foodBank.location"></google-map>
 
     <button class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>
     <button class="btn btn-default" ng-click="foodBanksShow.delete()">Delete</button>
