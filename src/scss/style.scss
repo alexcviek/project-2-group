@@ -90,9 +90,44 @@ form {
   background-color: #b3cccc;
   float: left;
 }
-aside{
+.dashboardAside{
   background-color: red;
   float: right;
   width: 30%;
   height: 45vh;
+}
+
+.showUser {
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 550px;
+  height: 500px;
+  margin-top: 5%;
+  margin-left: 25%;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #f6fc41;
+}
+
+.dashboardImage {
+  width: 60%;
+  height: 500px;
+}
+
+.carouselSection {
+  background-color: white;
+  width: 100%;
+  height: 50%;
+}
+
+.slideText {
+  font-size: 30px;
+  background-color: rgba(95, 100, 109, 0.6);
+}
+
+.search {
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

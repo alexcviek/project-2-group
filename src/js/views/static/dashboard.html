@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+
+<h1>Hello, I'm dashboard</h1>
+
+
+<section class="carouselSection">
+  <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
+    <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
+      <img class="dashboardImage" ng-src="{{slide.image}}">
+      <div class="carousel-caption">
+        <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<google-map class="map-section" center="{ lat: 51.521610, lng: -0.059307 }"></google-map>
+<aside class="dashboardAside">
+  <p>Hello I am feed</p>
+</aside>

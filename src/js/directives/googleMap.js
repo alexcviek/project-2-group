@@ -35,6 +35,7 @@ function googleMap() {
       }
 
       function addMarkers(foodBanks) {
+        if(!foodBanks) return false;
         removeMarkers();
 
         foodBanks.forEach((foodBank) => {
