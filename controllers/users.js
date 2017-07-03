@@ -19,6 +19,7 @@ function updateUsersRoute(req, res, next) {
     .exec()
     .then((user) => {
       if(!user) return res.notFound();
+      console.log(req.params.id);
 
       for(const field in req.body) {
         user[field] = req.body[field]; // field references a class in a div on the views/auth/login,register,edit&new
