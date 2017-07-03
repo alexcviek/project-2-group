@@ -13,6 +13,7 @@ function showUsersRoute(req, res, next) {
 }
 
 function updateUsersRoute(req, res, next) {
+  if(req.file ) req.body.image = req.file.filename;
   User
     .findById(req.params.id)
     .exec()
