@@ -4,14 +4,15 @@ const usersController = require('../controllers/users');
 const postsController = require('../controllers/posts');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
+const imageUpload = require('../lib/imageUpload');
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)
-  .post(postsController.createPostsRoute);
+  .post(imageUpload, postsController.createPostsRoute);
 
 router.route('/posts/:id')
   .get(postsController.showPostsRoute)
-  .put(postsController.updatePostsRoute)
+  .put(imageUpload, postsController.updatePostsRoute)
   .delete(postsController.deletePostsRoute);
 
 router.route('/foodbanks')
@@ -20,13 +21,13 @@ router.route('/foodbanks')
 
 router.route('/foodbanks/:id')
   .get(foodBanksController.showFoodBanksRoute)
-  .put(foodBanksController.updateFoodBanksRoute)
+  .put(imageUpload, foodBanksController.updateFoodBanksRoute)
   .delete(foodBanksController.deleteFoodBanksRoute);
 
 
 router.route('/users/:id')
   .get(usersController.showUsersRoute)
-  .put(usersController.updateUsersRoute)
+  .put(imageUpload, usersController.updateUsersRoute)
   .delete(usersController.deleteUsersRoute);
 
 router.route('/register')

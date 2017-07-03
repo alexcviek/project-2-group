@@ -23,4 +23,11 @@ const postSchema = new mongoose.Schema({
   comments: [commentSchema]
 });
 
+postSchema.virtual('imageSRC')
+  .get(function getImageSrc() {
+    if(!this.image) return null;
+    if(this.image.match(/^http/)) return this.image;
+    return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.image}`;
+  });
+
 module.exports = mongoose.model('Post', postSchema);

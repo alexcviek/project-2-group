@@ -13,8 +13,10 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
-  <nav>
-    <ul>
+
+  <nav class="navbar navbar-default">
+    <ul class="navbar-left">
+      <li><a ui-sref="home"><img src="./images/logo-small.png"></a></li>
       <li><a ui-sref="home">Hello Sausage</a></li>
       <li><a ui-sref="foodBanksIndex">Food Banks</a></li>
       <li><a ui-sref="postsIndex">Browse items</a></li>
