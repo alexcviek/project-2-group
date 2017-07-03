@@ -2,8 +2,8 @@ angular
   .module('sausageApp')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions'];
-function MainCtrl($rootScope, $state, $auth, $transitions) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
+function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
 
   vm.isAuthenticated = $auth.isAuthenticated;
@@ -23,7 +23,11 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
     vm.pageName = transition.$to().name;
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    if($auth.getPayload()) {
+      vm.currentUserId = $auth.getPayload().userId;
+      vm.currentUser = User.get({ id: vm.currentUserId });
+    }
+    console.log('payload', $auth.getPayload());
   });
 
   function logout() {
