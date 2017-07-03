@@ -5,9 +5,19 @@ angular
   .controller('FoodBanksShowCtrl', FoodBanksShowCtrl)
   .controller('FoodBanksEditCtrl', FoodBanksEditCtrl);
 
-FoodBanksIndexCtrl.$inject = ['FoodBank', 'filterFilter', '$scope'];
-function FoodBanksIndexCtrl(FoodBank, filterFilter, $scope){
+FoodBanksIndexCtrl.$inject = ['FoodBank', 'filterFilter', '$scope', 'userLocation', '$rootScope'];
+function FoodBanksIndexCtrl(FoodBank, filterFilter, $scope, userLocation, $rootScope){
   const vm = this;
+  vm.center = userLocation.getLocation();
+  vm.all = [];
+  vm.filtered = [];
+
+
+  $rootScope.$on('locationChanged', (e, location) => {
+    console.log('user location', location);
+    vm.center = userLocation.getLocation();
+  });
+
   FoodBank.query((foodBanks) => {
     vm.all = foodBanks;
     filterFoodBanks();
