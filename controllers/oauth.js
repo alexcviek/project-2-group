@@ -90,16 +90,13 @@ function facebook(req, res, next) {
         user.facebookId = profile.id;
         // console.log('USER IMAGE BEFORE UPDATING WITH FACEBOOK', user.image);
 
-        console.log(user);
+
         return user.save();
       });
   })
   .then((user) => {
-    console.log('here is the user', user);
     const payload = { userId: user.id };
     const token   = jwt.sign(payload, secret, { expiresIn: '1hr' });
-
-    console.log('here is the token ********', token);
 
     return res.json({
       token,
