@@ -19,16 +19,17 @@ function googleMap() {
       let markers = [];
       let infowindow = null;
 
-      scope.$watch('center', initSmallMap);
-      scope.$watch('foodBanks', addMarkers);
+      scope.$watch('center', updateCenter, true);
+      scope.$watch('foodBanks', addMarkers, true);
       scope.$on('$destroy', destroyMap);
 
-      if(scope.foodBanks) initLargeMap();
+      if(element.hasClass('large')) initLargeMap();
+      if(element.hasClass('small')) initSmallMap();
 
       function initLargeMap(){
         map = new google.maps.Map(element[0], {
           zoom: 7,
-          center: { lat: 51.521610, lng: -0.059307 },
+          center: scope.center || { lat: 51.521610, lng: -0.059307 },
           scaleControl: false,
           scrollwheel: false
         });
@@ -70,18 +71,23 @@ function googleMap() {
         infowindow.open(map, marker);
       }
 
-      function initSmallMap(center){
-        if(!center) return false;
+      function initSmallMap(){
         map = new google.maps.Map(element[0], {
           zoom: 14,
-          center: center,
+          center: scope.center || { lat: 51.521610, lng: -0.059307 },
           scaleControl: false,
           scrollwheel: false
         });
         smallMapMarker = new google.maps.Marker({
-          position: center,
+          position: scope.center || { lat: 51.521610, lng: -0.059307 },
           map
         });
+      }
+
+      function updateCenter(center) {
+        if(!center) return false;
+        map.setCenter(center);
+        if(smallMapMarker) smallMapMarker.setPosition(center);
       }
 
       function destroyMap(){

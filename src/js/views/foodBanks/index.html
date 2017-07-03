@@ -2,7 +2,7 @@
 
 <h2>Food Banks</h2>
 <a ui-sref="foodBanksNew" class="btn btn-primary">Add a new Food Bank</a>
-<google-map class="map-large" food-banks="foodBanksIndex.filtered" ng-if="foodBanksIndex.all.$resolved"></google-map>
+<google-map class="map-large large" center="foodBanksIndex.center" food-banks="foodBanksIndex.filtered"></google-map>
 <input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="Search for a food bank...">
 <section class="row">
   <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.filtered">

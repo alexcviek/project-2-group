@@ -8,7 +8,7 @@ function register(req, res, next){
   User
   .create(req.body)
   .then(() => {
-    return res.json({ message: 'Registraion successful '});
+    return res.json({ message: 'Registration successful '});
   })
   .catch(next);
 }
