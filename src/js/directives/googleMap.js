@@ -1,7 +1,7 @@
 /* global google */
 angular
-  .module('sausageApp')
-  .directive('googleMap', googleMap);
+.module('sausageApp')
+.directive('googleMap', googleMap);
 
 function googleMap() {
   return {
@@ -9,32 +9,91 @@ function googleMap() {
     replace: true,
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
-      center: '='
+      center: '=',
+      foodBanks: '='
     },
     link(scope, element) {
 
       let map = null;
-      let marker = null;
+      let smallMapMarker = null;
+      let markers = [];
+      let infowindow = null;
 
-      scope.$watch('center', initMap);
+      scope.$watch('center', initSmallMap);
+      scope.$watch('foodBanks', addMarkers);
       scope.$on('$destroy', destroyMap);
 
-      function initMap(center){
+      if(scope.foodBanks) initLargeMap();
+
+      function initLargeMap(){
+        map = new google.maps.Map(element[0], {
+          zoom: 7,
+          center: { lat: 51.521610, lng: -0.059307 }
+        });
+      }
+
+      function addMarkers(foodBanks) {
+        removeMarkers();
+
+        foodBanks.forEach((foodBank) => {
+          addMarker(foodBank);
+        });
+      }
+
+      function addMarker(foodBank) {
+        const marker = new google.maps.Marker({
+          position: foodBank.location,
+          map
+        });
+
+        markers.push(marker);
+
+        marker.addListener('click', () => {
+          markerClick(marker, foodBank);
+        });
+      }
+
+      function markerClick(marker, foodBank) {
+        if(infowindow) infowindow.close();
+
+        const name = foodBank.name;
+
+        infowindow = new google.maps.InfoWindow({
+          content: `
+          Hello I am ${name}. CHEESE.
+          `
+        });
+
+        infowindow.open(map, marker);
+      }
+
+      function initSmallMap(center){
         if(!center) return false;
         map = new google.maps.Map(element[0], {
           zoom: 14,
           center: center
         });
-        marker = new google.maps.Marker({
+        smallMapMarker = new google.maps.Marker({
           position: center,
           map
         });
       }
+
       function destroyMap(){
         console.log('destroying map...');
-        marker.setMap(null);
-        marker = null;
         map = null;
+        removeMarkers(); // remove multiple markers
+        if(smallMapMarker) {
+          smallMapMarker.setMap(null);
+          smallMapMarker = null;
+        }
+      }
+
+      function removeMarkers() {
+        markers.forEach((marker) => {
+          marker.setMap(null);
+        });
+        markers = [];
       }
     }
   };

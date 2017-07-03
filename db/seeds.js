@@ -17,15 +17,18 @@ User
   .create([{
     username: 'Lauren Armbrust',
     email: 'lauren@gmail.com',
-    password: 'pass'
+    password: 'pass',
+    passwordConfirmation: 'pass'
   },{
     username: 'Alex Cwiek',
     email: 'alex@gmail.com',
-    password: 'pass'
+    password: 'pass',
+    passwordConfirmation: 'pass'
   },{
     username: 'Nick Cresner',
     email: 'nick@gmail.com',
-    password: 'pass'
+    password: 'pass',
+    passwordConfirmation: 'pass'
   }])
   .then((users) => {
     console.log(`${users.length} users created!`);
