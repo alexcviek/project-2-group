@@ -6,8 +6,8 @@
 <a class="btn btn-primary" ui-sref="postsNew">Add a new Item</a>
 
 <section class="row">
-  <div class="col-lg-6" ng-repeat="post in postsIndex.filtered">
-    <div class="postImage" style="background-image: url({{ post.image }})">
+  <div class="col-lg-6 card" ng-repeat="post in postsIndex.filtered">
+    <div class="postImage img-thumbnail" style="background-image: url({{ post.image }})">
     </div>
     <h2>{{ post.title }}</h2>
 
