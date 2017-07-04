@@ -21,6 +21,7 @@ function createPostsRoute(req, res, next) {
 function showPostsRoute(req, res, next) {
   Post
     .findById(req.params.id)
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((post) => {
       if(!post) return res.notFound();
@@ -57,9 +58,7 @@ function deletePostsRoute(req, res, next) {
     .catch(next);
 }
 
-function addPostsCommentRoute(req, res, next) {
-
-  req.body.createdBy = req.user;
+function addComment(req, res, next) {
 
   Post
     .findById(req.params.id)
@@ -76,7 +75,7 @@ function addPostsCommentRoute(req, res, next) {
     .catch(next);
 }
 
-function deletePostsCommentRoute(req, res, next) {
+function deleteComment(req, res, next) {
   Post
     .findById(req.params.id)
     .exec()
@@ -99,6 +98,6 @@ module.exports = {
   showPostsRoute,
   updatePostsRoute,
   deletePostsRoute,
-  addPostsCommentRoute,
-  deletePostsCommentRoute
+  addComment,
+  deleteComment
 };
