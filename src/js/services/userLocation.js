@@ -13,7 +13,7 @@ function UserLocation($rootScope) {
     $rootScope.$broadcast('locationChanged', currentLocation);
   });
 
-  this.getLocation = function getLocation() {
+  this.getLocation = function getLocation() { //confirm geolocation active and functional
     return currentLocation;
   };
 }

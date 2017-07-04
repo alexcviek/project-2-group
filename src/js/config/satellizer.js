@@ -15,3 +15,7 @@ function Auth($authProvider){
     clientId: '1397101173700413'
   });
 }
+
+
+//The ability to change a profile image and keep it on the site rather than it
+//reverting after session.

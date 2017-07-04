@@ -26,7 +26,7 @@ function googleMap() {
       if(element.hasClass('large')) initLargeMap();
       if(element.hasClass('small')) initSmallMap();
 
-      function initLargeMap(){
+      function initLargeMap(){ //Large dashboard map
         map = new google.maps.Map(element[0], {
           zoom: 7,
           center: scope.center || { lat: 51.521610, lng: -0.059307 },
@@ -35,7 +35,7 @@ function googleMap() {
         });
       }
 
-      function addMarkers(foodBanks) {
+      function addMarkers(foodBanks) { //foodbank coming from db?
         if(!foodBanks) return false;
         removeMarkers();
 

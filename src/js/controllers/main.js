@@ -16,7 +16,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User) {
     text: 'Browse all posts to view items currently available for collection'
   },{
     image: 'https://static.pexels.com/photos/111150/pexels-photo-111150.jpeg',
-    text: 'Reserve items on our site and exchange messages with other users to arrange collections'
+    text: 'Reserve items on our site and exchange messages with other users to arrange collections' //need more images here..
   },{
     image: 'https://images.unsplash.com/photo-1495732915095-32d9aea1d037?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Food Bank locations can be found and navigated to from our map below'

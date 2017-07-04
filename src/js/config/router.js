@@ -77,3 +77,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   });
   $urlRouterProvider.otherwise('/dashboard');
 }
+
+//Splash page with enter to dashboard
+//Dashboard with interacitve map and access to Posts/Foodbanks/Profile
+//Posts/Foodbanks/Profile able to be deleted only by createdBy
