@@ -51,7 +51,7 @@ function PostsNewCtrl(Post, $state) {
   vm.addItem = addItem;
 
   function deleteItem(item) {
-    const itemsIndex = vm.post.comments.indexOf(item);
+    const itemsIndex = vm.post.items.indexOf(item);
     vm.post.items.splice(itemsIndex, 1);
   }
 
