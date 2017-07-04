@@ -55,9 +55,9 @@ nav{
 }
 .tomato {
   height: 92vh;
-  // background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=&amp;bg=");
-  // background-position: center;
-  // background-size: cover;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url("https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1080&amp;h=720&amp;q=80&amp;cs=tinysrgb&amp;crop=&amp;bg=");
+  background-position: center;
+  background-size: cover;
   position: relative;
   .main-text{
     position: absolute;
@@ -66,7 +66,23 @@ nav{
     transform: translate(-50%,-50%);
     color: #fff;
   }
+  h4 {
+    margin-bottom: 40px;
+    }
+  .enter-button {
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-top: 30px;
+  }
+  .enter-button:hover {
+    text-decoration: none;
+    border-color: tomato;
+    color: tomato;
+  }
 }
+
 
 .post {
   img {

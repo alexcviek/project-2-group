@@ -4,7 +4,7 @@
   <div>
     <h2>{{ foodBanksShow.foodBank.name }}</h2>
 
-    <img ng-src="{{ foodBanksShow.foodBank.image }}">
+    <img ng-src="{{ foodBanksShow.foodBank.imageSRC }}">
     <google-map class="small" center="foodBanksShow.foodBank.location"></google-map>
 
     <button class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>

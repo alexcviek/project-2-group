@@ -22,6 +22,13 @@ userSchema
   this._passwordConfirmation = passwordConfirmation;
 });
 
+userSchema
+.virtual('posts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
 userSchema.pre('remove', function removeImage(next){
   if(this.image) return s3.deleteObject({ Key: this.image }, next);
   next();

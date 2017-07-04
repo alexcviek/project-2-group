@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 
 <section class="showUser">
-<h2>Hello, {{ usersShow.user.username }}!</h2>
+  <h2>Hello, {{ usersShow.user.username }}!</h2>
 
-<img ng-src="{{ usersShow.user.imageSRC }}" alt="profile.user.username">
-<h2>{{ usersShow.user.username }}</h2>
-<a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a><br>
-<button ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
+  <img ng-src="{{ usersShow.user.imageSRC }}" alt="profile.user.username">
+  <h2>{{ usersShow.user.username }}</h2>
+  <a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a><br>
+  <button ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
 </section>
+
 
 <div class="userPosts">
   <h2>DISPLAY USERS POSTS HERE</h2>
+
+  <div class="card">
+
+    <h2>posts</h2>
+    <ul>
+      <li ng-repeat="post in postsIndex.post.userPosts track by $index">
+        <strong>{{ post.createdBy.username }}</strong>
+      </li>
+    </ul>
+  </div>
 </div>
