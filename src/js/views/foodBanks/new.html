@@ -14,7 +14,7 @@
 
         <div class="form-group">
             <label for="location">Location</label>
-          <input type="text" class="form-control" id="location" name="location" ng-model="foodBanksNew.foodBank.location" required>
+              <input autocomplete type="text" class="form-control" name="postcode" ng-model="postsIndex.filtered.location">
           <div ng-messages="foodBanksNew.foodBankForm.location.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.location.$touched">
             <div ng-message="required">Location is required.</div>
           </div>
