@@ -108,7 +108,11 @@ User
               image: 'https://static.pexels.com/photos/322207/pexels-photo-322207.jpeg',
               claimed: false
             }],
-            createdBy: users[2]
+            createdBy: users[2],
+            comments: [{
+              text: 'This shit is boss',
+              createdBy: users[1]
+            }]
           },{
             title: 'Loads of food',
             separable: false,

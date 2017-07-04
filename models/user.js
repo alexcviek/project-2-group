@@ -1,4 +1,4 @@
-const mongoose  = require('mongoose-fill');
+const mongoose  = require('mongoose');
 const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 const commentSchema = new mongoose.Schema({
@@ -23,9 +23,10 @@ userSchema
 });
 
 userSchema
-.fill('posts')
-.get(function getPosts(done) {
-  return this.model('Post').find({ 'comments.createdBy': this._id }).exec(done);
+.virtual('posts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'createdBy'
 });
 
 userSchema.pre('remove', function removeImage(next){
