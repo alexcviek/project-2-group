@@ -14,10 +14,10 @@
           <strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="button" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">X</button>
         </li>
       </ul>
+
       <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
-        <label>Add comment</label>
-        <textarea ng-model="postsShow.newComment.text"></textarea>
-        <button class="button button--full">Comment</button>
+        <textarea ng-model="newComment.text"></textarea>
+        <button class="btn btn-primary">Add comment</button>
       </form>
     </div>
 

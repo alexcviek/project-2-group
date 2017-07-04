@@ -74,16 +74,17 @@ nav{
     height: 400px;
   }
 }
+.search {
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
 form {
   text-align: center;
+  margin: 0 auto;
 }
 
-.carousel-section{
-  width: 100%;
-  height: 45vh;
-  background-color: hotpink;
-}
 .map-section{
   width: 70%;
   height: 45vh;
@@ -98,7 +99,6 @@ form {
 }
 
 .showUser {
-  text-align: center;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   width: 550px;
@@ -108,8 +108,8 @@ form {
   padding-top: 100px;
   padding-bottom: 80px;
   background-color: #f6fc41;
-}
 
+}
 .dashboardImage {
   width: 60%;
   height: 500px;
@@ -119,18 +119,21 @@ form {
   background-color: white;
   width: 100%;
   height: 50%;
+  div {
+    div {
+      div {
+        .slideText {
+          font-size: 30px;
+          background-color: rgba(95, 100, 109, 0.6);
+          padding: 0 40px;
+        }
+      }
+    }
+  }
 }
 
-.slideText {
-  font-size: 30px;
-  background-color: rgba(95, 100, 109, 0.6);
-}
-
-.search {
-  padding: 10px 40px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-form{
-  margin: 0 auto;
+.right.carousel-control, .left.carousel-control {
+  opacity: .046;
+  filter:alpha(opacity=0); /* IE support */
+  color: black;
 }
