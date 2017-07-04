@@ -66,7 +66,23 @@ nav{
     transform: translate(-50%,-50%);
     color: #fff;
   }
+  h4 {
+    margin-bottom: 40px;
+    }
+  .enter-button {
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-top: 30px;
+  }
+  .enter-button:hover {
+    text-decoration: none;
+    border-color: tomato;
+    color: tomato;
+  }
 }
+
 
 .post {
   img {

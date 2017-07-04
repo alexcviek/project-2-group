@@ -6,7 +6,7 @@
 <input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="Search for a food bank...">
 <section class="row">
   <div class="col-lg-6" ng-repeat="foodBank in foodBanksIndex.filtered">
-    <img ng-src="{{ foodBank.image }}">
+    <img ng-src="{{ foodBank.imageSRC }}">
     <h2>{{ foodBank.name }}</h2>
     <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
   </div>
