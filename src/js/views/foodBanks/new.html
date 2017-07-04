@@ -11,14 +11,9 @@
         <div ng-message="required">Name is required.</div>
       </div>
     </div>
-    {{ foodBanksNew.foodBank}}
     <div class="form-group">
       <label for="location">Location</label>
       <input autocomplete type="text" class="form-control" location="foodBanksNew.foodBank.location" ng-model="foodBanksNew.foodBank.address" name="location">
-      <p>Lat: {{ foodBanksNew.city.lat }}</p>
-      <p>Lng: {{ foodBanksNew.city.lng }}</p>
-      <input  name="lat" value="{{ foodBanksNew.city.lat }}" required>
-      <input  name="lng" value="{{ foodBanksNew.city.lng }}" required>
       <div ng-messages="foodBanksNew.foodBankForm.location.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.location.$touched">
         <div ng-message="required">Location is required.</div>
       </div>

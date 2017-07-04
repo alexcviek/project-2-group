@@ -10,6 +10,14 @@
     </div>
 
     <div class="form-group">
+      <label for="location">Location</label>
+      <input autocomplete type="text" class="form-control" location="postsNew.post.location" ng-model="postsNew.post.address" name="location">
+      <div ng-messages="postsNew.postForm.location.$error" ng-show="postsNew.postForm.$submitted || postsNew.postForm.location.$touched">
+        <div ng-message="required">Location is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="separable">Separable?</label>
       <select class="form-control" id="separable" name="separable" ng-model="postsNew.post.separable" required>
         <option ng-value="true">Yes</option>
@@ -46,8 +54,8 @@
 
       <label for="itemPerishable">Is the item perishable?: </label>
       <select ng-model="postsNew.newItem.perishable">
-      <option ng-value="true">Yes</option>
-      <option ng-value="false">No</option>
+        <option ng-value="true">Yes</option>
+        <option ng-value="false">No</option>
       </select>
 
       <!-- <label for="itemImage">Item Image: </label>
