@@ -27,7 +27,9 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
 PostsNewCtrl.$inject = ['Post', '$state'];
 function PostsNewCtrl(Post, $state) {
   const vm = this;
-  vm.post = {};
+  vm.post = {
+    items: []
+  };
 
   function postsCreate() {
     if (vm.postForm.$valid) {
@@ -39,6 +41,22 @@ function PostsNewCtrl(Post, $state) {
   }
 
   vm.create = postsCreate;
+
+  function addItem() {
+    console.log(vm.newItem);
+    vm.post.items.push(vm.newItem);
+    vm.newItem = {};
+  }
+
+  vm.addItem = addItem;
+
+  function deleteItem(item) {
+    const itemsIndex = vm.post.comments.indexOf(item);
+    vm.post.items.splice(itemsIndex, 1);
+  }
+
+  vm.deleteItem = deleteItem;
+
 }
 
 PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state'];
@@ -54,6 +72,7 @@ function PostsShowCtrl(Post, PostComment, $stateParams, $state) {
   }
 
   vm.delete = postsDelete;
+
 
   function addComment(){
     PostComment

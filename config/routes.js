@@ -5,10 +5,11 @@ const postsController = require('../controllers/posts');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
 const imageUpload = require('../lib/imageUpload');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)
-  .post(imageUpload, postsController.createPostsRoute);
+  .post(secureRoute, imageUpload, postsController.createPostsRoute);
 
 router.route('/posts/:id')
   .get(postsController.showPostsRoute)
