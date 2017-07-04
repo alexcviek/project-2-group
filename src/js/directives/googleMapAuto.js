@@ -10,7 +10,7 @@ function autocomplete() {
     restrict: 'A',
     require: 'ngModel',
     scope: {
-      city: '='
+      location: '='
     },
     link: function(scope, element, attrs, model) {
       const options = {
@@ -19,8 +19,8 @@ function autocomplete() {
       const autocomplete = new google.maps.places.Autocomplete(element[0], options);
       autocomplete.addListener('place_changed', () => {
         const place = autocomplete.getPlace();
-        scope.city = place.geometry.location.toJSON();
-        console.log(scope.city);
+        scope.location = place.geometry.location.toJSON();
+        console.log(scope.location);
 
         console.log(place.geometry.location.lat());
         console.log(place.geometry.location.lng());

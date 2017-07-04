@@ -3,7 +3,7 @@
 
 
 <div class="row">
-  <form class="col-lg-4" ng-submit="foodBanksNew.update()" name="foodBanksNew.foodBankForm" novalidate>
+  <form class="col-lg-4" ng-submit="foodBanksNew.create()" name="foodBanksNew.foodBankForm" novalidate>
     <div class="form-group">
       <label for="name">Name</label>
       <input class="form-control" type="text" id="name" name="name" ng-model="foodBanksNew.foodBank.name" required>
@@ -11,10 +11,10 @@
         <div ng-message="required">Name is required.</div>
       </div>
     </div>
-
+    {{ foodBanksNew.foodBank}}
     <div class="form-group">
       <label for="location">Location</label>
-      <input autocomplete type="text" class="form-control" city="foodBanksNew.city" name="city" ng-model="foodBanksNew.filtered.city">
+      <input autocomplete type="text" class="form-control" location="foodBanksNew.foodBank.location" ng-model="foodBanksNew.foodBank.address" name="location">
       <p>Lat: {{ foodBanksNew.city.lat }}</p>
       <p>Lng: {{ foodBanksNew.city.lng }}</p>
       <input  name="lat" value="{{ foodBanksNew.city.lat }}" required>
@@ -26,7 +26,7 @@
 
     <div class="form-group">
       <label for="type">Type:</label>
-      <select class="form-control" id="typeFoodBank" name="type" required>
+      <select class="form-control" id="typeFoodBank" name="type" required ng-model="foodBanksNew.foodBank.type">
         <option value="food">Food</option>
         <option value="other">Other</option>
       </select>
@@ -45,7 +45,7 @@
       <input type="text" class="form-control" id="image" name="image" ng-model="foodBanksNew.foodBank.image">
     </div>
 
-    <button type="submit" class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">Submit</button>
+    <button type="submit" class="btn btn-default">Submit</button>
 
   </form>
 </div>

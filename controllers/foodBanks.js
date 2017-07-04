@@ -20,6 +20,7 @@ function showFoodBanksRoute(req, res, next){
 }
 
 function createFoodBanksRoute(req, res, next){
+  req.body.createdBy = req.user;
   FoodBank
     .create(req.body)
     .then((foodBank) => res.status(201).json(foodBank))
