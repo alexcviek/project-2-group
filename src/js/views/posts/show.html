@@ -4,7 +4,8 @@
 <a class="btn btn-primary" href="mailto:{{ postsShow.post.createdBy.email }}?Subject=Hey, I am interested in {{ postsShow.post.title }}" target="_top">Email me about this!</a>
 <section>
   <div class="post card">
-    <img ng-src="{{ postsShow.post.image }}">
+    <h2>Item created by {{ postsShow.post.createdBy.username }}</h2>
+    <img ng-src="{{ postsShow.post.imageSRC }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
 
     <div class="comments">
@@ -27,3 +28,5 @@
     <button class="btn btn-default" ng-click="postsShow.delete()">Delete</button>
   </div>
 </section>
+
+<p>{{ postsShow.post }}</p>

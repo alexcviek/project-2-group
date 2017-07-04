@@ -1,77 +1,62 @@
 <!DOCTYPE html>
-
-    <div class="container">
-      <form ng-submit="postsEdit.update()" name="postsEdit.postForm" novalidate>
-        <div class="form-group">
-          <p>
-            <label for="title">Title</label>
-          </p>
-          <input type="text" class="input" id="title" name="title" ng-model="postsEdit.post.name" required>
-          <div ng-messages="postsEdit.postForm.title.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.title.$touched">
-            <div ng-message="required">Title is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="separable">Separable?</label>
-          </p>
-          <select id="separable" name="separable" required>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
-          <div ng-messages="postsEdit.postForm.separable.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.separable.$touched">
-            <div ng-message="required">Separable is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label class="label" for="image">Image:</label>
-          </p>
-          <input type="text" class="input" id="image" name="image" ng-model="postsEdit.post.image">
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="item">Item:</label>
-          </p>
-          <label for="nameItem">Name:
-            <input type="text" id="nameItem" name="nameItem" ng-model="postsEdit.post.name" required>
-          </label><br>
-
-          <label for="type">Type:
-            <input type="text" id="type" name="type" ng-model="postsEdit.post.type" required>
-          </label><br>
-
-          <label for="perishable">Perishable? (Yes: checked)
-            <input type="checkbox" id="perishable" name="perishable" ng-model="postsEdit.post.perishable" required>
-          </label><br>
-
-          <label for="image">Image:
-            <input type="text" id="itemImage" name="itemImage" ng-model="postsEdit.post.itemImage" required>
-          </label><br>
-
-          <label for="claimed">Claimed (Yes: checked)
-            <input type="checkbox" id="claimed" name="claimed" ng-model="postsEdit.post.claimed" required>
-          </label>
-
-          <div ng-messages="postsEdit.postForm.item.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.item.$touched">
-            <div ng-message="required">Item is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="createdBy">Created By</label>
-          </p>
-          <input type="text" id="createdBy" name="createdBy" ng-model="postsEdit.post.createdBy" required>
-          <div ng-messages="postsEdit.postForm.createdBy.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.createdBy.$touched">
-            <div ng-message="required">Created by is required.</div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-default">Update</button>
-
-      </form>
+<div class="row">
+  <form class="col-lg-4" ng-submit="postsEdit.create()" name="postsEdit.postForm" novalidate>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" type="text" id="title" name="title" ng-model="postsEdit.post.title" value="{{ postsEdit.post.title }}" required>
+      <div ng-messages="postsEdit.postForm.title.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.title.$touched">
+        <div ng-message="required">Title is required.</div>
+      </div>
     </div>
+
+    <div class="form-group">
+      <label for="separable">Separable?</label>
+      <select class="form-control" id="separable" name="separable" ng-model="postsEdit.post.separable" required>
+        <option ng-value="true">Yes</option>
+        <option ng-value="false">No</option>
+      </select>
+      <div ng-messages="postsEdit.postForm.separable.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.separable.$touched">
+        <div ng-message="required">Separable is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Update image</label>
+      <input class="form-control" base64 type="file" name="image" id="image" ng-model="postsEdit.post.base64" required>
+      <img ng-src="{{ postsEdit.post.imageSRC }}">
+    </div>
+
+    <h2>Edit Items:</h2>
+    <ul>
+      <li ng-repeat="item in postsEdit.post.items">{{ item.name }} ({{ item.type }})<button class="button" type="button" ng-click="postsEdit.deleteItem(item)">del</button></li>
+    </ul>
+    <div class="form-group">
+
+      <label for="nameItem">Item name: </label>
+      <input ng-model="postsEdit.newItem.name">
+
+      <label for="itemType">Item Type: </label>
+      <select ng-model="postsEdit.newItem.type">
+        <option value="clothes">Clothes</option>
+        <option value="food">Food</option>
+        <option value="baby">Baby Item</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="itemPerishable">Is the item perishable?: </label>
+      <select ng-model="postsEdit.newItem.perishable">
+      <option ng-value="true">Yes</option>
+      <option ng-value="false">No</option>
+      </select>
+
+      <!-- <label for="itemImage">Item Image: </label>
+      <input ng-model="postsEdit.post.item.image"> -->
+
+
+      <button class="button" type="button" ng-click="postsEdit.addItem()">Add</button>
+    </div>
+
+    {{ postsNew.post }}
+    <button class="button">Add</button>
+  </form>
+</div>

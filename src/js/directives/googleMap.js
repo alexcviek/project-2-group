@@ -61,12 +61,19 @@ function googleMap() {
         if(infowindow) infowindow.close();
 
         const name = foodBank.name;
+        const image = foodBank.image;
+        const id = foodBank.id;
+        // const url = foodBank.url;
+        // const innerUrl = foodBank({ id: foodBank.id });
 
         infowindow = new google.maps.InfoWindow({
-          content: `
-          Hello I am ${name}. CHEESE.
-          `
+          content: `<a href="/foodbanks/${id}">Hello I am ${name}. CHEESE.
+          <img src="${image}"></a>`
+
         });
+
+
+
 
         infowindow.open(map, marker);
       }
