@@ -3,7 +3,7 @@
 <h2>{{ postsShow.post.title }}</h2>
 <a class="btn btn-primary" href="mailto:{{ postsShow.post.createdBy.email }}?Subject=Hey, I am interested in {{ postsShow.post.title }}" target="_top">Email me about this!</a>
 <section>
-  <div class="post">
+  <div class="post card">
     <img ng-src="{{ postsShow.post.image }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
 
