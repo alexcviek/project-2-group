@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <title>WDI Project 3</title>
   <base href="/">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdIl5vwLjGfnKOZYNym05H1KD007m7-o"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdIl5vwLjGfnKOZYNym05H1KD007m7-o"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdIl5vwLjGfnKOZYNym05H1KD007m7-o&libraries=places"></script>
   <!-- inject:js -->
   <!-- endinject -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -28,10 +29,9 @@
         <li><a href="#" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a></li>
       </div>
     </ul>
-
+    <input autocomplete type="text" class="input" name="postcode" ng-model="postsIndex.filtered.location">
   </nav>
   <main ui-view>
-
   </main>
 </body>
 </html>
