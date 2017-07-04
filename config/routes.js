@@ -17,10 +17,10 @@ router.route('/posts/:id')
   .delete(postsController.deletePostsRoute);
 
 router.route('/posts/:id/comments')
-  .post(postsController.addPostsCommentRoute);
+  .post(postsController.addComment);
 
 router.route('/posts/:id/comments/:commentId')
-  .delete(postsController.deletePostsCommentRoute);
+  .delete(postsController.deleteComment);
 
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
