@@ -1,4 +1,4 @@
-const mongoose  = require('mongoose');
+const mongoose  = require('mongoose-fill');
 const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 const commentSchema = new mongoose.Schema({
@@ -20,6 +20,12 @@ userSchema
 .virtual('passwordConfirmation')
 .set(function setPasswordConfirmation(passwordConfirmation) {
   this._passwordConfirmation = passwordConfirmation;
+});
+
+userSchema
+.fill('posts')
+.get(function getPosts(done) {
+  return this.model('Post').find({ 'comments.createdBy': this._id }).exec(done);
 });
 
 userSchema.pre('remove', function removeImage(next){
