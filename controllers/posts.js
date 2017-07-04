@@ -60,8 +60,6 @@ function deletePostsRoute(req, res, next) {
 
 function addComment(req, res, next) {
 
-  req.body.createdBy = req.user;
-
   Post
     .findById(req.params.id)
     .exec()
