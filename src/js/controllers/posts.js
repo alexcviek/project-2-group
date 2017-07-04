@@ -12,7 +12,7 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
     vm.all = posts;
     filterPosts();
   });
-  
+
   function filterPosts(){
     const params = { title: vm.q };
     vm.filtered = filterFilter(vm.all, params);
@@ -41,10 +41,10 @@ function PostsNewCtrl(Post, $state) {
   vm.create = postsCreate;
 }
 
-PostsShowCtrl.$inject = ['Post', '$stateParams', '$state'];
-function PostsShowCtrl(Post, $stateParams, $state) {
+PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state'];
+function PostsShowCtrl(Post, PostComment, $stateParams, $state) {
   const vm = this;
-
+  vm.newComment = {};
   vm.post = Post.get($stateParams);
 
   function postsDelete() {
@@ -54,6 +54,29 @@ function PostsShowCtrl(Post, $stateParams, $state) {
   }
 
   vm.delete = postsDelete;
+
+  function addComment(){
+    PostComment
+    .save({ postId: vm.post.id }, vm.newComment )
+    .$promise
+    .then((comment) => {
+      vm.post.comments.push(comment);
+      vm.newComment = {};
+    });
+  }
+  vm.addComment = addComment;
+
+  function deleteComment(comment){
+    PostComment
+    .delete({ postId: vm.post.id, id: comment.id })
+    .$promise
+    .then(() => {
+      const index = vm.post.comments.indexOf(comment);
+      vm.post.comments.splice(index, 1);
+    });
+  }
+  vm.deleteComment = deleteComment;
+
 }
 
 PostsEditCtrl.$inject = ['Post', '$stateParams', '$state'];
