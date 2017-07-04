@@ -8,6 +8,7 @@ const commentSchema = new mongoose.Schema({
 
 const foodBankSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  address: { type: String },
   location: { lat: { type: Number, required: true },
     lng: { type: Number, required: true }
   },

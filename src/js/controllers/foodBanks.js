@@ -38,6 +38,7 @@ function FoodBanksNewCtrl($state, FoodBank){
   vm.foodBank = {};
 
   function foodBanksCreate(){
+    console.log('going inside foodBanksCreate()');
     if(vm.foodBankForm.$valid){
       FoodBank
       .save(vm.foodBank)
