@@ -10,7 +10,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User) {
 
   vm.slides = [{
     image: 'https://images.unsplash.com/photo-1468664093569-795a12e8b31c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
-    text: 'Inspired by our pet friend, Sausage the Cat, this app brings goods that would otherwise go unused to someone who could use them.'
+    text: 'Inspired by our pet friend, Sausage the Cat, this app lets you trade goods that would otherwise go unused with someone who could use them.'
   },{
     image: 'https://images.unsplash.com/photo-1495732915095-32d9aea1d037?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Browse all posts to view items currently available for collection'
