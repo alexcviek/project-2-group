@@ -9,19 +9,19 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   vm.isAuthenticated = $auth.isAuthenticated;
 
   vm.slides = [{
-    image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/19601519_10210260731020005_5310511868163244179_n.jpg?oh=834487f3251e194deb38d9133940e8cd&oe=59D29A31',
+    image: 'https://images.unsplash.com/photo-1468664093569-795a12e8b31c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Inspired by our pet friend, Sausage the Cat, this app brings goods that would otherwise go unused to someone who could use them.'
   },{
     image: 'https://images.unsplash.com/photo-1495732915095-32d9aea1d037?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Browse all posts to view items currently available for collection'
   },{
-    image: 'https://static.pexels.com/photos/111150/pexels-photo-111150.jpeg',
-    text: 'Reserve items on our site and exchange messages with other users to arrange collections'
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?dpr=1&auto=format&fit=crop&w=1500&h=998&q=80&cs=tinysrgb&crop=&bg=',
+    text: 'Reserve items on our site and exchange messages with other users to arrange collections' //need more images here..
   },{
-    image: 'https://images.unsplash.com/photo-1495732915095-32d9aea1d037?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=',
-    text: 'Food Bank locations can be found and navigated to from our map below'
+    image: 'https://images.unsplash.com/photo-1444662708655-bd276c0ee8bd?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
+    text: 'Food Bank drop off locations can be found and navigated to from our map below for those feeling extra helpful'
   },{
-    image: 'https://images.unsplash.com/photo-1495732915095-32d9aea1d037?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=&bg=',
+    image: 'https://images.unsplash.com/photo-1484712401471-05c7215830eb?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Use the feed to find out other ways to get involved in the community'
   }];
 

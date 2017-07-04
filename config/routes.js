@@ -13,23 +13,23 @@ router.route('/posts')
 
 router.route('/posts/:id')
   .get(postsController.showPostsRoute)
-  .put(imageUpload, postsController.updatePostsRoute)
-  .delete(postsController.deletePostsRoute);
+  .put(secureRoute,imageUpload, postsController.updatePostsRoute)
+  .delete(secureRoute, postsController.deletePostsRoute);
 
 router.route('/posts/:id/comments')
-  .post(postsController.addComment);
+  .post(secureRoute, postsController.addComment);
 
 router.route('/posts/:id/comments/:commentId')
-  .delete(postsController.deleteComment);
+  .delete(secureRoute, postsController.deleteComment);
 
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
-  .post(foodBanksController.createFoodBanksRoute);
+  .post(secureRoute, foodBanksController.createFoodBanksRoute);
 
 router.route('/foodbanks/:id')
   .get(foodBanksController.showFoodBanksRoute)
-  .put(imageUpload, foodBanksController.updateFoodBanksRoute)
-  .delete(foodBanksController.deleteFoodBanksRoute);
+  .put(secureRoute, imageUpload, foodBanksController.updateFoodBanksRoute)
+  .delete(secureRoute, foodBanksController.deleteFoodBanksRoute);
 
 
 router.route('/users/:id')
