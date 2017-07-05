@@ -20,10 +20,13 @@ nav{
       list-style: none;
       display: inline;
       margin-right: 20px;
+
       a {
         color: white;
-        font-size: 20px;
+        font-size: 16px;
         text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
         img {
           height: 50px;
         }
@@ -40,7 +43,7 @@ nav{
 }
 
 .navbarColor {
-  background-color: #36C9A3;
+  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
 }
 
 .borderRadius {
@@ -130,14 +133,12 @@ form {
 }
 
 .showUser {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   width: 600px;
   height: 520px;
   margin-top: 5%;
   margin-left: 25%;
   padding-bottom: 80px;
-  background-color: #f6fc41;
+  background: linear-gradient(to bottom right, #fcfc1b, #eded95);
 
 }
 .dashboardImage {
@@ -170,9 +171,13 @@ form {
 
 .section {
   min-height: 1000px;
-  background-color: dodgerblue;
+  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
 }
 
 .inline-block {
   display: inline-block;
+}
+
+.card {
+  border-radius: 5px;
 }
