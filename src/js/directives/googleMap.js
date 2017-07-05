@@ -10,17 +10,20 @@ function googleMap() {
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
       center: '=',
-      foodBanks: '='
+      foodBanks: '=',
+      posts: '='
     },
     link(scope, element) {
 
       let map = null;
       let smallMapMarker = null;
-      let markers = [];
+      let foodBanksMarkers = [];
+      let postsMarkers = [];
       let infowindow = null;
 
       scope.$watch('center', updateCenter, true);
-      scope.$watch('foodBanks', addMarkers, true);
+      scope.$watch('foodBanks', addFoodBanksMarkers, true);
+      scope.$watch('posts', addPostsMarkers, true);
       scope.$on('$destroy', destroyMap);
 
       if(element.hasClass('large')) initLargeMap();
@@ -35,46 +38,78 @@ function googleMap() {
         });
       }
 
-      function addMarkers(foodBanks) { //foodbank coming from db?
-        if(!foodBanks) return false;
-        removeMarkers();
+      //MARKERS FOR posts
 
-        foodBanks.forEach((foodBank) => {
-          addMarker(foodBank);
+      function addPostsMarkers(posts) {
+        if(!posts) return false;
+        removePostMarkers();
+
+        posts.forEach((post) => {
+          addPostMarker(post);
         });
       }
 
-      function addMarker(foodBank) {
+      function addPostMarker(post) {
+        const marker = new google.maps.Marker({
+          position: post.location,
+          map
+        });
+
+        postsMarkers.push(marker);
+
+        marker.addListener('click', () => {
+          markerPostClick(marker, post);
+        });
+      }
+
+      function markerPostClick(marker, post) {
+        if(infowindow) infowindow.close();
+
+        const title = post.title;
+
+        infowindow = new google.maps.InfoWindow({
+          content: `Hello there ${title}`
+
+        });
+        infowindow.open(map, marker);
+      }
+
+      //MARKERS FOR FOODBANKS
+
+      function addFoodBanksMarkers(foodBanks) {
+        if(!foodBanks) return false;
+        removeFoodBankMarkers();
+
+        foodBanks.forEach((foodBank) => {
+          addFoodBankMarker(foodBank);
+        });
+      }
+
+      function addFoodBankMarker(foodBank) {
         const marker = new google.maps.Marker({
           position: foodBank.location,
           map
         });
 
-        markers.push(marker);
+        foodBanksMarkers.push(marker);
 
         marker.addListener('click', () => {
-          markerClick(marker, foodBank);
+          markerFoodBankClick(marker, foodBank);
         });
       }
 
-      function markerClick(marker, foodBank) {
+      function markerFoodBankClick(marker, foodBank) {
         if(infowindow) infowindow.close();
 
         const name = foodBank.name;
         const image = foodBank.image;
         const id = foodBank.id;
-        // const url = foodBank.url;
-        // const innerUrl = foodBank({ id: foodBank.id });
 
         infowindow = new google.maps.InfoWindow({
           content: `<a href="/foodbanks/${id}">Hello I am ${name}. CHEESE.
           <img src="${image}"></a>`
 
         });
-
-
-
-
         infowindow.open(map, marker);
       }
 
@@ -100,18 +135,24 @@ function googleMap() {
       function destroyMap(){
         console.log('destroying map...');
         map = null;
-        removeMarkers(); // remove multiple markers
+        removeFoodBankMarkers();
+        removePostMarkers();
         if(smallMapMarker) {
           smallMapMarker.setMap(null);
           smallMapMarker = null;
         }
       }
-
-      function removeMarkers() {
-        markers.forEach((marker) => {
+      function removePostMarkers(){
+        postsMarkers.forEach((marker) => {
           marker.setMap(null);
         });
-        markers = [];
+        postsMarkers = [];
+      }
+      function removeFoodBankMarkers() {
+        foodBanksMarkers.forEach((marker) => {
+          marker.setMap(null);
+        });
+        foodBanksMarkers = [];
       }
     }
   };
