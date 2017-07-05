@@ -36,8 +36,9 @@
     </div>
 
     <div class="form-group">
-      <label for="image">Image:</label>
-      <input type="text" class="form-control" id="image" name="image" ng-model="foodBanksNew.foodBank.image">
+      <label for="image">Image</label>
+      <input class="form-control" base64 type="file" name="image" id="image" ng-model="foodBanksNew.foodBank.base64" required>
+      <img ng-src="{{ foodBanksNew.foodBank.base64 }}">
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>

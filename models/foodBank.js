@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const s3 = require('../lib/s3');
 
 const commentSchema = new mongoose.Schema({
   text: { type: String, required: true },
@@ -25,9 +24,5 @@ foodBankSchema.virtual('imageSRC')
     if(this.image.match(/^http/)) return this.image;
     return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${this.image}`;
   });
-foodBankSchema.pre('remove', function removeImage(next) {
-  if(this.image) return s3.deleteObject({ Key: this.image }, next);
-  next();
-});
 
 module.exports = mongoose.model('FoodBank', foodBankSchema);

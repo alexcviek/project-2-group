@@ -20,7 +20,9 @@ function showFoodBanksRoute(req, res, next){
 }
 
 function createFoodBanksRoute(req, res, next){
+  if(req.file) req.body.image = req.file.filename;
   req.body.createdBy = req.user;
+  
   FoodBank
     .create(req.body)
     .then((foodBank) => res.status(201).json(foodBank))
