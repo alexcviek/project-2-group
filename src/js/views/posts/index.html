@@ -10,6 +10,7 @@
     <div class="postImage img-thumbnail" style="background-image: url({{ post.imageSRC }})">
     </div>
     <h2>{{ post.title }}</h2>
+    <p>{{post.createdBy}}</p>
 
     <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
   </div>

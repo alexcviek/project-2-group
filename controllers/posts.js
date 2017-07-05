@@ -3,6 +3,7 @@ const Post = require('../models/post');
 function indexPostsRoute(req, res, next) {
   Post
     .find()
+    .populate('createdBy')
     .exec()
     .then((posts) => res.json(posts))
     .catch(next);
@@ -21,7 +22,7 @@ function createPostsRoute(req, res, next) {
 function showPostsRoute(req, res, next) {
   Post
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    .populate('createdBy')
     .exec()
     .then((post) => {
       if(!post) return res.notFound();

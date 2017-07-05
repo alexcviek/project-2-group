@@ -1,9 +1,10 @@
 angular
-  .module('sausageApp')
-  .controller('PostsIndexCtrl', PostsIndexCtrl)
-  .controller('PostsNewCtrl', PostsNewCtrl)
-  .controller('PostsShowCtrl', PostsShowCtrl)
-  .controller('PostsEditCtrl', PostsEditCtrl);
+.module('sausageApp')
+.controller('PostsIndexCtrl', PostsIndexCtrl)
+.controller('PostsNewCtrl', PostsNewCtrl)
+.controller('PostsShowCtrl', PostsShowCtrl)
+.controller('PostsEditCtrl', PostsEditCtrl);
+//controller for posts to display on user page
 
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope){
@@ -24,6 +25,7 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
 
 }
 
+
 PostsNewCtrl.$inject = ['Post', '$state'];
 function PostsNewCtrl(Post, $state) {
   const vm = this;
@@ -34,9 +36,9 @@ function PostsNewCtrl(Post, $state) {
   function postsCreate() {
     if (vm.postForm.$valid) {
       Post
-        .save(vm.post)
-        .$promise
-        .then(() => $state.go('postsIndex'));
+      .save(vm.post)
+      .$promise
+      .then(() => $state.go('postsIndex'));
     }
   }
 
@@ -59,16 +61,26 @@ function PostsNewCtrl(Post, $state) {
 
 }
 
-PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state'];
-function PostsShowCtrl(Post, PostComment, $stateParams, $state) {
+PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state', '$auth', 'User'];
+function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User) {
   const vm = this;
   vm.newComment = {};
   vm.post = Post.get($stateParams);
+  if($auth.getPayload()) {
+    vm.currentUserId = $auth.getPayload().userId;
+    User.get({
+      id: vm.currentUserId
+    })
+    .$promise
+    .then((user) => {
+      vm.user = user;
+    });
+  }
 
   function postsDelete() {
     vm.post
-      .$remove()
-      .then(() => $state.go('postsIndex'));
+    .$remove()
+    .then(() => $state.go('postsIndex'));
   }
 
   vm.delete = postsDelete;
@@ -107,8 +119,8 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   function postsUpdate() {
     if (vm.postForm.$valid) {
       vm.post
-        .$update()
-        .then(() => $state.go('postsShow', $stateParams));
+      .$update()
+      .then(() => $state.go('postsShow', $stateParams));
     }
   }
 

@@ -4,14 +4,23 @@ angular
 .controller('UsersEditCtrl', UsersEditCtrl);
 
 
-UsersShowCtrl.$inject = ['$auth', 'User', '$state'];
-function UsersShowCtrl($auth, User, $state) {
+UsersShowCtrl.$inject = ['$auth', 'User', '$state', 'Post', '$stateParams'];
+function UsersShowCtrl($auth, User, $state, Post, $stateParams) {
   const vm = this;
-  const { userId } = $auth.getPayload();
-
-  if(userId) vm.user = User.get({ id: userId });
 
 
+
+  vm.posts = Post.query({
+    createdBy: $state.params.id
+  }, (data)=>{
+    const filtered = data.filter((post)=>{
+      return post.createdBy.id === $stateParams.id;
+    });
+    vm.user.posts = filtered;
+  });
+
+
+  vm.user = User.get($stateParams);
   function logout() {
     $auth.logout();
     $state.go('login');
