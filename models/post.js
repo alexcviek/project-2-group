@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
   title: { type: String, required: true },
   separable: { type: Boolean, required: true },
-  image: { type: String },
+  image: { type: String, required: true },
   address: { type: String },
   location: { lat: { type: Number, required: true },
     lng: { type: Number, required: true }

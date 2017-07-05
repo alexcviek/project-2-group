@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<h1>Take me home with you</h1>
+<h1>Cat's out of the bag!</h1>
+<h5>View an item to reserve its contents</h5>
 
-<i class="icon-search"></i>
-<input type="text" class="search" name="txtBox" ng-model="postsIndex.q" placeholder="Search..."><br>
-<a class="btn btn-primary" ui-sref="postsNew">Add a new Item</a>
+<div class="inline-block">
+  <input type="text" class="search" name="txtBox" ng-model="postsIndex.q" placeholder="Filter by name...">
+</div>
+
+<div class="inline-block">
+  <a class="btn btn-primary" ui-sref="postsNew">Add a new Item</a>
+</div>
+
 
 <section class="row">
   <div class="col-lg-6 card" ng-repeat="post in postsIndex.filtered">
     <div class="postImage img-thumbnail" style="background-image: url({{ post.imageSRC }})">
     </div>
     <h2>{{ post.title }}</h2>
+    <!-- <p>{{post.createdBy}}</p> -->
 
     <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
   </div>

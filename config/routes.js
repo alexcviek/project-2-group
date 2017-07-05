@@ -2,6 +2,7 @@ const router = require('express').Router();
 const foodBanksController = require('../controllers/foodBanks');
 const usersController = require('../controllers/users');
 const postsController = require('../controllers/posts');
+const dashboardController = require('../controllers/dashboard');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
 const imageUpload = require('../lib/imageUpload');
@@ -9,6 +10,9 @@ const secureRoute = require('../lib/secureRoute');
 const meetup  = require('../controllers/meetup');
 
 router.get('/meetup', meetup.groupIndex);
+
+router.route('/dashboard')
+  .get(dashboardController.dashboard);
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)
@@ -27,7 +31,7 @@ router.route('/posts/:id/comments/:commentId')
 
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
-  .post(secureRoute, foodBanksController.createFoodBanksRoute);
+  .post(secureRoute, imageUpload, foodBanksController.createFoodBanksRoute);
 
 router.route('/foodbanks/:id')
   .get(foodBanksController.showFoodBanksRoute)

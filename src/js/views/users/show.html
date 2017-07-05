@@ -9,24 +9,17 @@
   <button ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
 
 
+{{ user.posts }}
 
-
-  <div class="userPosts">
-    <h2>DISPLAY USERS POSTS HERE</h2>
-
-
-  <div class="userPosts">
-
-    <div class="card">
-
-      <h2>posts</h2>
-      <ul>
-        <li ng-repeat="post in postsIndex.post.userPosts track by $index">
-          <strong>{{ post.createdBy.username }}</strong>
-        </li>
-      </ul>
+</section>
+<section class="section">
+  <h1>Display User Posts</h1>
+  <div class="row">
+    <div class="col-lg-6 card" ng-repeat="post in usersShow.user.posts">
+      <div class="postImage img-thumbnail" style="background-image: url({{ post.imageSRC }})">
+      </div>
+      <h2>{{ post.title }}</h2>
+      <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
     </div>
   </div>
-</div>
-
 </section>

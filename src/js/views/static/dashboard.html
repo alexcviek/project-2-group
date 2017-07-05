@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<h1>Hello, I'm dashboard</h1> <!--Currently only working for logged in users-->
+<h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1> <!--Currently only working for logged in users-->
 
 <!-- {{ dashboard.meetups }} -->
 <section class="carouselSection">
@@ -18,8 +18,9 @@
 <!--Responsiveness in carousel styling-->
 
 
-<google-map class="map-section" center="{ lat: 51.521610, lng: -0.059307 }"></google-map>
+<google-map class="map-section large" food-banks="dashboard.all"></google-map>
 <!--Map to be taller to create lower section below top-->
+<!--Populate data from foodbanks and items to this map-->
 
 <aside class="dashboardAside">
   <h2>Volunteering Opportunities in your area</h2>
@@ -29,7 +30,6 @@
         <p>{{ meetups.name }}</p>
         {{ meetups.description | limitTo: 150 }}
       </li>
-    <ul>
-
+    </ul>
   </div>
 </aside>

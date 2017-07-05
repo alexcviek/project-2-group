@@ -3,7 +3,8 @@ angular
   .controller('PostsIndexCtrl', PostsIndexCtrl)
   .controller('PostsNewCtrl', PostsNewCtrl)
   .controller('PostsShowCtrl', PostsShowCtrl)
-  .controller('PostsEditCtrl', PostsEditCtrl);
+  .controller('PostsEditCtrl', PostsEditCtrl)
+  .controller('PostsDeleteCtrl', PostsDeleteCtrl);
 
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope){
@@ -24,6 +25,7 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
 
 }
 
+
 PostsNewCtrl.$inject = ['Post', '$state'];
 function PostsNewCtrl(Post, $state) {
   const vm = this;
@@ -34,9 +36,9 @@ function PostsNewCtrl(Post, $state) {
   function postsCreate() {
     if (vm.postForm.$valid) {
       Post
-        .save(vm.post)
-        .$promise
-        .then(() => $state.go('postsIndex'));
+      .save(vm.post)
+      .$promise
+      .then(() => $state.go('postsIndex'));
     }
   }
 
@@ -59,19 +61,42 @@ function PostsNewCtrl(Post, $state) {
 
 }
 
-PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state'];
-function PostsShowCtrl(Post, PostComment, $stateParams, $state) {
+PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state', '$auth', 'User', '$uibModal'];
+function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User, $uibModal) {
   const vm = this;
   vm.newComment = {};
   vm.post = Post.get($stateParams);
-
-  function postsDelete() {
-    vm.post
-      .$remove()
-      .then(() => $state.go('postsIndex'));
+  if($auth.getPayload()) {
+    vm.currentUserId = $auth.getPayload().userId;
+    User.get({
+      id: vm.currentUserId
+    })
+    .$promise
+    .then((user) => {
+      vm.user = user;
+    });
   }
 
-  vm.delete = postsDelete;
+  // function postsDelete() {
+  //   vm.post
+  //     .$remove()
+  //     .then(() => $state.go('postsIndex'));
+  // }
+  //
+  // vm.delete = postsDelete;
+  function openModal(){
+    $uibModal.open({
+      templateUrl: 'js/views/partials/postDeleteModal.html',
+      controller: 'PostsDeleteCtrl as postsDelete',
+      resolve: {
+        post: () => {
+          return vm.post;
+        }
+      }
+    });
+  }
+
+  vm.openModal = openModal;
 
 
   function addComment(){
@@ -107,10 +132,32 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   function postsUpdate() {
     if (vm.postForm.$valid) {
       vm.post
-        .$update()
-        .then(() => $state.go('postsShow', $stateParams));
+      .$update()
+      .then(() => $state.go('postsShow', $stateParams));
     }
   }
 
   vm.update = postsUpdate;
+}
+
+PostsDeleteCtrl.$inject = ['$uibModalInstance', 'post', '$state'];
+function PostsDeleteCtrl($uibModalInstance, post, $state){
+  const vm = this;
+  vm.post = post;
+
+  function closeModal(){
+    $uibModalInstance.close();
+  }
+  vm.closeModal = closeModal;
+
+  function postsDelete() {
+    vm.post
+      .$remove()
+      .then(() => {
+        $state.go('postsIndex');
+        $uibModalInstance.close();
+      });
+  }
+
+  vm.delete = postsDelete;
 }
