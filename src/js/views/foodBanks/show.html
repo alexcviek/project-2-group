@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 
 <section>
-  <div>
+  <div class="col-lg-6 card">
     <h2>{{ foodBanksShow.foodBank.name }}</h2>
 
     <img ng-src="{{ foodBanksShow.foodBank.imageSRC }}">
     <google-map class="small" center="foodBanksShow.foodBank.location"></google-map>
 
+    <hr>
+
+    <p>Created by: {{ foodBanksShow.foodBank.createdBy }}</p>
+
+    <hr>
+
     <button class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>
     <button class="btn btn-default" ng-click="foodBanksShow.delete()">Delete</button>
+
+
+
+
   </div>
 </section>
-
-<p>Created by: {{ foodBanksShow.foodBank.createdBy }}</p>
