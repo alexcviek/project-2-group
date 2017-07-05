@@ -26,7 +26,7 @@ const groupIndex = (req, res) => {
       method: 'GET',
       qs: {
         group_id: idArray.toString(),
-        key: process.env.MEETUP_API_KEY,
+        key: '29621f1b7b477145431a27565f58c3f',
         sign: true,
         page: 150
       },
