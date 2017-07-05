@@ -79,7 +79,7 @@ function googleMap() {
 
         infowindow = new google.maps.InfoWindow({
           content: `<a href="/posts/${id}">Hello I am ${title}. CHEESE.
-          <img src="${image}"></a>``
+          <img src="${image}"></a>`
 
         });
         infowindow.open(map, marker);
