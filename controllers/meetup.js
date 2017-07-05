@@ -36,7 +36,7 @@ const groupIndex = (req, res) => {
   .then((data) => {
     res.status(200).json(data.results);
     // data.results.forEach((event) => {
-    console.log(data.results);
+    // console.log(data.results);
     // });
     // res.render('hookup', {data: data.results});
     // // res.end();

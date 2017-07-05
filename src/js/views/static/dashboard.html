@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
 
+<p>Url: {{ dashboard.meetups.event_url }}</p>
+
 <h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1> <!--Currently only working for logged in users-->
 
 <!-- {{ dashboard.meetups }} -->
@@ -28,6 +30,8 @@
       <li>
         <p>{{ meetups.name }}</p>
         {{ meetups.description | limitTo: 150 }}
+        <p><a href="{{ meetups.event_url }}">Link</a></p>
+
       </li>
     </ul>
   </div>
