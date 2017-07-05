@@ -6,6 +6,9 @@ const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
+const meetup  = require('../controllers/meetup');
+
+router.get('/meetup', meetup.groupIndex);
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)
