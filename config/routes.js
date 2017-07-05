@@ -2,10 +2,14 @@ const router = require('express').Router();
 const foodBanksController = require('../controllers/foodBanks');
 const usersController = require('../controllers/users');
 const postsController = require('../controllers/posts');
+const dashboardController = require('../controllers/dashboard');
 const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
+
+router.route('/dashboard')
+  .get(dashboardController.dashboard);
 
 router.route('/posts')
   .get(postsController.indexPostsRoute)

@@ -38,6 +38,9 @@
     <div class="form-group">
       <label for="image">Image</label>
       <input class="form-control" base64 type="file" name="image" id="image" ng-model="foodBanksNew.foodBank.base64" required>
+      <div ng-messages="foodBanksNew.foodBankForm.image.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.image.$touched">
+        <div ng-message="required">Image is required.</div>
+      </div>
       <img ng-src="{{ foodBanksNew.foodBank.base64 }}">
     </div>
 

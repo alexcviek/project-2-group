@@ -13,7 +13,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('dashboard', {
     url: '/dashboard',
-    templateUrl: 'js/views/static/dashboard.html'
+    templateUrl: 'js/views/static/dashboard.html',
+    controller: 'DashboardCtrl as dashboard'
   })
   .state('postsIndex', {
     url: '/posts',

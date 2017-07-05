@@ -29,7 +29,7 @@ function googleMap() {
       function initLargeMap(){ //Large dashboard map
         map = new google.maps.Map(element[0], {
           zoom: 7,
-          center: scope.center || { lat: 51.521610, lng: -0.059307 },
+          center: scope.center || { lat: 51.515704, lng: -0.072829 },
           scaleControl: false,
           scrollwheel: false
         });
@@ -81,12 +81,12 @@ function googleMap() {
       function initSmallMap(){
         map = new google.maps.Map(element[0], {
           zoom: 14,
-          center: scope.center || { lat: 51.521610, lng: -0.059307 },
+          center: scope.center || { lat: 51.515704, lng: -0.072829 },
           scaleControl: false,
           scrollwheel: false
         });
         smallMapMarker = new google.maps.Marker({
-          position: scope.center || { lat: 51.521610, lng: -0.059307 },
+          position: scope.center || { lat: 51.515704, lng: -0.072829 },
           map
         });
       }
