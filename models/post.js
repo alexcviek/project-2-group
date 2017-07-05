@@ -18,7 +18,6 @@ const postSchema = new mongoose.Schema({
     name: { type: String, required: true },
     type: { type: String, required: true },
     perishable: { type: Boolean, required: true },
-    image: { type: String },
     claimed: { type: Boolean, required: true, default: false }
   }],
   comments: [commentSchema]
