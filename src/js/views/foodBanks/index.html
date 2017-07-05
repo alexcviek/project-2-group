@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <h2>Food Banks</h2>
-<a ui-sref="foodBanksNew" class="btn btn-primary">Add a new Food Bank</a>
+<a ui-sref="foodBanksNew" class="btn btn-primary" ng-if="main.isAuthenticated()">Add a new Food Bank</a>
 
 <div class="container">
   <google-map class="container map-large large" center="foodBanksIndex.center" food-banks="foodBanksIndex.filtered"></google-map>

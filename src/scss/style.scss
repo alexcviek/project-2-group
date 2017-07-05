@@ -116,19 +116,22 @@ form {
 }
 
 .map-section{
-  width: 70%;
+  width: 100%;
   height: 45vh;
   background-color: #b3cccc;
-  float: left;
 }
 .dashboardAside{
-  background-color: red;
+  background-color: #fafafa;
+  text-align: left;
   float: right;
-  width: 30%;
   height: 45vh;
   overflow: scroll;
-  h2 {
-    position: fixed;
+  a {
+    color: #000;
+  }
+  a:hover, a:active{
+    text-decoration: none;
+    color: grey;
   }
 }
 
@@ -143,18 +146,18 @@ form {
 }
 .dashboardImage {
   width: 60%;
-  height: 500px;
+  height: 45vh;
 }
 
 .carouselSection {
   background-color: white;
   width: 100%;
-  height: 50%;
+  height: 45vh;
   div {
     div {
       div {
         .slideText {
-          font-size: 30px;
+          font-size: 20px;
           background-color: rgba(95, 100, 109, 0.6);
           padding: 0 40px;
         }
@@ -169,10 +172,10 @@ form {
   color: black;
 }
 
-.section {
-  min-height: 1000px;
-  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-}
+// .section {
+//   min-height: 1000px;
+//   background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+// }
 
 .inline-block {
   display: inline-block;
