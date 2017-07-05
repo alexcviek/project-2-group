@@ -1,10 +1,10 @@
 angular
-.module('sausageApp')
-.controller('PostsIndexCtrl', PostsIndexCtrl)
-.controller('PostsNewCtrl', PostsNewCtrl)
-.controller('PostsShowCtrl', PostsShowCtrl)
-.controller('PostsEditCtrl', PostsEditCtrl);
-//controller for posts to display on user page
+  .module('sausageApp')
+  .controller('PostsIndexCtrl', PostsIndexCtrl)
+  .controller('PostsNewCtrl', PostsNewCtrl)
+  .controller('PostsShowCtrl', PostsShowCtrl)
+  .controller('PostsEditCtrl', PostsEditCtrl)
+  .controller('PostsDeleteCtrl', PostsDeleteCtrl);
 
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope){
@@ -61,8 +61,8 @@ function PostsNewCtrl(Post, $state) {
 
 }
 
-PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state', '$auth', 'User'];
-function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User) {
+PostsShowCtrl.$inject = ['Post', 'PostComment', '$stateParams', '$state', '$auth', 'User', '$uibModal'];
+function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User, $uibModal) {
   const vm = this;
   vm.newComment = {};
   vm.post = Post.get($stateParams);
@@ -77,13 +77,26 @@ function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User) {
     });
   }
 
-  function postsDelete() {
-    vm.post
-    .$remove()
-    .then(() => $state.go('postsIndex'));
+  // function postsDelete() {
+  //   vm.post
+  //     .$remove()
+  //     .then(() => $state.go('postsIndex'));
+  // }
+  //
+  // vm.delete = postsDelete;
+  function openModal(){
+    $uibModal.open({
+      templateUrl: 'js/views/partials/postDeleteModal.html',
+      controller: 'PostsDeleteCtrl as postsDelete',
+      resolve: {
+        post: () => {
+          return vm.post;
+        }
+      }
+    });
   }
 
-  vm.delete = postsDelete;
+  vm.openModal = openModal;
 
 
   function addComment(){
@@ -125,4 +138,26 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   }
 
   vm.update = postsUpdate;
+}
+
+PostsDeleteCtrl.$inject = ['$uibModalInstance', 'post', '$state'];
+function PostsDeleteCtrl($uibModalInstance, post, $state){
+  const vm = this;
+  vm.post = post;
+
+  function closeModal(){
+    $uibModalInstance.close();
+  }
+  vm.closeModal = closeModal;
+
+  function postsDelete() {
+    vm.post
+      .$remove()
+      .then(() => {
+        $state.go('postsIndex');
+        $uibModalInstance.close();
+      });
+  }
+
+  vm.delete = postsDelete;
 }

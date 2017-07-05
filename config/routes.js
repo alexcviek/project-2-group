@@ -24,7 +24,7 @@ router.route('/posts/:id/comments/:commentId')
 
 router.route('/foodbanks')
   .get(foodBanksController.indexFoodBanksRoute)
-  .post(secureRoute, foodBanksController.createFoodBanksRoute);
+  .post(secureRoute, imageUpload, foodBanksController.createFoodBanksRoute);
 
 router.route('/foodbanks/:id')
   .get(foodBanksController.showFoodBanksRoute)
