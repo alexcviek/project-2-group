@@ -3,7 +3,7 @@
 
 <h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1> <!--Currently only working for logged in users-->
 
-
+<!-- {{ dashboard.meetups }} -->
 <section class="carouselSection">
   <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
     <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
@@ -22,5 +22,13 @@
 <!--Populate data from foodbanks and items to this map-->
 
 <aside class="dashboardAside">
-  <p>Feed pulled from Meetup API</p>
+  <h2>Volunteering Opportunities in your area</h2>
+  <div ng-repeat= "meetups in dashboard.meetups">
+    <ul>
+      <li>
+        <p>{{ meetups.name }}</p>
+        {{ meetups.description | limitTo: 150 }}
+      </li>
+    </ul>
+  </div>
 </aside>
