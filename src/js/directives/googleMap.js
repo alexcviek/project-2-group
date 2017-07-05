@@ -31,7 +31,7 @@ function googleMap() {
 
       function initLargeMap(){ //Large dashboard map
         map = new google.maps.Map(element[0], {
-          zoom: 7,
+          zoom: 10,
           center: scope.center || { lat: 51.515704, lng: -0.072829 },
           scaleControl: false,
           scrollwheel: false
@@ -50,7 +50,15 @@ function googleMap() {
       }
 
       function addPostMarker(post) {
+        var iconCat = {
+          url: './images/011-lucky-cat-toy.png',
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 32),
+          scaledSize: new google.maps.Size(50, 50)
+        };
         const marker = new google.maps.Marker({
+          icon: iconCat,
           position: post.location,
           map
         });
@@ -86,7 +94,15 @@ function googleMap() {
       }
 
       function addFoodBankMarker(foodBank) {
+        var iconFoodBank = {
+          url: './images/012-sausage-2.png',
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 32),
+          scaledSize: new google.maps.Size(50, 50)
+        };
         const marker = new google.maps.Marker({
+          icon: iconFoodBank,
           position: foodBank.location,
           map
         });
