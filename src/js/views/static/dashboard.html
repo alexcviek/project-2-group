@@ -3,10 +3,10 @@
 
 
 <h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1> <!--Currently only working for logged in users-->
+{{ dashboard.meetups }}
 
 <!-- <img src="./images/logo4.png"> -->
 
-<!-- {{ dashboard.meetups }} -->
 <section class="carouselSection">
   <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
     <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
@@ -27,13 +27,8 @@
 <aside class="dashboardAside">
   <h2>Volunteering Opportunities in your area</h2>
   <div ng-repeat= "meetups in dashboard.meetups">
-    <ul>
-      <li>
-        <p>{{ meetups.name }}</p>
-        {{ meetups.description | limitTo: 150 }}
-        <p><a href="{{ meetups.event_url }}">Link</a></p>
-
-      </li>
-    </ul>
+      <p><strong>{{ meetups.name }}</strong></p>
+      <p ng-bind-html="{{ meetups.description | limitTo: 150 }}"></p>
+      <a href="{{ meetups.event_url}}" target="_blank">Link</a>
   </div>
 </aside>

@@ -12,7 +12,7 @@ function MeetupService($http) {
           return {
             name: meetup.name,
             description: meetup.description,
-            url: meetup.event_url,
+            event_url: meetup.event_url ? `${meetup.event_url}` : null,
             startTime: meetup.time,
             location: { lat: Number(meetup.group.group_lat), lng: Number(meetup.group.group_lon) },
             address: meetup.venue ? `${meetup.venue.name}, ${meetup.venue.address_1}` : null

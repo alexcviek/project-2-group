@@ -1,74 +1,44 @@
 <!DOCTYPE html>
 <h1>EDIT FOODBANK</h1>
-
-
-    <div class="container">
-      <form ng-submit="foodBanksEdit.update()" name="foodBanksEdit.foodBankForm" novalidate>
-        <div class="form-group">
-          <p>
-            <label for="name">Name</label>
-          </p>
-          <input type="text" class="input" id="name" name="name" ng-model="foodBanksEdit.foodBank.name" required>
-          <div ng-messages="foodBanksEdit.foodBankForm.name.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.name.$touched">
-            <div ng-message="required">Title is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="location">Location</label>
-          </p>
-          <input type="text" class="input" id="location" name="location" ng-model="foodBanksEdit.foodBank.location" required>
-          <div ng-messages="foodBanksEdit.foodBankForm.location.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.location.$touched">
-            <div ng-message="required">Location is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="type">Type:</label>
-          </p>
-          <select id="typeFoodBank" name="type" required>
-            <option value="food">Food</option>
-            <option value="other">Other</option>
-          </select>
-          <div ng-messages="foodBanksEdit.foodBankForm.type.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.type.$touched">
-            <div ng-message="required">Type is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label class="label" for="url">Url:</label>
-          </p>
-          <input type="text" class="input" id="url" name="url" ng-model="foodBanksEdit.foodBank.url">
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label class="label" for="image">Image:</label>
-          </p>
-          <input type="text" class="input" id="image" name="image" ng-model="foodBanksEdit.foodBank.image">
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label for="createdBy">Created By</label>
-          </p>
-          <input type="text" id="createdBy" name="createdBy" ng-model="foodBanksEdit.foodBank.createdBy" required>
-          <div ng-messages="foodBanksEdit.foodBankForm.createdBy.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.createdBy.$touched">
-            <div ng-message="required">Created by is required.</div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <p>
-            <label class="label" for="comments">Comments:</label>
-          </p>
-          <input type="text" class="input" id="commentsFoodBanks" name="comments" ng-model="foodBanksEdit.foodBank.comments">
-        </div>
-
-        <button type="submit" class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">Update</button>
-
-      </form>
+<form class="col-lg-4" ng-submit="foodBanksEdit.update()" name="foodBanksEdit.foodBankForm" novalidate>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" ng-model="foodBanksEdit.foodBank.name" required>
+    <div ng-messages="foodBanksEdit.foodBankForm.name.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.name.$touched">
+      <div ng-message="required">Title is required.</div>
     </div>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input autocomplete type="text" class="form-control" location="foodBanksEdit.foodBank.location" ng-model="foodBanksEdit.foodBank.address" name="location">
+    <div ng-messages="foodBanksEdit.foodBankForm.location.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.location.$touched">
+      <div ng-message="required">Location is required.</div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="type">Type:</label>
+    <select class="form-control" id="typeFoodBank" name="type" required>
+      <option value="food">Food</option>
+      <option value="other">Other</option>
+    </select>
+    <div ng-messages="foodBanksEdit.foodBankForm.type.$error" ng-show="foodBanksEdit.foodBankForm.$submitted || foodBanksEdit.foodBankForm.type.$touched">
+      <div ng-message="required">Type is required.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="label" for="url">Url:</label>
+    <input type="text" class="form-control" id="url" name="url" ng-model="foodBanksEdit.foodBank.url">
+  </div>
+
+  <div class="form-group">
+    <label class="label" for="image">Image:</label>
+    <input type="text" class="form-control" id="image" name="image" ng-model="foodBanksEdit.foodBank.image">
+  </div>
+
+  <button type="submit" class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">Update</button>
+
+</form>
