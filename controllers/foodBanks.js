@@ -30,6 +30,8 @@ function createFoodBanksRoute(req, res, next){
 }
 
 function updateFoodBanksRoute(req, res, next){
+  if(req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.user;
   FoodBank
     .findById(req.params.id)
     .exec()

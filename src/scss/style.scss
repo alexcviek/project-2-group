@@ -122,12 +122,19 @@ form {
   float: left;
 }
 .dashboardAside{
-  background-color: red;
+  background-color: #fafafa;
+  text-align: left;
+  padding: 20px;
   float: right;
   width: 30%;
   height: 45vh;
   overflow: scroll;
-  h2 {
+  a {
+    color: #000;
+  }
+  a:hover, a:active{
+    text-decoration: none;
+    color: grey;
   }
 }
 
