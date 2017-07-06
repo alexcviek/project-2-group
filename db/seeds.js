@@ -104,7 +104,7 @@ User
         type: 'Donation Point',
         url: 'http://www.oxfam.org.uk/',
         image: 'http://loveincstatic.blob.core.windows.net/lovemoney/Oxfam%20PA-5199621.jpg',
-        createdBy: users[3]
+        createdBy: users[2]
       }])
       .then((foodBanks) => {
         console.log(`${foodBanks.length} food banks created!`);
@@ -135,7 +135,7 @@ User
               image: 'https://static.pexels.com/photos/322207/pexels-photo-322207.jpeg',
               claimed: false
             }],
-            createdBy: users[3],
+            createdBy: users[2],
             comments: [{
               text: 'Thank you for separating the items in the photo. Will definitely be sending an email to inquire whether the items have been reserved.',
               createdBy: users[1]
@@ -181,7 +181,7 @@ User
               image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
               claimed: false
             }],
-            createdBy: users[4]
+            createdBy: users[1]
           },{
             title: 'Loads of food',
             separable: false,
@@ -244,7 +244,7 @@ User
               image: 'http://maxpixel.freegreatpicture.com/static/photo/1x/Bobby-Car-Childrens-Vehicles-Toys-Bobby-Car-Races-268380.jpg',
               claimed: false
             }],
-            createdBy: users[3]
+            createdBy: users[0]
           }])
           .then((posts) => {
             console.log(`${posts.length} posts created!`);
