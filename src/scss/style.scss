@@ -98,7 +98,6 @@ nav{
   width: 250px;
   background-color: ghostwhite;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
 }
 .map-large{
   width: 100%;
@@ -386,11 +385,11 @@ a.right.carousel-control, .left.carousel-control {
     list-style-type:none;
     margin:0;
     padding:0;
-    position: absolute;
+    position: relative;
     /*Create a horizontal list with spacing*/
     .responsiveLi {
     display:inline-block;
-    float: left;
+    // float: left;
     margin-right: 1px;
   }
 }
