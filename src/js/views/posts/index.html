@@ -5,13 +5,13 @@
   <div>
     <h1>Cat's out of the bag!</h1>
     <input type="text" class="search" name="txtBox" ng-model="postsIndex.q" placeholder="F i l t e r  b y  n a m e ...">
-
   </div>
 
 <div class="inline-block">
-  <h4>Or:</h4>
+  <h4 ng-if="main.isAuthenticated()" >Or:</h4>
   <a class="btn btn-success" ng-if="main.isAuthenticated()" ui-sref="postsNew"> + Add a new Item</a>
 </div>
+    <p class="no-results" ng-show="postsIndex.filtered.length === 0">Sorry, no results for your search!</p>
 
 
 
@@ -25,6 +25,5 @@
     </div>
     </div>
   </div>
-  <p ng-show="postsIndex.filtered.length === 0">Sorry, no results for your search!</p>
 </section>
 </div>

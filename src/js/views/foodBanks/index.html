@@ -9,6 +9,7 @@
 
 
   <input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="F i l t e r   b y    n a  m e ...">
+  <p class="no-results" ng-show="foodBanksIndex.filtered.length === 0">Sorry, no results for your search!</p>
   <section class="row">
     <div class="col-lg-6 foodbank-tile" ng-repeat="foodBank in foodBanksIndex.filtered">
       <div class="foodbank-image card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url({{ foodBank.imageSRC }})">
@@ -18,6 +19,5 @@
         </div>
       </div>
     </div>
-    <p ng-show="foodBanksIndex.filtered.length === 0">Sorry, no results for your search!</p>
   </section>
 </div>
