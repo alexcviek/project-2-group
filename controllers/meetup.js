@@ -10,7 +10,8 @@ const groupIndex = (req, res) => {
       topic_id: '16645',
       page: 150,
       category: 4,
-      key: 'MEETUP_API_KEY'
+      key: process.env.MEETUP_API_KEY
+
     },
     json: true
   })
@@ -26,7 +27,7 @@ const groupIndex = (req, res) => {
       method: 'GET',
       qs: {
         group_id: idArray.toString(),
-        key: 'MEETUP_API_KEY',
+        key: process.env.MEETUP_API_KEY,
         sign: true,
         page: 150
       },
