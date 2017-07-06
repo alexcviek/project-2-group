@@ -4,34 +4,38 @@
 <a class="btn btn-primary" href="mailto:{{ postsShow.post.createdBy.email }} Subject=Hey, I am interested in {{ postsShow.post.title }}" target="_top">Email me about this!</a>
 <section>
   <div class="post col-lg-6 card">
-  <h2>Post created by   <a ui-sref="usersShow({ id: postsShow.post.createdBy.id })">{{ postsShow.post.createdBy.username }}</a></h2>
+    <h2>Post created by   <a ui-sref="usersShow({ id: postsShow.post.createdBy.id })">{{ postsShow.post.createdBy.username }}</a></h2>
     <img class="post-image" ng-src="{{ postsShow.post.imageSRC }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
 
-  <div class="post-block post-items">
-    <h2>Items</h2>
-    <div class="post-items">
-      <p ng-repeat="item in postsShow.post.items">{{ item.name }}</p>
+    <div class="post-block post-items">
+      <h2>Items</h2>
+      <div class="post-items">
+        <p ng-repeat="item in postsShow.post.items">{{ item.name }}</p>
+      </div>
     </div>
-  </div>
 
     <div class="comments">
       <h2>Comments</h2>
-      <div>
-        <p class="card post-comment-card" ng-repeat="comment in postsShow.post.comments track by $index">
-           - {{ comment.text }}  <button class="btn comment-btn" style="background-image: url('/images/dustbin.png')" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id"></button> <a ui-sref="usersShow({ id: comment.createdBy.id })"><small><em> {{ comment.createdBy.username }}  <img class="comments-image" ng-src="{{ main.currentUser.imageSRC }}"></em></small></a>
-           <hr>
-        </p>
+      <div class="row card post-comment-card" ng-repeat="comment in postsShow.post.comments track by $index">
+        <div class="col-xs-3 user-info">
+          <a ui-sref="usersShow({ id: comment.createdBy.id })">
+              <img ng-src="{{ main.currentUser.imageSRC }}">
+            <small><em> {{ comment.createdBy.username }}</em></small></a>
+        </div>
+        <div class="col-xs-9">
+          <p> {{ comment.text }}</p>
+        </div>
+            <button class="comment-btn" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </div>
-
-      <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
-        <label>Add comment</label>
-        <textarea ng-model="postsShow.newComment.text"></textarea>
-        <button class="btn btn-primary">Comment</button>
-      </form>
+          <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
+            <label>Add comment</label>
+            <textarea ng-model="postsShow.newComment.text"></textarea>
+            <button class="btn btn-primary">Comment</button>
+          </form>
     </div>
 
-    <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
-    <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
+        <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
+        <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
   </div>
 </section>
