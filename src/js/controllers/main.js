@@ -9,9 +9,6 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   vm.isAuthenticated = $auth.isAuthenticated;
 
   vm.slides = [{
-    image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/19884193_10210291566350869_2665045517210336706_n.jpg?oh=d1b9c4f64138b9f67315516f774d6e76&oe=59CEB9C1',
-    text: 'Meet us..'
-  },{
     image: 'https://images.unsplash.com/photo-1468664093569-795a12e8b31c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
     text: 'Inspired by our pet friend, Sausage the Cat, this app lets you donate goods that would otherwise go unused.'
   },{
