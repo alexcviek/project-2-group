@@ -74,9 +74,12 @@ function googleMap() {
         if(infowindow) infowindow.close();
 
         const title = post.title;
+        const id    = post.id;
+        const image = post.imageSRC;
 
         infowindow = new google.maps.InfoWindow({
-          content: `Hello there ${title}`
+          content: `<a href="/posts/${id}">Hello I am ${title}. CHEESE.
+          <img src="${image}"></a>`
 
         });
         infowindow.open(map, marker);
