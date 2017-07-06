@@ -230,13 +230,13 @@ text-shadow: 1px 1px 1px white,
 
 .dashboardImage {
   width: 90%;
-  height: 75vh;
+  // height: 75vh;
 }
 
 .carouselSection {
   background-color: white;
   width: 100%;
-  height: 55vh;
+  // height: 55vh;
   margin-bottom: 150px;
   div {
     div {
@@ -362,4 +362,61 @@ a.right.carousel-control, .left.carousel-control {
     background-color: #3b5998;
     border: 1px solid #3b5998;
   }
+}
+
+.float-left {
+  float: left;
+}
+
+.responsiveUl {
+  /*Strip the ul of padding and list styling*/
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+    /*Create a horizontal list with spacing*/
+    .responsiveLi {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+  }
+}
+
+/*Responsive Styles Navbar*/
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+    }
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
 }
