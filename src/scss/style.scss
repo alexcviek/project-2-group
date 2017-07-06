@@ -87,7 +87,7 @@ nav{
   }
   h4 {
     margin-bottom: 40px;
-    }
+  }
   .enter-button {
     color: white;
     // padding: 5px 10px;
@@ -193,4 +193,34 @@ form {
 
 .card {
   border-radius: 5px;
+}
+
+.foodbank-tile{
+  margin: 20px 0;
+  .foodbank-image{
+    width: 470px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    .foodbank-text{
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      a{
+        color: #fff;
+        font-weight: lighter;
+        border: 1px solid #fff;
+        border-radius: 7%;
+        padding: 5px 10px;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+    }
+  }
 }
