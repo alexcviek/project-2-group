@@ -53,14 +53,6 @@ nav{
   border-radius: 14px;
 }
 
-.postImage {
-  width: 500px;
-  height: 400px;
-  background-position: center;
-  background-size: cover;
-  margin: 0 auto;
-}
-
 
 
 .map {
@@ -206,6 +198,33 @@ form {
     margin: 0 auto;
     position: relative;
     .foodbank-text{
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      a{
+        color: #fff;
+        font-weight: lighter;
+        border: 1px solid #fff;
+        border-radius: 7%;
+        padding: 5px 10px;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+.post-tile{
+  margin: 20px 0;
+  .postImage {
+    width: 500px;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    .post-text{
       color: #fff;
       position: absolute;
       top: 50%;
