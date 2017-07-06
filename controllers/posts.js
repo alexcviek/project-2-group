@@ -22,7 +22,7 @@ function createPostsRoute(req, res, next) {
 function showPostsRoute(req, res, next) {
   Post
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((post) => {
       if(!post) return res.notFound();

@@ -55,13 +55,47 @@ nav{
   border-radius: 14px;
 }
 
-.postImage {
+.comments-image {
+  height: 60px;
+  width: 40px;
+  border-radius: 10px;
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.post-image {
   width: 500px;
   height: 400px;
   border: 2px solid #77ACA2;
   background-position: center;
   background-size: cover;
-  margin: 0 auto;
+  margin-left: 12%;
+}
+
+.post-comment-card {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 18px;
+  width: 500px;
+  height: 80px;
+  left: 5%;
+  display: inline-block;
+  .comment-btn {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  a {
+    float: right;
+    margin-right: 20px;
+  }
 }
 
 
@@ -107,10 +141,17 @@ nav{
 
 
 .post {
-  img {
+  margin-left: 25%;
+  width: 75%;
+  .post-image {
     width: 500px;
     height: 400px;
     border: 2px solid #77ACA2;
+    margin-bottom: 20px;
+  }
+  .map {
+    width: 85%;
+    margin-left: 7%; 
   }
 }
 .search {
