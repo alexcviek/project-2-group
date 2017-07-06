@@ -3,9 +3,9 @@ angular
 .factory('Post', Post)
 .factory('PostComment', postComment);
 
-Post.$inject = ['$resource', 'API'];
-function Post($resource, API){
-  return $resource(`${API}/posts/:id`, { id: '@id' }, {
+Post.$inject = ['$resource'];
+function Post($resource){
+  return $resource('/api/posts/:id', { id: '@id' }, {
     'update': { method: 'PUT' }
   });
 }
