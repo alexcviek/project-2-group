@@ -26,15 +26,16 @@ nav{
         color: white;
         font-size: 16px;
         text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
         text-transform: uppercase;
         img {
           height: 50px;
         }
       }
       a:hover{
-        text-decoration: none;
-        color: #5c8a8a;
+        text-decoration: underline;
+        color: #B5F44A;
       }
       a:visited{
         color: #fff;
@@ -47,7 +48,7 @@ nav{
 }
 
 .navbarColor {
-  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+  background-color: #77ACA2;
 }
 
 .borderRadius {
@@ -57,6 +58,7 @@ nav{
 .postImage {
   width: 500px;
   height: 400px;
+  border: 2px solid #77ACA2;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
@@ -106,6 +108,7 @@ nav{
   img {
     width: 500px;
     height: 400px;
+    border: 2px solid #77ACA2;
   }
 }
 .search {
@@ -158,35 +161,41 @@ form {
   margin-left: 25%;
   padding-bottom: 80px;
   background: linear-gradient(to bottom right, #fcfc1b, #eded95);
-
 }
+
+.z-index {
+  z-index: -1; position:relative;
+}
+
+.background-image {
+  background-image: url("https://images.unsplash.com/photo-1499242165110-131f6ccd0c9a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=");
+  width: 100vw;
+  height: 100vh;
+}
+
 .dashboardImage {
   width: 90%;
   height: 90vh;
 }
 
 .carouselSection {
-  background-color: white;
   width: 100%;
   height: 90vh;
   margin-bottom: 30px;
-  border: 2px solid #B5F44A;
+  border: 2px solid #77ACA2;
   div {
     div {
       div {
         .slideText {
           font-size: 40px;
           background-color: rgba(95, 100, 109, 0.6);
-          padding: 0 40px;
+
         }
       }
     }
   }
 }
 
-.carousel-caption {
-  width: 50%;
-}
 
 .right.carousel-control, .left.carousel-control {
   opacity: .046;
@@ -194,12 +203,6 @@ form {
   color: black;
   width: 10vh;
 }
-
-
-// .section {
-//   min-height: 1000px;
-//   background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-// }
 
 .inline-block {
   display: inline-block;
