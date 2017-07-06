@@ -183,7 +183,7 @@ User
             }],
             createdBy: users[1]
           },{
-            title: 'Loads of food',
+            title: 'Furniture',
             separable: false,
             image: 'https://images.unsplash.com/photo-1417976528056-3c9bbbb5456c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
             location: { lat: -51.521610,
@@ -225,14 +225,14 @@ User
             }],
             createdBy: users[2]
           },{
-            title: 'Childrens Items',
+            title: 'Baby Items',
             separable: false,
-            image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',
-            location: { lat: -51.521615,
+            image: 'https://cdn.pixabay.com/photo/2015/09/21/16/27/toys-950148_960_720.jpg',
+            location: { lat: -51.521616,
               lng: -0.059307
             },
             items: [{
-              name: 'Clothing for Infants and Toddlers',
+              name: 'Toys for Infants and Toddlers',
               type: 'clothing',
               perishable: false,
               image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',

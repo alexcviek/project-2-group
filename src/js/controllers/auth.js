@@ -8,11 +8,11 @@ function RegisterCtrl($auth, $state) {
   const vm = this;
   vm.user = {};
 
-
-
   function submit() {
-    $auth.signup(vm.user)
+    if(vm.registerForm.$valid){
+      $auth.signup(vm.user)
       .then(() => $state.go('login')); //someone has just registered and is then redirected to the login page
+    }
   }
 
   vm.submit = submit;
@@ -25,9 +25,11 @@ function LoginCtrl($auth, $state) {
   vm.credentials = {};
 
   function submit() {
-    $auth.login(vm.credentials) //where else does this tie in..?
+    if(vm.loginForm.$valid){
+      $auth.login(vm.credentials) //where else does this tie in..?
       .then(() => $state.go('dashboard')); //when you login you see the dashboard page .. need to set this up
-
+      
+    }
   }
   vm.submit = submit;
   function authenticate(provider){

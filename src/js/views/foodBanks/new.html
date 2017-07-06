@@ -13,20 +13,9 @@
     </div>
     <div class="form-group">
       <label for="location">Location</label>
-      <input autocomplete type="text" class="form-control" location="foodBanksNew.foodBank.location" ng-model="foodBanksNew.foodBank.address" name="location">
+      <input autocomplete type="text" class="form-control" location="foodBanksNew.foodBank.location" ng-model="foodBanksNew.foodBank.address" name="location" required>
       <div ng-messages="foodBanksNew.foodBankForm.location.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.location.$touched">
         <div ng-message="required">Location is required.</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="type">Type:</label>
-      <select class="form-control" id="typeFoodBank" name="type" required ng-model="foodBanksNew.foodBank.type">
-        <option value="food">Food</option>
-        <option value="other">Other</option>
-      </select>
-      <div ng-messages="foodBanksNew.foodBankForm.type.$error" ng-show="foodBanksNew.foodBankForm.$submitted || foodBanksNew.foodBankForm.type.$touched">
-        <div ng-message="required">Type is required.</div>
       </div>
     </div>
 
