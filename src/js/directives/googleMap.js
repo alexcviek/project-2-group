@@ -138,8 +138,16 @@ function googleMap() {
           scaleControl: false,
           scrollwheel: false
         });
+        var iconCat = {
+          url: './images/cat-whiskers (1).png',
+          size: new google.maps.Size(100, 100),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 0),
+          scaledSize: new google.maps.Size(40, 40)
+        };
         smallMapMarker = new google.maps.Marker({
           position: scope.center || { lat: 51.515704, lng: -0.072829 },
+          icon: iconCat,
           map
         });
       }
