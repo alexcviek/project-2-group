@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 
 
-<h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1> <!--Currently only working for logged in users-->
+<!-- <h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1>
 
-<!-- <img src="./images/logo4.png"> -->
-<div class="container">
+
+
+<! <div class="container"> -->
 <div class="row">
-  <section class="carouselSection col-lg-8">
+  <section class="carouselSection col-lg-12">
     <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
-        <img class="dashboardImage" ng-src="{{slide.image}}">
-        <div class="carousel-caption">
-          <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+        <div class="wrapper">
+          <img class="dashboardImage" ng-src="{{slide.image}}">
+          <div class="carousel-caption">
+            <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+</div>
+
+<section class="row">
+  <google-map class="map-section large" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
   <aside class="dashboardAside col-lg-4">
     <h2>Volunteering Opportunities in your area</h2>
     <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
         <a href="{{ meetups.event_url}}" target="_blank"><p><strong>{{ meetups.name }}</strong></p></a>
     </div>
   </aside>
-</div>
+</section>
+
 <!--Carousel transition to smooth with uibootstrap-->
 <!--Responsiveness in carousel styling-->
-<google-map class="map-section large" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
 <!--Map to be taller to create lower section below top-->
 <!--Populate data from foodbanks and items to this map-->
-</div>
+<!-- </div> -->
