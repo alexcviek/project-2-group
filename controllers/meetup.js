@@ -10,7 +10,7 @@ const groupIndex = (req, res) => {
       topic_id: '16645',
       page: 150,
       category: 4,
-      key: '29621f1b7b477145431a27565f58c3f'
+      key: process.env.MEETUP_API_KEY
     },
     json: true
   })
@@ -26,7 +26,7 @@ const groupIndex = (req, res) => {
       method: 'GET',
       qs: {
         group_id: idArray.toString(),
-        key: '29621f1b7b477145431a27565f58c3f',
+        key: process.env.MEETUP_API_KEY,
         sign: true,
         page: 150
       },
@@ -35,11 +35,6 @@ const groupIndex = (req, res) => {
   })
   .then((data) => {
     res.status(200).json(data.results);
-    // data.results.forEach((event) => {
-    // console.log(data.results);
-    // });
-    // res.render('hookup', {data: data.results});
-    // // res.end();
   })
   .catch((err) => {
     res.status(500).json(err);
