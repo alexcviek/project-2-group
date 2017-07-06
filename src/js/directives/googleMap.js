@@ -179,7 +179,6 @@ function googleMap() {
 
         const title = post.title;
         const id    = post.id;
-        const image = post.imageSRC;
 
         infowindow = new google.maps.InfoWindow({
           content: `<a href="/posts/${id}">${title}, </a>`,

@@ -13,7 +13,7 @@
         <div class="wrapper">
           <img class="dashboardImage" ng-src="{{slide.image}}">
           <div class="carousel-caption">
-            <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+            <p class="slideText">{{$index + 1}}. {{slide.text}}</p>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
 
 <div class="container">
   <section class="row">
-    <google-map class="map-section large" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
+    <google-map class="map-section large col-lg-8" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
     <aside class="dashboardAside col-lg-4">
       <h2>Volunteering Opportunities in your area</h2>
       <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
