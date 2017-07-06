@@ -50,7 +50,6 @@ nav{
   border-radius: 14px;
 }
 
-<<<<<<< HEAD
 .postImage {
   width: 500px;
   height: 400px;
@@ -58,9 +57,6 @@ nav{
   background-size: cover;
   margin: 0 auto;
 }
-=======
-
->>>>>>> e5950701e46ec2ac15f90af0e8639dfc61805232
 
 .map {
   height: 250px;
@@ -177,11 +173,6 @@ form {
   color: black;
 }
 
-// .section {
-//   min-height: 1000px;
-//   background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-// }
-
 .inline-block {
   display: inline-block;
 }
@@ -227,6 +218,19 @@ form {
     }
   }
 }
+.foodbank-details{
+  .map-foodbank-show{
+    width: 100%;
+  }
+  a{
+    color: #000;
+  }
+  a:hover{
+    text-decoration: none;
+    color: grey;
+  }
+}
+
 .post-tile{
   margin: 20px 0;
   .postImage {

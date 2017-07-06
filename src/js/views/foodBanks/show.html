@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 
-<section>
-  <div class="col-lg-6 card">
-    <h2>{{ foodBanksShow.foodBank.name }}</h2>
+<section class="container">
+  <div class="row">
+    <div class="col-lg-6 foodbank-details">
+      <h2>{{ foodBanksShow.foodBank.name }}</h2>
+      <google-map class="small map-foodbank-show" center="foodBanksShow.foodBank.location"></google-map>
+      <p>Address: {{ foodBanksShow.foodBank.address }} </p>
+      <p>Created by: <a ui-sref="usersShow({ id: foodBanksShow.foodBank.createdBy.id })">{{ foodBanksShow.foodBank.createdBy.username }}</a></p>
 
-    <img ng-src="{{ foodBanksShow.foodBank.imageSRC }}">
-    <google-map class="small" center="foodBanksShow.foodBank.location"></google-map>
+      <a href="{{ foodBanksShow.foodBank.url }}" target="_blank">Foodbank's webpage</a>
 
-    <hr>
+      <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>
+      <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ng-click="foodBanksShow.delete()">Delete</button>
 
-    <p>Created by: {{ foodBanksShow.foodBank.createdBy }}</p>
-
-    <hr>
-
-    <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>
-    <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ng-click="foodBanksShow.delete()">Delete</button>
-
-
-
-
+    </div>
+    <div class="col-lg-6">
+      <img ng-src="{{ foodBanksShow.foodBank.imageSRC }}">
+    </div>
   </div>
 </section>
