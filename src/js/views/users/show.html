@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<div class="clowder">
-  <section class="showUser">
+<div>
+  <section class="showUser container">
 
     <img class="userImage" ng-src="{{ usersShow.user.imageSRC }}" alt="profile.user.username">
     <h2>{{ usersShow.user.username }}</h2>
-    <a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a><br>
+    <div class="userEmail">
+      <a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a>
+    </div>
     <button ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id"  class="btn btn-default" ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
   </section>
 
 
     <!-- {{ user.posts }} -->
 
-  <div class="showPosts">
+  <div class="showPosts container">
     <div>
       <div class="card" ng-repeat="post in usersShow.user.posts">
         <div class="img-thumbnail" style="background-image: url({{ post.imageSRC }})">

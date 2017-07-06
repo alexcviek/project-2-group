@@ -97,6 +97,8 @@ nav{
   height: 250px;
   width: 250px;
   background-color: ghostwhite;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
 }
 .map-large{
   width: 100%;
@@ -182,11 +184,12 @@ form {
 
 .showUser {
   width: 400px;
+  display: inline-block;
   height: 520px;
   margin-top: 5%;
   margin-left: 15px;
   background: linear-gradient(to bottom right, #fcfc1b, #eded95);
-  float: left;
+  // float: left;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 
   .userImage {
@@ -211,11 +214,15 @@ aside {
   margin-left: 20px;
 }
 
-.clowder {
-  background-repeat: no-repeat;
-  background-image: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/19693454_10210292169645951_3064037528385373931_o.jpg?oh=45dbd1b0c36a082f1ab8f205eb18e7b5&oe=5A112D2E");
-  background-size: 500px 100px;
+// .clowder {
+//   background-repeat: no-repeat;
+//   background-image: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/19693454_10210292169645951_3064037528385373931_o.jpg?oh=45dbd1b0c36a082f1ab8f205eb18e7b5&oe=5A112D2E");
+//   background-size: 500px 100px;
+//
+// }
 
+.userEmail {
+  padding: 20px;
 }
 
 .showPosts {
@@ -225,6 +232,7 @@ width: 600px;
 display: inline-block;
 text-shadow: 1px 1px 1px white,
                1px 1px 3px black;
+display: inline-block;
 }
 
 
@@ -368,6 +376,11 @@ a.right.carousel-control, .left.carousel-control {
   float: left;
 }
 
+.btn-default {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+}
+
 .responsiveUl {
   /*Strip the ul of padding and list styling*/
     list-style-type:none;
@@ -385,6 +398,7 @@ a.right.carousel-control, .left.carousel-control {
 /*Responsive Styles Navbar*/
 @media screen and (max-width : 760px){
     /*Make dropdown links appear inline*/
+
     ul {
         position: static;
         display: none;
@@ -402,6 +416,8 @@ a.right.carousel-control, .left.carousel-control {
         display:block;
     }
 }
+
+
 /*Style 'show menu' label button and hide it by default*/
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
