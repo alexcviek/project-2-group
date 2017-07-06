@@ -35,9 +35,6 @@ nav{
         text-decoration: none;
         color: #5c8a8a;
       }
-      a:visited{
-        color: #fff;
-      }
     }
     .right{
       float: right;
@@ -53,7 +50,17 @@ nav{
   border-radius: 14px;
 }
 
+<<<<<<< HEAD
+.postImage {
+  width: 500px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+=======
 
+>>>>>>> e5950701e46ec2ac15f90af0e8639dfc61805232
 
 .map {
   height: 250px;
@@ -79,26 +86,22 @@ nav{
   }
   h4 {
     margin-bottom: 40px;
-  }
-  .enter-button {
-    color: white;
-    // padding: 5px 10px;
-    border: 1px solid white;
-    border-radius: 3px;
-    display: inline-block;
-    font-size: 30px;
-    margin-top: 10px;
-  }
-  .displayBlock {
-    display: block;
-  }
-  .enter-button:hover {
-    text-decoration: none;
-    border-color: tomato;
-    color: tomato;
-  }
+    }
 }
 
+.enter-button {
+  margin-left: 30%;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-image: url(/images/logo4.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.enter-button:hover {
+  background-image: url(/images/logo4b.png);
+}
 
 .post {
   img {
