@@ -12,13 +12,13 @@
 
 
 <section class="row">
-  <div class="col-lg-6 card" ng-repeat="post in postsIndex.filtered">
-    <div class="postImage img-thumbnail" style="background-image: url({{ post.imageSRC }})">
+  <div class="col-lg-6 post-tile" ng-repeat="post in postsIndex.filtered">
+    <div class="postImage card" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url({{ post.imageSRC }})">
+      <div class="post-text">
+      <h2>{{ post.title }}</h2>
+      <a ui-sref="postsShow({ id: post.id })">View</a> <!--button directing to show-->
     </div>
-    <h2>{{ post.title }}</h2>
-    <!-- <p>{{post.createdBy}}</p> -->
-
-    <button class="btn btn-default" ui-sref="postsShow({ id: post.id })">View</button> <!--button directing to show-->
+    </div>
   </div>
   <p ng-show="(postsIndex.filtered.length === 0">Sorry, no results for your search!</p>
 </section>
