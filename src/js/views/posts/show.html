@@ -5,23 +5,24 @@
 <section>
   <div class="post col-lg-6 card">
   <h2>Post created by   <a ui-sref="usersShow({ id: postsShow.post.createdBy.id })">{{ postsShow.post.createdBy.username }}</a></h2>
-    <img ng-src="{{ postsShow.post.imageSRC }}">
+    <img class="post-image" ng-src="{{ postsShow.post.imageSRC }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
 
   <div class="post-block post-items">
     <h2>Items</h2>
-    <ul class="post-items">
-      <li ng-repeat="item in postsShow.post.items">{{ item.name }}</li>
-    </ul>
+    <div class="post-items">
+      <p ng-repeat="item in postsShow.post.items">{{ item.name }}</p>
+    </div>
   </div>
 
     <div class="comments">
       <h2>Comments</h2>
-      <ul>
-        <li ng-repeat="comment in postsShow.post.comments track by $index">
-          <strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="btn btn-primary" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">X</button>
-        </li>
-      </ul>
+      <div>
+        <p class="card post-comment-card" ng-repeat="comment in postsShow.post.comments track by $index">
+           - {{ comment.text }}  <button class="btn comment-btn" style="background-image: url('/images/dustbin.png')" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id"></button> <a ui-sref="usersShow({ id: comment.createdBy.id })"><small><em> {{ comment.createdBy.username }}  <img class="comments-image" ng-src="{{ main.currentUser.imageSRC }}"></em></small></a>
+           <hr>
+        </p>
+      </div>
 
       <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
         <label>Add comment</label>
@@ -34,5 +35,3 @@
     <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
   </div>
 </section>
-
-<p>{{ postsShow.post }}</p>

@@ -50,6 +50,51 @@ nav{
   border-radius: 14px;
 }
 
+<<<<<<< HEAD
+=======
+.comments-image {
+  height: 60px;
+  width: 40px;
+  border-radius: 10px;
+  float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.post-image {
+  width: 500px;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  margin-left: 12%;
+}
+
+.post-comment-card {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 18px;
+  width: 500px;
+  height: 80px;
+  left: 5%;
+  display: inline-block;
+  .comment-btn {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  a {
+    float: right;
+    margin-right: 20px;
+  }
+}
+
+>>>>>>> 86a7f6590b517918f4d38e594d131fb6c3080daa
 .map {
   height: 250px;
   width: 250px;
@@ -92,15 +137,24 @@ nav{
 }
 
 .post {
-  img {
+  margin-left: 25%;
+  width: 75%;
+  .post-image {
     width: 500px;
     height: 400px;
+    border: 2px solid #77ACA2;
+    margin-bottom: 20px;
+  }
+  .map {
+    width: 85%;
+    margin-left: 7%;
+
   }
 }
 .search {
   padding: 10px 40px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 form {
@@ -180,11 +234,6 @@ text-shadow: 1px 1px 1px white,
   color: black;
 }
 
-// .section {
-//   min-height: 1000px;
-//   background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-// }
-
 .inline-block {
   display: inline-block;
 }
@@ -192,7 +241,15 @@ text-shadow: 1px 1px 1px white,
 .card {
   border-radius: 5px;
 }
-
+.map-foodbank-info{
+  color: #000;
+}
+.map-foodbank-info:hover{
+  text-decoration: none;
+}
+.new-foodbank-btn{
+  margin-bottom: 20px;
+}
 .foodbank-tile{
   margin: 20px 0;
   .foodbank-image{
@@ -222,6 +279,19 @@ text-shadow: 1px 1px 1px white,
     }
   }
 }
+.foodbank-details{
+  .map-foodbank-show{
+    width: 100%;
+  }
+  a{
+    color: #000;
+  }
+  a:hover{
+    text-decoration: none;
+    color: grey;
+  }
+}
+
 .post-tile{
   margin: 20px 0;
   .postImage {

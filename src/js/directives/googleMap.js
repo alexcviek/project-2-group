@@ -124,7 +124,7 @@ function googleMap() {
         const id = foodBank.id;
 
         infowindow = new google.maps.InfoWindow({
-          content: `<a href="/foodbanks/${id}">${name}</a>`
+          content: `<a class="map-foodbank-info" href="/foodbanks/${id}">${name}</a>`
 
         });
         infowindow.open(map, marker);
