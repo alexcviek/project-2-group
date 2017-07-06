@@ -50,8 +50,7 @@ nav{
   border-radius: 14px;
 }
 
-<<<<<<< HEAD
-=======
+
 .comments-image {
   height: 60px;
   width: 40px;
@@ -94,7 +93,6 @@ nav{
   }
 }
 
->>>>>>> 86a7f6590b517918f4d38e594d131fb6c3080daa
 .map {
   height: 250px;
   width: 250px;
@@ -163,9 +161,9 @@ form {
 }
 
 .map-section{
-  width: 100%;
+  width: 60%;
   height: 45vh;
-  background-color: #b3cccc;
+  background-color: #fcfc1b;
 }
 .dashboardAside{
   background-color: #fafafa;
@@ -207,32 +205,40 @@ text-shadow: 1px 1px 1px white,
 
 
 .dashboardImage {
-  width: 60%;
-  height: 45vh;
+  width: 90%;
+  height: 75vh;
 }
 
 .carouselSection {
   background-color: white;
   width: 100%;
-  height: 45vh;
+  height: 55vh;
+  margin-bottom: 150px;
   div {
     div {
       div {
         .slideText {
           font-size: 20px;
-          background-color: rgba(95, 100, 109, 0.6);
-          padding: 0 40px;
+          margin-bottom: 20%;
+          margin-left: 50%;
+          height: 80%;
+          padding: 60px;
+          width: 60%;
+          float: right;
+          background-color: rgba(95, 100, 109, 0.8);
         }
       }
     }
   }
 }
 
-.right.carousel-control, .left.carousel-control {
+a.right.carousel-control, .left.carousel-control {
   opacity: .046;
-  filter:alpha(opacity=0); /* IE support */
+  max-width: 20px;
+  filter:alpha(opacity=0);
   color: black;
 }
+
 
 .inline-block {
   display: inline-block;
