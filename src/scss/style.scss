@@ -10,6 +10,9 @@ body{
     font-size: 60px;
     margin-bottom: 10px;
   }
+  main{
+    min-height: 85vh;
+  }
 }
 nav{
   height: 60px;
@@ -35,6 +38,9 @@ nav{
       a:hover{
         text-decoration: none;
         color: #5c8a8a;
+      }
+      a:visited{
+        color: white;
       }
     }
     .right{
@@ -99,7 +105,6 @@ nav{
   width: 250px;
   background-color: ghostwhite;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
 }
 .map-large{
   margin: 25px;
@@ -386,61 +391,32 @@ a.right.carousel-control, .left.carousel-control {
 
 .btn-default {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
 }
 
-.responsiveUl {
-  /*Strip the ul of padding and list styling*/
-    list-style-type:none;
-    margin:0;
-    padding:0;
-    position: absolute;
-    /*Create a horizontal list with spacing*/
-    .responsiveLi {
-    display:inline-block;
-    float: left;
-    margin-right: 1px;
+
+footer{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+  height: 50px;
+  margin-bottom: 0;
+  p,a{
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+    text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
   }
-}
-
-/*Responsive Styles Navbar*/
-@media screen and (max-width : 760px){
-    /*Make dropdown links appear inline*/
-
-    ul {
-        position: static;
-        display: none;
-    }
-    /*Create vertical spacing*/
-    li {
-        margin-bottom: 1px;
-    }
-    /*Make all menu links full width*/
-    ul li, li a {
-        width: 100%;
-    }
-    /*Display 'show menu' link*/
-    .show-menu {
-        display:block;
-    }
-}
-
-
-/*Style 'show menu' label button and hide it by default*/
-.show-menu {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  a:hover{
     text-decoration: none;
-    color: #fff;
-    background: #19c589;
-    text-align: center;
-    padding: 10px 0;
-    display: none;
-}
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-}
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #menu{
-    display: block;
+    color: #5c8a8a;
+  }
+  a:visited{
+    color: white;
+  }
+
 }
