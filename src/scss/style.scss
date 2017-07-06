@@ -109,7 +109,7 @@ nav{
 .search {
   padding: 10px 40px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 form {
@@ -186,7 +186,15 @@ form {
 .card {
   border-radius: 5px;
 }
-
+.map-foodbank-info{
+  color: #000;
+}
+.map-foodbank-info:hover{
+  text-decoration: none;
+}
+.new-foodbank-btn{
+  margin-bottom: 20px;
+}
 .foodbank-tile{
   margin: 20px 0;
   .foodbank-image{

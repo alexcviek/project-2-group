@@ -11,7 +11,6 @@ const foodBankSchema = new mongoose.Schema({
   location: { lat: { type: Number, required: true },
     lng: { type: Number, required: true }
   },
-  type: { type: String, required: true },
   url: { type: String },
   image: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
