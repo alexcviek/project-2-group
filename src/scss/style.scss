@@ -8,6 +8,7 @@ body{
   }
   h1{
     font-size: 60px;
+    margin-bottom: 10px;
   }
   main{
     min-height: 85vh;
@@ -104,7 +105,6 @@ nav{
   width: 250px;
   background-color: ghostwhite;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
 }
 .map-large{
   width: 100%;
@@ -256,8 +256,9 @@ display: inline-block;
     div {
       div {
         .slideText {
+          font-family: poppins, sans-serif;
           font-size: 20px;
-          background-color: rgba(95, 100, 109, 0.8);
+          background-color: rgba(95, 100, 109, 0.4);
         }
       }
     }
@@ -384,22 +385,8 @@ a.right.carousel-control, .left.carousel-control {
 
 .btn-default {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
 }
 
-.responsiveUl {
-  /*Strip the ul of padding and list styling*/
-    list-style-type:none;
-    margin:0;
-    padding:0;
-    position: absolute;
-    /*Create a horizontal list with spacing*/
-    .responsiveLi {
-    display:inline-block;
-    float: left;
-    margin-right: 1px;
-  }
-}
 
 footer{
   position: relative;
@@ -425,46 +412,5 @@ footer{
   a:visited{
     color: white;
   }
-}
 
-/*Responsive Styles Navbar*/
-@media screen and (max-width : 760px){
-    /*Make dropdown links appear inline*/
-
-    ul {
-        position: static;
-        display: none;
-    }
-    /*Create vertical spacing*/
-    li {
-        margin-bottom: 1px;
-    }
-    /*Make all menu links full width*/
-    ul li, li a {
-        width: 100%;
-    }
-    /*Display 'show menu' link*/
-    .show-menu {
-        display:block;
-    }
-}
-
-
-/*Style 'show menu' label button and hide it by default*/
-.show-menu {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-decoration: none;
-    color: #fff;
-    background: #19c589;
-    text-align: center;
-    padding: 10px 0;
-    display: none;
-}
-/*Hide checkbox*/
-input[type=checkbox]{
-    display: none;
-}
-/*Show menu when invisible checkbox is checked*/
-input[type=checkbox]:checked ~ #menu{
-    display: block;
 }
