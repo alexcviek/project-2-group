@@ -10,9 +10,11 @@
   <section class="carouselSection col-lg-12 col-md-6 col sm-4">
     <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
-        <img class="dashboardImage" ng-src="{{slide.image}}">
-        <div class="carousel-caption">
-          <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+        <div class="wrapper">
+          <img class="dashboardImage" ng-src="{{slide.image}}">
+          <div class="carousel-caption">
+            <p class="slideText">{{$index + 1}}.) {{slide.text}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,6 @@
 
 <!--Carousel transition to smooth with uibootstrap-->
 <!--Responsiveness in carousel styling-->
-
 <!--Map to be taller to create lower section below top-->
 <!--Populate data from foodbanks and items to this map-->
 <!-- </div> -->
