@@ -17,8 +17,7 @@ const postSchema = new mongoose.Schema({
   items: [{
     name: { type: String, required: true },
     type: { type: String, required: true },
-    perishable: { type: Boolean, required: true },
-    claimed: { type: Boolean, required: true, default: false }
+    perishable: { type: Boolean, required: true }
   }],
   comments: [commentSchema]
 });

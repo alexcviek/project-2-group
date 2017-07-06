@@ -7,7 +7,7 @@
   <img ng-src="{{ usersShow.user.imageSRC }}" alt="profile.user.username">
   <h2>{{ usersShow.user.username }}</h2>
   <a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a><br>
-  <button class="btn btn-default" ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
+  <button ng-if="main.isAuthenticated() && main.currentUserId === usersShow.user.id"  class="btn btn-default" ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
 </section>
 
 
