@@ -182,9 +182,9 @@ form {
 
 .showUser {
   width: 400px;
-  height: 560px;
+  height: 520px;
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: 15px;
   background: linear-gradient(to bottom right, #fcfc1b, #eded95);
   float: left;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -194,6 +194,28 @@ form {
     padding: 10px;
     border-radius: 50px
   }
+}
+
+aside {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  h2 {
+    text-align: center;
+    color: #36C9A3;
+  }
+  .meetups {
+    text-align: center;
+  }
+
+}
+.margin-left {
+  margin-left: 20px;
+}
+
+.clowder {
+  background-repeat: no-repeat;
+  background-image: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/19693454_10210292169645951_3064037528385373931_o.jpg?oh=45dbd1b0c36a082f1ab8f205eb18e7b5&oe=5A112D2E");
+  background-size: 500px 100px;
+
 }
 
 .showPosts {
@@ -221,12 +243,6 @@ text-shadow: 1px 1px 1px white,
       div {
         .slideText {
           font-size: 20px;
-          margin-bottom: 20%;
-          margin-left: 50%;
-          height: 80%;
-          padding: 60px;
-          width: 60%;
-          float: right;
           background-color: rgba(95, 100, 109, 0.8);
         }
       }
