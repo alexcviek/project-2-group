@@ -116,7 +116,7 @@ User
             location: { lat: 51.521611,
               lng: -0.059308
             },
-            item: [{
+            items: [{
               name: 'Belt',
               type: 'clothes',
               perishable: false,
@@ -147,7 +147,7 @@ User
             location: { lat: -51.521613,
               lng: -0.059304
             },
-            item: [{
+            items: [{
               name: 'Eggs',
               type: 'food',
               perishable: true,
@@ -168,7 +168,7 @@ User
             location: { lat: -51.521612,
               lng: -0.059306
             },
-            item: [{
+            items: [{
               name: 'Food',
               type: 'food',
               perishable: true,
@@ -189,7 +189,7 @@ User
             location: { lat: -51.521610,
               lng: -0.059307
             },
-            item: [{
+            items: [{
               name: 'Eggs',
               type: 'food',
               perishable: true,
@@ -210,7 +210,7 @@ User
             location: { lat: -51.521615,
               lng: -0.059307
             },
-            item: [{
+            items: [{
               name: 'Clothing for Infants and Toddlers',
               type: 'clothing',
               perishable: false,
@@ -231,7 +231,7 @@ User
             location: { lat: -51.521615,
               lng: -0.059307
             },
-            item: [{
+            items: [{
               name: 'Clothing for Infants and Toddlers',
               type: 'clothing',
               perishable: false,
