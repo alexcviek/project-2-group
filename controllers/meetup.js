@@ -11,6 +11,7 @@ const groupIndex = (req, res) => {
       page: 150,
       category: 4,
       key: process.env.MEETUP_API_KEY
+
     },
     json: true
   })
