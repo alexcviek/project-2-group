@@ -13,6 +13,33 @@ body{
   main{
     min-height: 85vh;
   }
+  footer{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+    height: 50px;
+    margin-bottom: 0;
+    margin-top: 40px;
+    p,a{
+      line-height: 50px;
+      color: white;
+      font-size: 16px;
+      text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
+      font-family: 'Josefin Sans', sans-serif;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    a:hover{
+      text-decoration: none;
+      color: #5c8a8a;
+    }
+    a:visited{
+      color: white;
+    }
+
+  }
 }
 nav{
   height: 60px;
@@ -24,7 +51,6 @@ nav{
       list-style: none;
       display: inline;
       margin-right: 20px;
-
       a {
         color: white;
         font-size: 16px;
@@ -385,32 +411,4 @@ a.right.carousel-control, .left.carousel-control {
 
 .btn-default {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-}
-
-
-footer{
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-  height: 50px;
-  margin-bottom: 0;
-  p,a{
-    line-height: 50px;
-    color: white;
-    font-size: 16px;
-    text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
-    font-family: 'Josefin Sans', sans-serif;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  a:hover{
-    text-decoration: none;
-    color: #5c8a8a;
-  }
-  a:visited{
-    color: white;
-  }
-
 }
