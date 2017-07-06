@@ -2,6 +2,7 @@
 <html ng-app="sausageApp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WDI Project 3</title>
   <base href="/">
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdIl5vwLjGfnKOZYNym05H1KD007m7-o"></script> -->
@@ -21,11 +22,13 @@
 <body ng-controller="MainCtrl as main">
 
   <nav class="navbar navbar-default navbarColor">
-    <ul class="navbar-left">
-      <li><a ui-sref="dashboard"><img src="./images/logo4c.png"></a></li>
+    <ul class="navbar-left responsiveUl">
+      <li class="responsiveLi"><a ui-sref="dashboard"><img src="./images/logo4c.png"></a></li>
       <li><a ui-sref="dashboard">Clowder</a></li>
       <li><a ui-sref="foodBanksIndex">Food Banks</a></li>
       <li><a ui-sref="postsIndex">Browse items</a></li>
+      <label for="show-menu" class="show-menu">Show Menu</label>
+      <input type="checkbox" id="show-menu" role="button">
       <div class="right">
         <li><a ui-sref="login" ng-if="!main.isAuthenticated()">Login</a></li>
         <li><a ui-sref="register" ng-if="!main.isAuthenticated()">Register</a></li>
