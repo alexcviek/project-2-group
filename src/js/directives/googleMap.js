@@ -121,12 +121,10 @@ function googleMap() {
         if(infowindow) infowindow.close();
 
         const name = foodBank.name;
-        const image = foodBank.image;
         const id = foodBank.id;
 
         infowindow = new google.maps.InfoWindow({
-          content: `<a href="/foodbanks/${id}">Hello I am ${name}. CHEESE.
-          <img src="${image}"></a>`
+          content: `<a class="map-foodbank-info" href="/foodbanks/${id}">${name}</a>`
 
         });
         infowindow.open(map, marker);

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 
 <h2>Food Banks</h2>
-<a ui-sref="foodBanksNew" class="btn btn-primary" ng-if="main.isAuthenticated()">Add a new Food Bank</a>
+<a ui-sref="foodBanksNew" class="btn btn-primary new-foodbank-btn" ng-if="main.isAuthenticated()">Add a new Food Bank</a>
 
 <div class="container">
   <google-map class="container map-large large" center="foodBanksIndex.center" food-banks="foodBanksIndex.filtered"></google-map>
 
   <input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="Filter by name...">
   <section class="row">
-    <div class="col-lg-6 card" ng-repeat="foodBank in foodBanksIndex.filtered">
-      <img class="img-thumbnail" ng-src="{{ foodBank.imageSRC }}">
-      <h2>{{ foodBank.name }}</h2>
-      <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
+    <div class="col-lg-6 foodbank-tile" ng-repeat="foodBank in foodBanksIndex.filtered">
+      <div class="foodbank-image card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url({{ foodBank.imageSRC }})">
+        <div class="foodbank-text">
+          <h2>{{ foodBank.name }}</h2>
+          <a ui-sref="foodBanksShow({ id: foodBank.id })">View</a> <!--button directing to show-->
+        </div>
+      </div>
     </div>
-      <p ng-hide="foodBanksIndex">Sorry, no results for your search!</p>
   </section>
 </div>

@@ -11,6 +11,7 @@ function indexFoodBanksRoute(req, res, next){
 function showFoodBanksRoute(req, res, next){
   FoodBank
     .findById(req.params.id)
+    .populate('createdBy')
     .exec()
     .then(foodBank => {
       if(!foodBank) return res.notFound();

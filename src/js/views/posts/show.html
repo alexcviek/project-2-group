@@ -31,8 +31,7 @@
       </form>
     </div>
 
-
-    <button class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
-    <button class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
+    <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
+    <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
   </div>
 </section>
