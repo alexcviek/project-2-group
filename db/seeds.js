@@ -52,13 +52,13 @@ User
         image: 'http://www.stpaulscambridge.org.uk/wp-content/uploads/2014/11/Cambridge-City-Foodbank.jpg',
         createdBy: users[1]
       },{
-        name: 'Battersea Fat Cat Pantry',
-        location: { lat: 51.476389,
-          lng: -0.151680
+        name: 'Brent Food Bank',
+        location: { lat: 51.549431,
+          lng: -0.249593
         },
-        type: 'Private Sectory',
-        url: 'http://fatcat.co.uk',
-        image: 'http://i.dailymail.co.uk/i/pix/2016/10/04/17/39191F2600000578-3821775-image-a-40_1475597321353.jpg',
+        type: 'Food Bank',
+        url: 'https://brent.foodbank.org.uk/',
+        image: 'https://brent.foodbank.org.uk/wp-content/uploads/sites/23/2016/02/warehouse_volunteers_20150324_0092-237x235.jpg',
         createdBy: users[1]
       },{
         name: 'Hackney Food Bank',
@@ -78,6 +78,33 @@ User
         url: 'http://trusselltrust.org',
         image: 'https://leftfootforward.org/images/2014/02/Food-banksj.jpg',
         createdBy: users[2]
+      },{
+        name: 'Stoke Newington Food Bank',
+        location: { lat: 51.5608971,
+          lng: -0.1542394
+        },
+        type: 'Food Bank',
+        url: 'https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=0ahUKEwi1sYXHhPTUAhVFJMAKHQjoCfgQgU8IWjAI&url=http%3A%2F%2Fhackney.foodbank.org.uk%2F&usg=AFQjCNHY30le3sLkHt0VJGZL6ZRq6wagBA&cad=rja',
+        image: 'https://hackney.foodbank.org.uk/wp-content/uploads/sites/162/2016/01/warehouse_volunteers_20150330_0045-e1452785212962-237x235.jpg',
+        createdBy: users[2]
+      },{
+        name: 'Westminster Chapel',
+        location: { lat: 51.4988641,
+          lng: -0.2081405
+        },
+        type: 'Westminster Chapel',
+        url: 'http://www.westminsterchapel.org.uk/',
+        image: 'http://www.westminsterchapel.org.uk/wp-content/themes/westminster/images/westminster_logo_main.png',
+        createdBy: users[2]
+      },{
+        name: 'Oxfam Donation Point',
+        location: { lat: 51.4796261,
+          lng: -0.1925649
+        },
+        type: 'Donation Point',
+        url: 'http://www.oxfam.org.uk/',
+        image: 'http://loveincstatic.blob.core.windows.net/lovemoney/Oxfam%20PA-5199621.jpg',
+        createdBy: users[2]
       }])
       .then((foodBanks) => {
         console.log(`${foodBanks.length} food banks created!`);
@@ -86,8 +113,8 @@ User
             title: 'Bunch of clothes',
             separable: false,
             image: 'https://static.pexels.com/photos/322207/pexels-photo-322207.jpeg',
-            location: { lat: 51.521610,
-              lng: -0.059307
+            location: { lat: 51.521611,
+              lng: -0.059308
             },
             item: [{
               name: 'Belt',
@@ -110,15 +137,15 @@ User
             }],
             createdBy: users[2],
             comments: [{
-              text: 'This shit is boss',
+              text: 'Thank you for separating the items in the photo. Will definitely be sending an email to inquire whether the items have been reserved.',
               createdBy: users[1]
             }]
           },{
-            title: 'Loads of food',
+            title: 'Going on vacation, help us clean out our fridge!',
             separable: false,
             image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
-            location: { lat: -51.521610,
-              lng: -0.059307
+            location: { lat: -51.521613,
+              lng: -0.059304
             },
             item: [{
               name: 'Eggs',
@@ -135,26 +162,26 @@ User
             }],
             createdBy: users[2]
           },{
-            title: 'Loads of food',
+            title: 'Random Items',
             separable: false,
             image: 'https://images.unsplash.com/photo-1418669112725-fb499fb61127?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',
-            location: { lat: -51.521610,
-              lng: -0.059307
+            location: { lat: -51.521612,
+              lng: -0.059306
             },
             item: [{
-              name: 'Eggs',
+              name: 'Food',
               type: 'food',
               perishable: true,
               image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
               claimed: false
             },{
-              name: 'Sausage',
+              name: 'Clothes',
               type: 'food',
               perishable: true,
               image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
               claimed: false
             }],
-            createdBy: users[2]
+            createdBy: users[1]
           },{
             title: 'Loads of food',
             separable: false,
@@ -175,7 +202,49 @@ User
               image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Food_into_a_refrigerator_-_20111002.jpg',
               claimed: false
             }],
+            createdBy: users[1]
+          },{
+            title: 'Childrens Items',
+            separable: false,
+            image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',
+            location: { lat: -51.521615,
+              lng: -0.059307
+            },
+            item: [{
+              name: 'Clothing for Infants and Toddlers',
+              type: 'clothing',
+              perishable: false,
+              image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',
+              claimed: false
+            },{
+              name: 'Toys',
+              type: 'other',
+              perishable: false,
+              image: 'http://maxpixel.freegreatpicture.com/static/photo/1x/Bobby-Car-Childrens-Vehicles-Toys-Bobby-Car-Races-268380.jpg',
+              claimed: false
+            }],
             createdBy: users[2]
+          },{
+            title: 'Childrens Items',
+            separable: false,
+            image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',
+            location: { lat: -51.521615,
+              lng: -0.059307
+            },
+            item: [{
+              name: 'Clothing for Infants and Toddlers',
+              type: 'clothing',
+              perishable: false,
+              image: 'https://media.defense.gov/2014/Jul/30/2000829099/670/394/0/140728-F-TB066-025.JPG',
+              claimed: false
+            },{
+              name: 'Toys',
+              type: 'other',
+              perishable: false,
+              image: 'http://maxpixel.freegreatpicture.com/static/photo/1x/Bobby-Car-Childrens-Vehicles-Toys-Bobby-Car-Races-268380.jpg',
+              claimed: false
+            }],
+            createdBy: users[0]
           }])
           .then((posts) => {
             console.log(`${posts.length} posts created!`);
