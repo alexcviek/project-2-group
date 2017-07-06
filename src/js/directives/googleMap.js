@@ -51,11 +51,11 @@ function googleMap() {
 
       function addPostMarker(post) {
         var iconCat = {
-          url: './images/011-lucky-cat-toy.png',
-          size: new google.maps.Size(71, 71),
+          url: './images/cat-whiskers (1).png',
+          size: new google.maps.Size(100, 100),
           origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(0, 32),
-          scaledSize: new google.maps.Size(50, 50)
+          anchor: new google.maps.Point(0, 0),
+          scaledSize: new google.maps.Size(40, 40)
         };
         const marker = new google.maps.Marker({
           icon: iconCat,
@@ -78,8 +78,8 @@ function googleMap() {
         const image = post.imageSRC;
 
         infowindow = new google.maps.InfoWindow({
-          content: `<a href="/posts/${id}">Hello I am ${title}. CHEESE.
-          <img src="${image}"></a>`
+          content: `<a href="/posts/${id}">${title}, </a>`,
+          pixelOffset: new google.maps.Size(-29, 13)
 
         });
         infowindow.open(map, marker);
@@ -98,11 +98,11 @@ function googleMap() {
 
       function addFoodBankMarker(foodBank) {
         var iconFoodBank = {
-          url: './images/012-sausage-2.png',
+          url: './images/001-dog-paw.png',
           size: new google.maps.Size(71, 71),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(0, 32),
-          scaledSize: new google.maps.Size(50, 50)
+          scaledSize: new google.maps.Size(15, 15)
         };
         const marker = new google.maps.Marker({
           icon: iconFoodBank,
@@ -124,7 +124,8 @@ function googleMap() {
         const id = foodBank.id;
 
         infowindow = new google.maps.InfoWindow({
-          content: `<a class="map-foodbank-info" href="/foodbanks/${id}">${name}</a>`
+          content: `<a class="map-foodbank-info" href="/foodbanks/${id}">${name}</a>`,
+          pixelOffset: new google.maps.Size(-28, 0)
 
         });
         infowindow.open(map, marker);
@@ -137,8 +138,16 @@ function googleMap() {
           scaleControl: false,
           scrollwheel: false
         });
+        var iconCat = {
+          url: './images/cat-whiskers (1).png',
+          size: new google.maps.Size(100, 100),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(0, 0),
+          scaledSize: new google.maps.Size(40, 40)
+        };
         smallMapMarker = new google.maps.Marker({
           position: scope.center || { lat: 51.515704, lng: -0.072829 },
+          icon: iconCat,
           map
         });
       }
