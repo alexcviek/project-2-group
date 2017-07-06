@@ -8,6 +8,37 @@ body{
   }
   h1{
     font-size: 60px;
+    margin-bottom: 10px;
+  }
+  main{
+    min-height: 85vh;
+  }
+  footer{
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+    height: 50px;
+    margin-bottom: 0;
+    margin-top: 40px;
+    p,a{
+      line-height: 50px;
+      color: white;
+      font-size: 16px;
+      text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
+      font-family: 'Josefin Sans', sans-serif;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    a:hover{
+      text-decoration: none;
+      color: #5c8a8a;
+    }
+    a:visited{
+      color: white;
+    }
+
   }
 }
 nav{
@@ -20,7 +51,6 @@ nav{
       list-style: none;
       display: inline;
       margin-right: 20px;
-
       a {
         color: white;
         font-size: 16px;
@@ -35,11 +65,20 @@ nav{
         text-decoration: none;
         color: #5c8a8a;
       }
+      a:visited{
+        color: white;
+      }
     }
     .right{
       float: right;
     }
   }
+}
+.no-results{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #36C9A3;
 }
 
 .navbarColor {
@@ -97,10 +136,12 @@ nav{
   height: 250px;
   width: 250px;
   background-color: ghostwhite;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 .map-large{
-  width: 100%;
-  height: 70vh;
+  margin: 25px;
+  width: 97%;
+  height: 60vh;
 }
 .tomato {
   height: 92vh;
@@ -161,7 +202,7 @@ form {
 }
 
 .map-section{
-  width: 60%;
+  width: 100%;
   height: 45vh;
   background-color: #fcfc1b;
 }
@@ -182,11 +223,12 @@ form {
 
 .showUser {
   width: 400px;
+  display: inline-block;
   height: 520px;
   margin-top: 5%;
   margin-left: 15px;
   background: linear-gradient(to bottom right, #fcfc1b, #eded95);
-  float: left;
+  // float: left;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 
   .userImage {
@@ -211,11 +253,19 @@ aside {
   margin-left: 20px;
 }
 
-.clowder {
-  background-repeat: no-repeat;
-  background-image: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/19693454_10210292169645951_3064037528385373931_o.jpg?oh=45dbd1b0c36a082f1ab8f205eb18e7b5&oe=5A112D2E");
-  background-size: 500px 100px;
+// .clowder {
+//   background-repeat: no-repeat;
+//   background-image: url("https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/19693454_10210292169645951_3064037528385373931_o.jpg?oh=45dbd1b0c36a082f1ab8f205eb18e7b5&oe=5A112D2E");
+//   background-size: 500px 100px;
+//
+// }
 
+.userEmail {
+  padding: 20px;
+}
+
+.email-btn {
+  margin: 10px;
 }
 
 .showPosts {
@@ -225,25 +275,27 @@ width: 600px;
 display: inline-block;
 text-shadow: 1px 1px 1px white,
                1px 1px 3px black;
+display: inline-block;
 }
 
 
 .dashboardImage {
   width: 90%;
-  height: 75vh;
+  // height: 75vh;
 }
 
 .carouselSection {
   background-color: white;
   width: 100%;
-  height: 55vh;
+  // height: 55vh;
   margin-bottom: 150px;
   div {
     div {
       div {
         .slideText {
+          font-family: poppins, sans-serif;
           font-size: 20px;
-          background-color: rgba(95, 100, 109, 0.8);
+          background-color: rgba(95, 100, 109, 0.4);
         }
       }
     }
@@ -264,6 +316,7 @@ a.right.carousel-control, .left.carousel-control {
 
 .card {
   border-radius: 5px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 .map-foodbank-info{
   color: #000;
@@ -362,4 +415,12 @@ a.right.carousel-control, .left.carousel-control {
     background-color: #3b5998;
     border: 1px solid #3b5998;
   }
+}
+
+.float-left {
+  float: left;
+}
+
+.btn-default {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }

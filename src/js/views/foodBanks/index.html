@@ -3,10 +3,13 @@
 <h2>Food Banks</h2>
 <a ui-sref="foodBanksNew" class="btn btn-success new-foodbank-btn" ng-if="main.isAuthenticated()"> + Add a new Food Bank</a>
 
+<google-map class="map-large large" center="foodBanksIndex.center" food-banks="foodBanksIndex.filtered"></google-map>
+
 <div class="container">
-  <google-map class="container map-large large" center="foodBanksIndex.center" food-banks="foodBanksIndex.filtered"></google-map>
+
 
   <input type="text" class="search" ng-model="foodBanksIndex.q" placeholder="F i l t e r   b y    n a  m e ...">
+  <p class="no-results" ng-show="foodBanksIndex.filtered.length === 0">Sorry, no results for your search!</p>
   <section class="row">
     <div class="col-lg-6 foodbank-tile" ng-repeat="foodBank in foodBanksIndex.filtered">
       <div class="foodbank-image card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url({{ foodBank.imageSRC }})">

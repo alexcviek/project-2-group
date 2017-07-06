@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <div class="row">
-  <form class="col-lg-4" ng-submit="postsEdit.create()" name="postsEdit.postForm" novalidate>
+  <form class="col-lg-4" ng-submit="postsEdit.update()" name="postsEdit.postForm" novalidate>
+    <h2>Edit post</h2>
     <div class="form-group">
       <label for="title">Title</label>
       <input class="form-control" type="text" id="title" name="title" ng-model="postsEdit.post.title" value="{{ postsEdit.post.title }}" required>
@@ -28,35 +29,33 @@
 
     <h2>Edit Items:</h2>
     <ul>
-      <li ng-repeat="item in postsEdit.post.items">{{ item.name }} ({{ item.type }})<button class="button" type="button" ng-click="postsEdit.deleteItem(item)">del</button></li>
+      <li ng-repeat="item in postsEdit.post.items">{{ item.name }} ({{ item.type }})<button class="btn btn-danger" type="button" ng-click="postsEdit.deleteItem(item)">X</button></li>
     </ul>
     <div class="form-group">
+      <div class="form-group">
+        <label for="nameItem">Item name: </label>
+        <input class="form-control" ng-model="postsEdit.newItem.name">
+      </div>
+      <div class="form-group">
+        <label for="itemType">Item Type: </label>
+        <select class="form-control" ng-model="postsEdit.newItem.type">
+          <option value="clothes">Clothes</option>
+          <option value="food">Food</option>
+          <option value="baby">Baby Item</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
 
-      <label for="nameItem">Item name: </label>
-      <input ng-model="postsEdit.newItem.name">
+        <label for="itemPerishable">Is the item perishable?: </label>
+        <select class="form-control" ng-model="postsEdit.newItem.perishable">
+          <option ng-value="true">Yes</option>
+          <option ng-value="false">No</option>
+        </select>
+      </div>
+      <button class="btn btn-default" type="button" ng-click="postsEdit.addItem()">Add</button>
 
-      <label for="itemType">Item Type: </label>
-      <select ng-model="postsEdit.newItem.type">
-        <option value="clothes">Clothes</option>
-        <option value="food">Food</option>
-        <option value="baby">Baby Item</option>
-        <option value="other">Other</option>
-      </select>
-
-      <label for="itemPerishable">Is the item perishable?: </label>
-      <select ng-model="postsEdit.newItem.perishable">
-      <option ng-value="true">Yes</option>
-      <option ng-value="false">No</option>
-      </select>
-
-      <!-- <label for="itemImage">Item Image: </label>
-      <input ng-model="postsEdit.post.item.image"> -->
-
-
-      <button class="button" type="button" ng-click="postsEdit.addItem()">Add</button>
     </div>
-
-    {{ postsNew.post }}
-    <button class="button">Add</button>
+    <button class="btn btn-primary">Submit changes</button>
   </form>
 </div>
