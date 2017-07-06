@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+<div class="background-image">
 
 <section class="showUser">
-  <h2>Hello, {{ usersShow.user.username }}!</h2>
+  <h2>{{ usersShow.user.username }}!</h2>
 
   <img ng-src="{{ usersShow.user.imageSRC }}" alt="profile.user.username">
   <h2>{{ usersShow.user.username }}</h2>
   <a href="mailto:{{ usersShow.user.email }}" ng-if="usersShow.user.email">{{ usersShow.user.email }}</a><br>
   <button class="btn btn-default" ui-sref="usersEdit({ id: usersShow.user.id })">Edit Profile</button>
+</section>
 
 
-{{ user.posts }}
+  <!-- {{ user.posts }} -->
 
 </section>
 <section class="section container">

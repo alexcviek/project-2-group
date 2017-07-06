@@ -13,5 +13,6 @@
       <h2>{{ foodBank.name }}</h2>
       <button class="btn btn-default" ui-sref="foodBanksShow({ id: foodBank.id })">View</button> <!--button directing to show-->
     </div>
+      <p ng-hide="foodBanksIndex">Sorry, no results for your search!</p>
   </section>
 </div>

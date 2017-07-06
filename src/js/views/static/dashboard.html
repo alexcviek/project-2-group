@@ -28,7 +28,6 @@
     <h2>Volunteering Opportunities in your area</h2>
     <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
         <a href="{{ meetups.event_url}}" target="_blank"><p><strong>{{ meetups.name }}</strong></p></a>
-        <p ng-bind-html="{{ meetups.description | limitTo: 150 }}"></p>
     </div>
   </aside>
 </section>
