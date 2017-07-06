@@ -50,6 +50,7 @@ nav{
   border-radius: 14px;
 }
 
+
 .comments-image {
   height: 60px;
   width: 40px;
@@ -160,9 +161,9 @@ form {
 }
 
 .map-section{
-  width: 100%;
+  width: 60%;
   height: 45vh;
-  background-color: #b3cccc;
+  background-color: #fcfc1b;
 }
 .dashboardAside{
   background-color: #fafafa;
@@ -180,41 +181,64 @@ form {
 }
 
 .showUser {
-  width: 600px;
-  height: 520px;
+  width: 400px;
+  height: 560px;
   margin-top: 5%;
-  margin-left: 25%;
-  padding-bottom: 80px;
+  margin-left: 5%;
   background: linear-gradient(to bottom right, #fcfc1b, #eded95);
-
+  float: left;
+  .userImage {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 50px
+  }
 }
+
+.showPosts {
+margin-top: 30px;
+height: 250px;
+width: 600px;
+display: inline-block;
+text-shadow: 1px 1px 1px white,
+               1px 1px 3px black;
+}
+
+
 .dashboardImage {
-  width: 60%;
-  height: 45vh;
+  width: 90%;
+  height: 75vh;
 }
 
 .carouselSection {
   background-color: white;
   width: 100%;
-  height: 45vh;
+  height: 55vh;
+  margin-bottom: 150px;
   div {
     div {
       div {
         .slideText {
           font-size: 20px;
-          background-color: rgba(95, 100, 109, 0.6);
-          padding: 0 40px;
+          margin-bottom: 20%;
+          margin-left: 50%;
+          height: 80%;
+          padding: 60px;
+          width: 60%;
+          float: right;
+          background-color: rgba(95, 100, 109, 0.8);
         }
       }
     }
   }
 }
 
-.right.carousel-control, .left.carousel-control {
+a.right.carousel-control, .left.carousel-control {
   opacity: .046;
-  filter:alpha(opacity=0); /* IE support */
+  max-width: 20px;
+  filter:alpha(opacity=0);
   color: black;
 }
+
 
 .inline-block {
   display: inline-block;
