@@ -7,7 +7,7 @@
 
 <! <div class="container"> -->
 <div class="container">
-  <section class="carouselSection col-lg-12">
+  <section class="carouselSection col-lg-12 animated slideInDown">
     <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
         <div class="wrapper">
@@ -23,11 +23,11 @@
 
 <div class="container">
   <section class="row">
-    <google-map class="map-section large col-lg-8" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
+    <google-map class="map-section large col-lg-8 animated slideInUp" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
     <aside class="dashboardAside col-lg-4">
       <h2>Volunteering Opportunities in your area</h2>
       <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
-          <a href="{{ meetups.event_url}}" target="_blank"><p class="meetups">{{ meetups.name }}</p></a>
+          <a  class="meetup-a" href="{{ meetups.event_url}}" target="_blank"><p class="meetups">{{ meetups.name }}</p></a>
       </div>
     </aside>
   </section>

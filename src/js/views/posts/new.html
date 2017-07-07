@@ -37,7 +37,7 @@
       <img ng-src="{{ postsNew.post.base64 }}">
     </div>
 
-    <h2>Add Items to give away:</h2>
+    <h2>Add Items to donate:</h2>
     <ul>
       <li ng-repeat="item in postsNew.post.items">{{ item.name }} ({{ item.type }})<button class="btn btn-danger" type="button" ng-click="postsNew.deleteItem(item)">X</button></li>
     </ul>
