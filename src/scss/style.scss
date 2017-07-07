@@ -11,7 +11,7 @@ body{
     margin-bottom: 10px;
   }
   main{
-    overflow: hidden;
+    overflow: visible;
     min-height: calc(100vh - 170px);
   }
   footer{
@@ -200,9 +200,7 @@ form {
 }
 
 .map-section{
-  width: 100%;
   height: 45vh;
-  background-color: #fcfc1b;
 }
 .dashboardAside{
   background-color: #fafafa;
@@ -238,14 +236,43 @@ form {
 
 aside {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  padding-top: 0;
   h2 {
     text-align: center;
     color: #36C9A3;
+    position: sticky; top: (10px);
+    z-index: 2;
+    background-color: #fafafa;
+    top: 0;
   }
-  .meetups {
+  .meetups > p {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+  .meetups > p:hover {
+      color: #000;
+    }
+  .meetups > p:before {
     text-align: center;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
-
+  .meetups > p:hover:before {
+    text-decoration: underline;
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
 }
 .margin-left {
   margin-left: 20px;
@@ -267,13 +294,13 @@ aside {
 }
 
 .showPosts {
-margin-top: 30px;
-height: 250px;
-width: 600px;
-display: inline-block;
-text-shadow: 1px 1px 1px white,
-               1px 1px 3px black;
-display: inline-block;
+  margin-top: 30px;
+  height: 250px;
+  width: 600px;
+  display: inline-block;
+  text-shadow: 1px 1px 1px white,
+  1px 1px 3px black;
+  display: inline-block;
 }
 
 
@@ -421,4 +448,33 @@ a.right.carousel-control, .left.carousel-control {
 
 .btn-default {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+
+footer{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
+  height: 50px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  p,a{
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+    text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  a:hover{
+    text-decoration: none;
+    color: #5c8a8a;
+  }
+  a:visited{
+    color: white;
+  }
+
 }
