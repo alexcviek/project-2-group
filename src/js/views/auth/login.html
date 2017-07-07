@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<section class="row">
+<section class="row animated slideInDown">
   <form class="col-lg-4" ng-submit="login.submit()" name="login.loginForm" novalidate>
     <h2>Login</h2>
     <div class="form-group">
@@ -22,7 +22,7 @@
 </section>
 <div class="row">
   <form class="ouath-btns">
-    <button class="github" ng-click="login.authenticate('github')"><i class="fa fa-github" aria-hidden="true"></i> Login with Github</button>
-    <button class="facebook" ng-click="login.authenticate('facebook')"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with FB</button>
+    <button class="github animated slideInLeft" ng-click="login.authenticate('github')"><i class="fa fa-github" aria-hidden="true"></i> Login with Github</button>
+    <button class="facebook animated slideInRight" ng-click="login.authenticate('facebook')"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with FB</button>
   </form>
 </div>
