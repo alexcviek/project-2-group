@@ -33,6 +33,8 @@ function showPostsRoute(req, res, next) {
 }
 
 function updatePostsRoute(req, res, next){
+  if(req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.user;
   Post
     .findById(req.params.id)
     .exec()

@@ -9,14 +9,14 @@
     <google-map class="small" center="postsShow.post.location"></google-map>
 
     <div class="post-block post-items">
-      <h2>Included items</h2>
+      <h3>Included items</h3>
       <div class="post-items">
         <p ng-repeat="item in postsShow.post.items">{{ item.name }}</p>
       </div>
     </div>
 
     <div class="comments">
-      <h2>Comments</h2>
+      <h4>Comments</h4>
       <div class="row card post-comment-card" ng-repeat="comment in postsShow.post.comments track by $index">
         <div class="col-xs-3 user-info">
           <a ui-sref="usersShow({ id: comment.createdBy.id })">
@@ -29,9 +29,11 @@
             <button class="comment-btn" ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </div>
           <form ng-if="main.isAuthenticated()" ng-submit="postsShow.addComment()">
+            <div class="form-group">
             <label>Add comment</label>
-            <textarea ng-model="postsShow.newComment.text"></textarea>
+            <textarea class="form-control" ng-model="postsShow.newComment.text"></textarea>
             <button class="btn btn-primary">Comment</button>
+          </div>
           </form>
     </div>
 

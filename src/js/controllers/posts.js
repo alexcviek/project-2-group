@@ -77,13 +77,6 @@ function PostsShowCtrl(Post, PostComment, $stateParams, $state, $auth, User, $ui
     });
   }
 
-  // function postsDelete() {
-  //   vm.post
-  //     .$remove()
-  //     .then(() => $state.go('postsIndex'));
-  // }
-  //
-  // vm.delete = postsDelete;
   function openModal(){
     $uibModal.open({
       templateUrl: 'js/views/partials/postDeleteModal.html',
@@ -130,7 +123,9 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   vm.post = Post.get($stateParams);
 
   function postsUpdate() {
+    console.log('updating');
     if (vm.postForm.$valid) {
+      console.log('form is valid');
       vm.post
       .$update()
       .then(() => $state.go('postsShow', $stateParams));
@@ -138,6 +133,21 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   }
 
   vm.update = postsUpdate;
+
+  function addItem() {
+    console.log(vm.newItem);
+    vm.post.items.push(vm.newItem);
+    vm.newItem = {};
+  }
+
+  vm.addItem = addItem;
+
+  function deleteItem(item) {
+    const itemsIndex = vm.post.items.indexOf(item);
+    vm.post.items.splice(itemsIndex, 1);
+  }
+
+  vm.deleteItem = deleteItem;
 }
 
 PostsDeleteCtrl.$inject = ['$uibModalInstance', 'post', '$state'];
