@@ -28,13 +28,12 @@ function github(req, res, next) {
     });
   })
   .then((profile) => {
-    return User.findOne({ $or: [{ githubId: profile.id },{facebookId: profile.id },{ email: profile.email }] })
+    return User.findOne({ githubId: profile.id })
       .then((user) => {
         if(!user) {
           user = new User({
             username: profile.login,
-            email: profile.email,
-            image: profile.picture.data.url
+            email: profile.email
           });
         }
 
