@@ -55,7 +55,10 @@ function github(req, res, next) {
       message: `Welcome back, ${user.username}`
     });
   })
-  .catch(next);
+  .catch(err => {
+    console.log(err);
+    next();
+  });
 }
 
 function facebook(req, res, next) {
