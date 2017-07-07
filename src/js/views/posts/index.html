@@ -3,8 +3,8 @@
 <div class="container">
 
   <div>
-    <h1>Cat's out of the bag!</h1>
-    <input type="text" class="search" name="txtBox" ng-model="postsIndex.q" placeholder="F i l t e r  b y  n a m e ...">
+    <h1 class="animated slideInLeft">Cat's out of the bag!</h1>
+    <input type="text" class="search animated slideInRight" name="txtBox" ng-model="postsIndex.q" placeholder="F i l t e r  b y  n a m e ...">
   </div>
 
 <div class="inline-block">
@@ -16,7 +16,7 @@
 
 
 
-<section class="row">
+<section class="row animated slideInUp">
   <div class="col-lg-6 post-tile" ng-repeat="post in postsIndex.filtered">
     <div class="postImage card" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url({{ post.imageSRC }})">
       <div class="post-text">
