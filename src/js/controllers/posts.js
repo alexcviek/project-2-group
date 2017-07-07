@@ -123,7 +123,9 @@ function PostsEditCtrl(Post, $stateParams, $state) {
   vm.post = Post.get($stateParams);
 
   function postsUpdate() {
+    console.log('updating');
     if (vm.postForm.$valid) {
+      console.log('form is valid');
       vm.post
       .$update()
       .then(() => $state.go('postsShow', $stateParams));

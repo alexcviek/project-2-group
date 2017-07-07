@@ -15,9 +15,9 @@ const postSchema = new mongoose.Schema({
   },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   items: [{
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-    perishable: { type: Boolean, required: true }
+    name: { type: String  },
+    type: { type: String },
+    perishable: { type: Boolean }
   }],
   comments: [commentSchema]
 });

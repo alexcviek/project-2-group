@@ -25,6 +25,15 @@
       <label for="image">Update image</label>
       <input class="form-control" base64 type="file" name="image" id="image" ng-model="postsEdit.post.base64" required>
       <img ng-src="{{ postsEdit.post.imageSRC }}">
+      <img ng-src="{{ postsEdit.post.base64 }}">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input autocomplete type="text" class="form-control" location="postsEdit.post.location" ng-model="postsEdit.post.address" name="location" required>
+      <div ng-messages="postsEdit.postForm.location.$error" ng-show="postsEdit.postForm.$submitted || postsEdit.postForm.location.$touched">
+        <div ng-message="required">Location is required.</div>
+      </div>
     </div>
 
     <h2>Edit Items:</h2>
