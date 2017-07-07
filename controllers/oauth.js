@@ -10,7 +10,7 @@ function github(req, res, next) {
   return rp({
     method: 'POST',
     url: oauth.github.accessTokenURL,
-    qs: {
+    body: {
       client_id: oauth.github.clientId,
       client_secret: oauth.github.clientSecret,
       code: req.body.code
@@ -55,10 +55,7 @@ function github(req, res, next) {
       message: `Welcome back, ${user.username}`
     });
   })
-  .catch(err => {
-    console.log(err);
-    next();
-  });
+  .catch(next);
 }
 
 function facebook(req, res, next) {
