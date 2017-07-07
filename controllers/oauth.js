@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
 function github(req, res, next) {
+  console.log('req.body >>>>>>>>>', req.body);
   return rp({
     method: 'POST',
     url: oauth.github.accessTokenURL,
@@ -17,6 +18,7 @@ function github(req, res, next) {
     json: true
   })
   .then((token) => {
+    console.log('token >>>>>>>>>', token);
     return rp({
       method: 'GET',
       url: oauth.github.profileURL,
@@ -28,6 +30,7 @@ function github(req, res, next) {
     });
   })
   .then((profile) => {
+    console.log('profile >>>>>>>>>', profile);
     return User.findOne({ githubId: profile.id })
       .then((user) => {
         if(!user) {
@@ -43,7 +46,7 @@ function github(req, res, next) {
       });
   })
   .then((user) => {
-    console.log(user);
+    console.log('user >>>>>>>>>', user);
     const payload = { userId: user.id };
     const token   = jwt.sign(payload, secret, { expiresIn: '1hr' });
 
