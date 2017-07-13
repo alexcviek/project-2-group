@@ -11,7 +11,6 @@ const groupIndex = (req, res) => {
       page: 150,
       category: 4,
       key: process.env.MEETUP_API_KEY
-
     },
     json: true
   })
@@ -36,11 +35,6 @@ const groupIndex = (req, res) => {
   })
   .then((data) => {
     res.status(200).json(data.results);
-    // data.results.forEach((event) => {
-    // console.log(data.results);
-    // });
-    // res.render('hookup', {data: data.results});
-    // // res.end();
   })
   .catch((err) => {
     res.status(500).json(err);
