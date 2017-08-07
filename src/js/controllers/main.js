@@ -1,12 +1,13 @@
 angular
-  .module('sausageApp')
-  .controller('MainCtrl', MainCtrl);
+.module('sausageApp')
+.controller('MainCtrl', MainCtrl);
 
 MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
 function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
 
   vm.isAuthenticated = $auth.isAuthenticated;
+  vm.isNavCollapsed = true;
 
   vm.slides = [{
     image: 'https://images.unsplash.com/photo-1468664093569-795a12e8b31c?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=',

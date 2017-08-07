@@ -43,7 +43,6 @@ body{
   }
 }
 nav{
-  height: 60px;
   ul{
     text-align: left;
     margin: 0;
@@ -475,4 +474,30 @@ footer{
     color: white;
   }
 
+}
+@media only screen and (max-width: 768px){
+  nav{
+    ul{
+      padding: 0;
+      li{
+        display: block;
+      }
+      .right{
+        float: left;
+      }
+    }
+    .navbar-toggle{
+      border-style: none;
+      float: left;
+    }
+    .logo-nav{
+      display: none;
+    }
+  }
+  .navbar-default .navbar-toggle:hover{
+    background-color: transparent;
+  }
+  .navbar-default .navbar-toggle:focus{
+    background-color: transparent;
+  }
 }
