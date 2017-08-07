@@ -59,6 +59,10 @@ nav{
         font-family: 'Josefin Sans', sans-serif;
         text-transform: uppercase;
         position: relative;
+        &.active {
+          color: grey;
+          text-decoration: none;
+        }
         img {
           height: 50px;
         }
@@ -69,7 +73,7 @@ nav{
           height: 2px;
           bottom: -2px;
           left: 0;
-          background-color: #5c8a8a;
+          background-color: #fff;
           visibility: hidden;
           -webkit-transform: scaleX(0);
           transform: scaleX(0);
@@ -79,15 +83,12 @@ nav{
       }
       a:hover{
         text-decoration: none;
-        color: #5c8a8a;
+        color: #fff;
         &:before {
           visibility: visible;
           -webkit-transform: scaleX(1);
           transform: scaleX(1);
         }
-      }
-      a:visited{
-        color: white;
       }
     }
     .right{
