@@ -18,7 +18,7 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
     const params = { title: vm.q };
     const category = { type: vm.category };
 
-    // vm.filtered = filterFilter(vm.all, params);
+    vm.filtered = filterFilter(vm.all, params);
     vm.filtered = filterFilter(vm.all, category);
   }
 

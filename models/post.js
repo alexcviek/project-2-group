@@ -13,6 +13,7 @@ const postSchema = new mongoose.Schema({
   location: { lat: { type: Number, required: true },
     lng: { type: Number, required: true }
   },
+  type: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   items: [{
     name: { type: String  },

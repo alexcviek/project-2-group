@@ -116,6 +116,7 @@ User
             location: { lat: 51.521611,
               lng: -0.059308
             },
+            type: 'clothes',
             items: [{
               name: 'Belt',
               type: 'clothes',
@@ -147,6 +148,7 @@ User
             location: { lat: -51.521613,
               lng: -0.059304
             },
+            type: 'food',
             items: [{
               name: 'Eggs',
               type: 'food',
