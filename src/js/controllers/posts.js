@@ -16,11 +16,15 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
 
   function filterPosts(){
     const params = { title: vm.q };
-    vm.filtered = filterFilter(vm.all, params);
+    const category = { type: vm.category };
+
+    // vm.filtered = filterFilter(vm.all, params);
+    vm.filtered = filterFilter(vm.all, category);
   }
 
   $scope.$watchGroup([
-    () => vm.q
+    () => vm.q,
+    () => vm.category
   ], filterPosts);
 
 }

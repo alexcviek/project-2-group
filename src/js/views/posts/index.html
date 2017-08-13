@@ -4,26 +4,34 @@
 
   <div>
     <h1 class="animated slideInLeft">Cat's out of the bag!</h1>
-    <input type="text" class="search animated slideInRight" name="txtBox" ng-model="postsIndex.q" placeholder="F i l t e r  b y  n a m e ...">
+    <input type="text" class="search animated slideInRight" name="txtBox" ng-model="postsIndex.q" placeholder="Filter by name...">
+  </div>
+  <div>
+      <select ng-model="postsIndex.category">
+        <option value="Clothes">Clothes</option>
+        <option value="Food">Food</option>
+        <option value="baby item">Baby Item</option>
+        <option value="other">Other</option>
+      </select>
   </div>
 
-<div class="inline-block">
-  <h4 ng-if="main.isAuthenticated()" >Or:</h4>
-  <a class="btn btn-success" ng-if="main.isAuthenticated()" ui-sref="postsNew"> + Add a new Item</a>
-</div>
-    <p class="no-results" ng-show="postsIndex.filtered.length === 0">Sorry, no results for your search!</p>
-
-
-
-
-<section class="row animated slideInUp">
-  <div class="col-lg-6 post-tile" ng-repeat="post in postsIndex.filtered">
-    <div class="postImage card" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url({{ post.imageSRC }})">
-      <div class="post-text">
-      <h2>{{ post.title }}</h2>
-      <a ui-sref="postsShow({ id: post.id })">View</a> <!--button directing to show-->
-    </div>
-    </div>
+  <div class="inline-block">
+    <h4 ng-if="main.isAuthenticated()" >Or:</h4>
+    <a class="btn btn-success" ng-if="main.isAuthenticated()" ui-sref="postsNew"> + Add a new Item</a>
   </div>
-</section>
+  <p class="no-results" ng-show="postsIndex.filtered.length === 0">Sorry, no results for your search!</p>
+
+
+
+
+  <section class="row animated slideInUp">
+    <div class="col-lg-6 post-tile" ng-repeat="post in postsIndex.filtered">
+      <div class="postImage card" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url({{ post.imageSRC }})">
+        <div class="post-text">
+          <h2>{{ post.title }}</h2>
+          <a ui-sref="postsShow({ id: post.id })">View</a> <!--button directing to show-->
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
