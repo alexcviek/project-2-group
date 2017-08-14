@@ -2,9 +2,9 @@
 
 <section class="container">
   <div class="row">
-    <div class="col-lg-6 foodbank-details">
-      <h2>{{ foodBanksShow.foodBank.name }}</h2>
+    <div class="col-sm-12 foodbank-details">
       <google-map class="small map-foodbank-show" center="foodBanksShow.foodBank.location"></google-map>
+      <h2>{{ foodBanksShow.foodBank.name }}</h2>
       <p>Address: {{ foodBanksShow.foodBank.address }} </p>
       <p>Created by: <a ui-sref="usersShow({ id: foodBanksShow.foodBank.createdBy.id })">{{ foodBanksShow.foodBank.createdBy.username }}</a></p>
 
@@ -13,9 +13,6 @@
       <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ui-sref="foodBanksEdit({ id: foodBanksShow.foodBank.id })">Edit</button>
       <button ng-if="main.isAuthenticated() && main.currentUserId === foodBanksShow.foodBank.createdBy.id" class="btn btn-default" ng-click="foodBanksShow.delete()">Delete</button>
 
-    </div>
-    <div class="col-lg-6">
-      <img ng-src="{{ foodBanksShow.foodBank.imageSRC }}">
     </div>
   </div>
 </section>

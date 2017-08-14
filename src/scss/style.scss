@@ -332,11 +332,9 @@ a.right.carousel-control, .left.carousel-control {
 .foodbank-tile{
   margin: 20px 0;
   .foodbank-image{
-    width: 470px;
-    height: 300px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 90%;
+    height: 150px;
+    background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
     margin: 0 auto;
     position: relative;
     .foodbank-text{
@@ -360,7 +358,8 @@ a.right.carousel-control, .left.carousel-control {
 }
 .foodbank-details{
   .map-foodbank-show{
-    width: 100%;
+    width: 90%;
+    margin: 50px auto;
   }
   a{
     color: #000;
