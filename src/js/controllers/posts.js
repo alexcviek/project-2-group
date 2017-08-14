@@ -19,7 +19,7 @@ function PostsIndexCtrl(Post, filterFilter, $scope){
     const category = { type: vm.category };
 
     vm.filtered = filterFilter(vm.all, params);
-    vm.filtered = filterFilter(vm.all, category);
+    vm.filtered = filterFilter(vm.filtered, category);
   }
 
   $scope.$watchGroup([
