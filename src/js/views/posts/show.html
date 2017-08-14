@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
-
 <h2 class="animated slideInLeft">{{ postsShow.post.title }}</h2>
-<a class="email-btn btn btn-primary animated slideInRight" href="mailto:{{ postsShow.post.createdBy.email }} Subject=Hey, I am interested in {{ postsShow.post.title }}" target="_top">Email me about this!</a>
-<section>
+<a class="email-btn btn btn-primary animated slideInRight" href="mailto:{{ postsShow.post.createdBy.email }}?subject=Hey, I am interested in {{ postsShow.post.title }}" target="_top">Email me about this!</a>
+<div class="row">
   <div class="post col-lg-6 card animated slideInUp">
-    <h4>Post created by   <a ui-sref="usersShow({ id: postsShow.post.createdBy.id })">{{ postsShow.post.createdBy.username }}</a></h4>
+    <h4>Post created by <a ui-sref="usersShow({ id: postsShow.post.createdBy.id })">{{ postsShow.post.createdBy.username }}</a></h4>
     <img class="img-responsive img-thumbnail" ng-src="{{ postsShow.post.imageSRC }}">
     <google-map class="small" center="postsShow.post.location"></google-map>
 
@@ -41,4 +39,4 @@
         <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ui-sref="postsEdit({ id: postsShow.post.id })">Edit</button>
         <button ng-if="main.isAuthenticated() && main.currentUserId === postsShow.post.createdBy.id" class="btn btn-default" ng-click="postsShow.openModal()">Delete</button>
   </div>
-</section>
+</div>

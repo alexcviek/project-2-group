@@ -13,6 +13,7 @@ body{
   main{
     overflow: visible;
     min-height: calc(100vh - 50px);
+    margin-bottom: 50px;
   }
 }
 nav{
@@ -176,6 +177,7 @@ nav{
 }
 
 .post {
+  margin: 0 auto;
   .map {
     margin-top: 20px;
     width: 90%;

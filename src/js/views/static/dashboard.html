@@ -2,7 +2,7 @@
 
 <div class="container first-row">
   <div class="row">
-    <section class="carouselSection col-lg-6 animated slideInDown">
+    <section class="carouselSection col-lg-6">
       <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
         <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
           <div class="wrapper">
@@ -24,6 +24,6 @@
     </div>
   </div>
   <section class="row">
-    <google-map class="map-section large col-lg-12 col-sm-12 animated slideInUp" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
+    <google-map class="map-section large col-lg-12 col-sm-12" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
   </section>
 </div>
