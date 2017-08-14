@@ -139,9 +139,9 @@ nav{
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 .map-large{
-  margin: 25px;
-  width: 97%;
-  height: 60vh;
+  margin: 0 auto;
+  width: 90%;
+  height: 50vh;
 }
 .tomato {
   height: 92vh;
@@ -372,7 +372,7 @@ a.right.carousel-control, .left.carousel-control {
 .post-tile{
   margin: 20px 0;
   .postImage {
-    width: 500px;
+    width: 90%;
     height: 400px;
     background-position: center;
     background-size: cover;
