@@ -14,31 +14,6 @@ body{
     overflow: visible;
     min-height: calc(100vh - 50px);
   }
-  footer{
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: linear-gradient(to bottom right, #36C9A3, #b9f7f0);
-    height: 50px;
-    p,a{
-      line-height: 50px;
-      color: white;
-      font-size: 16px;
-      text-shadow: .1px 2px 2px rgba(0,0,0,0.3);
-      font-family: 'Josefin Sans', sans-serif;
-      text-transform: uppercase;
-      margin: 0;
-    }
-    a:hover{
-      text-decoration: none;
-      color: #5c8a8a;
-    }
-    a:visited{
-      color: white;
-    }
-
-  }
 }
 nav{
   margin: 0;
@@ -225,7 +200,6 @@ form {
 .dashboardAside{
   background-color: #fafafa;
   text-align: left;
-  float: right;
   height: 45vh;
   overflow: scroll;
   a {
@@ -306,23 +280,27 @@ aside {
   // height: 75vh;
 }
 
-.carouselSection {
-  background-color: white;
-  width: 100%;
-  // height: 55vh;
-  margin-bottom: 150px;
-  div {
+.first-row{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .carouselSection {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 50px;
     div {
       div {
-        .slideText {
-          font-family: poppins, sans-serif;
-          font-size: 20px;
-          background-color: rgba(95, 100, 109, 0.4);
+        div {
+          .slideText {
+            font-family: poppins, sans-serif;
+            font-size: 20px;
+            background-color: rgba(95, 100, 109, 0.4);
+          }
         }
       }
     }
   }
 }
+
 
 a.right.carousel-control, .left.carousel-control {
   opacity: .046;

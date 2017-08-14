@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 
-
-<!-- <h1>Meow, I'm dashboard! <img src="./images/logo4.png"></h1>
-
-
-
-<! <div class="container"> -->
-<div class="container">
-  <section class="carouselSection col-lg-12 animated slideInDown">
-    <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
-      <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
-        <div class="wrapper">
-          <img class="dashboardImage" ng-src="{{slide.image}}">
-          <div class="carousel-caption">
-            <p class="slideText">{{$index + 1}}. {{slide.text}}</p>
+<div class="container first-row">
+  <div class="row">
+    <section class="carouselSection col-lg-6 animated slideInDown">
+      <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="slide in main.slides track by $index" index="$index">
+          <div class="wrapper">
+            <img class="dashboardImage" ng-src="{{slide.image}}">
+            <div class="carousel-caption">
+              <p class="slideText">{{$index + 1}}. {{slide.text}}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-<div class="container">
-  <section class="row">
-    <google-map class="map-section large col-lg-8 animated slideInUp" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
-    <aside class="dashboardAside col-lg-4">
-      <h2>Volunteering Opportunities in your area</h2>
-      <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
+    </section>
+    <div class="col-lg-6 col-sm-12">
+      <aside class="dashboardAside">
+        <h2>Volunteering Opportunities in your area</h2>
+        <div class="meetups" ng-repeat= "meetups in dashboard.meetups">
           <a  class="meetup-a" href="{{ meetups.event_url}}" target="_blank"><p class="meetups">{{ meetups.name }}</p></a>
-      </div>
-    </aside>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <section class="row">
+    <google-map class="map-section large col-lg-12 col-sm-12 animated slideInUp" food-banks="dashboard.foodBanks" posts="dashboard.posts"></google-map>
   </section>
 </div>
-
-
-<!--Carousel transition to smooth with uibootstrap-->
-<!--Responsiveness in carousel styling-->
-<!--Map to be taller to create lower section below top-->
-<!--Populate data from foodbanks and items to this map-->
-<!-- </div> -->
